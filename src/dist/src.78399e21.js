@@ -29839,12 +29839,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/main-view/button-a/button-a.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/ui/button-a/button-a.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/main-view/button-a/button-a.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-a/button-a.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29864,7 +29864,191 @@ function ButtonA(props) {
     onClick: props.onClick
   }, "hello");
 }
-},{"react":"../node_modules/react/index.js","./button-a.scss":"components/main-view/button-a/button-a.scss"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./button-a.scss":"components/ui/button-a/button-a.scss"}],"components/ui/button-b/button-b.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-b/button-b.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonB = ButtonB;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./button-b.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonB(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-b",
+    onClick: props.onClick
+  }, "hello");
+}
+},{"react":"../node_modules/react/index.js","./button-b.scss":"components/ui/button-b/button-b.scss"}],"components/ui/button-c/button-c.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-c/button-c.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonC = ButtonC;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./button-c.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonC(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-c",
+    onClick: props.onClick
+  }, "hello");
+}
+},{"react":"../node_modules/react/index.js","./button-c.scss":"components/ui/button-c/button-c.scss"}],"components/ui/button-d/button-d.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-d/button-d.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonD = ButtonD;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./button-d.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonD(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-d",
+    onClick: props.onClick
+  }, "hello");
+}
+},{"react":"../node_modules/react/index.js","./button-d.scss":"components/ui/button-d/button-d.scss"}],"components/ui/directional-pad/left/left.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/directional-pad/left/left.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonLeft = ButtonLeft;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./left.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonLeft(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-left",
+    onClick: props.onClick
+  });
+}
+},{"react":"../node_modules/react/index.js","./left.scss":"components/ui/directional-pad/left/left.scss"}],"components/ui/directional-pad/right/right.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/directional-pad/right/right.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonRight = ButtonRight;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./right.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonRight(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-right",
+    onClick: props.onClick
+  });
+}
+},{"react":"../node_modules/react/index.js","./right.scss":"components/ui/directional-pad/right/right.scss"}],"components/ui/directional-pad/up/up.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/directional-pad/up/up.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonUp = ButtonUp;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./up.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonUp(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-up",
+    onClick: props.onClick
+  });
+}
+},{"react":"../node_modules/react/index.js","./up.scss":"components/ui/directional-pad/up/up.scss"}],"components/ui/directional-pad/down/down.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/directional-pad/down/down.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonDown = ButtonDown;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./down.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonDown(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-down",
+    onClick: props.onClick
+  });
+}
+},{"react":"../node_modules/react/index.js","./down.scss":"components/ui/directional-pad/down/down.scss"}],"components/main-view/main-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
+module.exports = "/poster.430e6e78.png";
+},{}],"vid/j1.mp4":[function(require,module,exports) {
+module.exports = "/j1.d6051879.mp4";
+},{}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29874,7 +30058,27 @@ exports.MainView = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _buttonA = require("./button-a/button-a");
+var _buttonA = require("../ui/button-a/button-a");
+
+var _buttonB = require("../ui/button-b/button-b");
+
+var _buttonC = require("../ui/button-c/button-c");
+
+var _buttonD = require("../ui/button-d/button-d");
+
+var _left = require("../ui/directional-pad/left/left");
+
+var _right = require("../ui/directional-pad/right/right");
+
+var _up = require("../ui/directional-pad/up/up");
+
+var _down = require("../ui/directional-pad/down/down");
+
+require("./main-view.scss");
+
+var _poster = _interopRequireDefault(require("../../img/poster.png"));
+
+var _j = _interopRequireDefault(require("../../vid/j1.mp4"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29922,8 +30126,70 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       console.log("inc-tal" + _this.state.tallyA);
     });
 
+    _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
+      _this.setState({
+        tallyb: _this.state.tallyB += 1
+      });
+
+      console.log("inc-tal" + _this.state.tallyB);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "incrementTallyC", function () {
+      _this.setState({
+        tallyC: _this.state.tallyC += 1
+      });
+
+      console.log("inc-tal" + _this.state.tallyC);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "incrementTallyD", function () {
+      _this.setState({
+        tallyD: _this.state.tallyD += 1
+      });
+
+      console.log("inc-tal" + _this.state.tallyD);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "incrementY", function () {
+      _this.setState({
+        tallyY: _this.state.tallyY += 1
+      });
+
+      console.log("inc-talY" + _this.state.tallyY);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "incrementX", function () {
+      _this.setState({
+        tallyX: _this.state.tallyX += 1
+      });
+
+      console.log("inc-talX" + _this.state.tallyX);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "decrementY", function () {
+      _this.setState({
+        tallyY: _this.state.tallyY -= 1
+      });
+
+      console.log("dec-talY" + _this.state.tallyY);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "decrementX", function () {
+      _this.setState({
+        tallyX: _this.state.tallyX -= 1
+      });
+
+      console.log("dec-talX" + _this.state.tallyX);
+    });
+
     _this.state = {
-      tallyA: 0
+      tallyA: 0,
+      tallyB: 0,
+      tallyC: 0,
+      tallyD: 0,
+      tallyX: 0,
+      tallyY: 0,
+      engMode: false
     };
     return _this;
   }
@@ -29931,9 +30197,108 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "show-champions"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "container"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "bg3"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        id: "county-data"
+      }, /*#__PURE__*/_react.default.createElement("h1", {
+        alt: "Champion"
+      }, "Tuairghneach")), /*#__PURE__*/_react.default.createElement("div", {
+        id: "bg2"
+      }), /*#__PURE__*/_react.default.createElement("video", {
+        id: "county-vid",
+        autoPlay: true,
+        loop: true,
+        muted: true,
+        poster: _poster.default
+      }, /*#__PURE__*/_react.default.createElement("source", {
+        src: _j.default,
+        type: "video/mp4"
+      }), /*#__PURE__*/_react.default.createElement("source", {
+        src: _j.default,
+        type: "video/ogg"
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        id: "bg1"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        id: "characters"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "all-champions",
+        className: ".text-center"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "stage"
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+        variant: "outline-primary",
+        alt: "rogue"
+      }, "R\xF3gaire"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Sage",
+        variant: "outline-secondary"
+      }, "Saoi"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Poet",
+        variant: "outline-success"
+      }, "File"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Druid",
+        variant: "outline-warning"
+      }, "Draoi"), ' ', /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Sorceress",
+        variant: "outline-danger"
+      }, "Sp\xE9irbhean"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Witch",
+        variant: "outline-info"
+      }, "Cailleach"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Occultist",
+        variant: "outline-dark"
+      }, "Diamhra\xED"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+        alt: "Warrior",
+        variant: "outline-light"
+      }, "F\xE9inn\xED")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
+        id: "main-canvas",
+        width: "640px",
+        height: "480px"
+      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "a-b-buttons"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
         onClick: this.incrementTallyA
-      }));
+      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally B: ", this.state.tallyB), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
+        onClick: this.incrementTallyB
+      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
+        onClick: this.incrementTallyC
+      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
+        onClick: this.incrementTallyD
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "gamepad"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-container"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }, "      ", /*#__PURE__*/_react.default.createElement(_up.ButtonUp, {
+        onClick: this.incrementY
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }, "      ", /*#__PURE__*/_react.default.createElement(_left.ButtonLeft, {
+        onClick: this.decrementX
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }, "      ", /*#__PURE__*/_react.default.createElement(_right.ButtonRight, {
+        onClick: this.incrementX
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }, "      ", /*#__PURE__*/_react.default.createElement(_down.ButtonDown, {
+        onClick: this.decrementY
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "grid-item"
+      }))));
     }
   }]);
 
@@ -29941,7 +30306,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.MainView = MainView;
-},{"react":"../node_modules/react/index.js","./button-a/button-a":"components/main-view/button-a/button-a.jsx"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../../img/poster.png":"img/poster.png","../../vid/j1.mp4":"vid/j1.mp4"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -30035,7 +30400,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44429" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44763" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

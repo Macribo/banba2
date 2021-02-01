@@ -1,6 +1,69 @@
 .button-a {
   border: 4px solid orange;
 }
+.button-a {
+  border: 4px solid orange;
+}
+.button-a {
+  border: 4px solid orange;
+}
+.button-a {
+  border: 4px solid orange;
+}
+.button-left {
+  border: 5px solid blueviolet;
+  background-color: blueviolet;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 50;
+}
+.button-right {
+  border: 5px solid blueviolet;
+  background-color: blueviolet;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 50;
+}
+.button-up {
+  border: 5px solid blueviolet;
+  background-color: blueviolet;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 50;
+}
+.button-down {
+  border: 5px solid blueviolet;
+  background-color: blueviolet;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 50;
+}
+.gamepad {
+  position: fixed;
+  z-index: 60;
+  right: 5%;
+  top: 60%;
+  width: 150px;
+  height: 150px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  font-size: 30px;
+  text-align: center;
+}
+
+#a-b-items {
+  border: 4px solid rebeccapurple;
+}
 .my-flix {
   color: steelblue;
 }
