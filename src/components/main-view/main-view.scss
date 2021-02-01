@@ -1,4 +1,22 @@
-.gamepad{
+
+#main-view{
+	border:4px solid orange;
+	justify-content: center;
+	display: grid;
+	align-items: center;
+	display: grid;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url('../../img/g.png');
+	width:100%;
+	height:100%;
+	z-index: -1;
+	
+}
+
+
+gamepad{
 	// border:4px solid blueviolet;
 	position:fixed;
 	z-index: 60;
@@ -26,4 +44,11 @@
 
   #a-b-items{
 	border:4px solid rebeccapurple;
+  }
+
+  #a-b-buttons{
+	  border:4px solid purple;
+	  position: relative;
+	  top:0%;
+	  z-index: 12;
   }

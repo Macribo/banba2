@@ -30044,7 +30044,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
+},{"./../../img/g.png":[["g.18891092.png","img/g.png"],"img/g.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
 module.exports = "/poster.430e6e78.png";
 },{}],"vid/j1.mp4":[function(require,module,exports) {
 module.exports = "/j1.d6051879.mp4";
@@ -30197,10 +30197,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        id: "main-view"
+      }, /*#__PURE__*/_react.default.createElement("div", {
         className: "show-champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "container"
+        id: "container",
+        className: "d-flex justify-content-center"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "bg3"
       }), /*#__PURE__*/_react.default.createElement("div", {
@@ -30209,19 +30212,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         alt: "Champion"
       }, "Tuairghneach")), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
-      }), /*#__PURE__*/_react.default.createElement("video", {
-        id: "county-vid",
-        autoPlay: true,
-        loop: true,
-        muted: true,
-        poster: _poster.default
-      }, /*#__PURE__*/_react.default.createElement("source", {
-        src: _j.default,
-        type: "video/mp4"
-      }), /*#__PURE__*/_react.default.createElement("source", {
-        src: _j.default,
-        type: "video/ogg"
-      })), /*#__PURE__*/_react.default.createElement("div", {
+      }), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg1"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -30229,6 +30220,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "all-champions",
         className: ".text-center"
       }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "a-b-buttons"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+        onClick: this.incrementTallyA
+      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally B: ", this.state.tallyB), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
+        onClick: this.incrementTallyB
+      })), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
         variant: "outline-primary",
@@ -30258,17 +30255,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "main-canvas",
         width: "640px",
         height: "480px"
-      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "a-b-buttons"
-      }, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
-        onClick: this.incrementTallyA
-      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally B: ", this.state.tallyB), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
-        onClick: this.incrementTallyB
-      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
+      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))), /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
         onClick: this.incrementTallyC
       }), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
         onClick: this.incrementTallyD
-      })), /*#__PURE__*/_react.default.createElement("div", {
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "gamepad"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-container"
@@ -30361,7 +30352,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
   _createClass(BanbaApp, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), /*#__PURE__*/_react.default.createElement(_mainView.MainView, null));
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null));
     }
   }]);
 

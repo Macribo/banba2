@@ -66,71 +66,74 @@ export class MainView extends React.Component {
 
   render() {
     return (
-      <div>
-
-<div className="show-champions">
-
+      <div id="main-view">
+        <div className="show-champions">
 
 
 
-    <div id="container">
-      <div id="bg3"></div>
-      <div id="county-data">
-        <h1 alt="Champion">Tuairghneach</h1>
-      </div>
-      <div id="bg2"></div>
-      {/* <div id="¬water"></div> */}
 
-      <video id="county-vid" autoPlay loop muted poster={Poster}>
+          <div id="container" className="d-flex justify-content-center">
+            <div id="bg3"></div>
+            <div id="county-data">
+              <h1 alt="Champion">Tuairghneach</h1>
+            </div>
+            <div id="bg2"></div>
+            {/* <div id="¬water"></div> */}
+
+            {/* <video id="county-vid" autoPlay loop muted poster={Poster}>
         <source src={clip} type='video/mp4' />
         <source src={clip} type="video/ogg" />
-      </video>
+      </video> */}
 
-      <div id="bg1"></div>
-      <div id="characters">
-        <div id="all-champions" className=".text-center">
-          <div id="stage">
-            <div>
-              <button variant="outline-primary" alt="rogue">Rógaire</button>{' '}
-              <button alt="Sage" variant="outline-secondary">Saoi</button>{' '}
-              <button alt="Poet" variant="outline-success">File</button>{' '}
-              <button alt="Druid" variant="outline-warning">Draoi</button>{' '}
-              <br />
-              <button alt="Sorceress" variant="outline-danger">Spéirbhean</button>{' '}
-              <button alt="Witch" variant="outline-info">Cailleach</button>{' '}
-              <button alt="Occultist" variant="outline-dark">Diamhraí</button>{' '}
-              <button alt="Warrior" variant="outline-light">Féinní</button>
+            <div id="bg1"></div>
+            <div id="characters">
+              <div id="all-champions" className=".text-center">
+          
+              <div id="a-b-buttons">
+          <h2>tally A: {this.state.tallyA}</h2>
+          <ButtonA onClick={this.incrementTallyA} />
+          <h2>tally B: {this.state.tallyB}</h2>
+          <ButtonB onClick={this.incrementTallyB} />
+
+        </div>
+                <div id="stage">
+                  <div>
+                    <button variant="outline-primary" alt="rogue">Rógaire</button>{' '}
+                    <button alt="Sage" variant="outline-secondary">Saoi</button>{' '}
+                    <button alt="Poet" variant="outline-success">File</button>{' '}
+                    <button alt="Druid" variant="outline-warning">Draoi</button>{' '}
+                    <br />
+                    <button alt="Sorceress" variant="outline-danger">Spéirbhean</button>{' '}
+                    <button alt="Witch" variant="outline-info">Cailleach</button>{' '}
+                    <button alt="Occultist" variant="outline-dark">Diamhraí</button>{' '}
+                    <button alt="Warrior" variant="outline-light">Féinní</button>
+                  </div>
+
+                </div>
+              </div>
+
+              <div>
+                <canvas id="main-canvas"
+                  width="640px" height="480px">
+                  <p>Canbhás ar iarraidh</p>
+                </canvas>
+                <noscript>
+                  <p>javaScript ar iarraidh.</p>
+                </noscript>
+              </div>
             </div>
-
           </div>
+          
+
         </div>
 
-        <div>
-          <canvas id="main-canvas"
-            width="640px" height="480px">
-            <p>Canbhás ar iarraidh</p>
-          </canvas>
-          <noscript>
-            <p>javaScript ar iarraidh.</p>
-          </noscript>
-        </div>
-      </div>
-    </div>
 
-
-</div>
-
-
-        <div id="a-b-buttons">
-        <h2>tally A: {this.state.tallyA}</h2>
-        <ButtonA onClick={this.incrementTallyA} />
-        <h2>tally B: {this.state.tallyB}</h2>
-        <ButtonB onClick={this.incrementTallyB} />
-        <h2>tally C: {this.state.tallyC}</h2>
-        <ButtonC onClick={this.incrementTallyC} />
-        <h2>tally D: {this.state.tallyD}</h2>
-        <ButtonD onClick={this.incrementTallyD} />
-</div>
+       
+          <h2>tally C: {this.state.tallyC}</h2>
+          <ButtonC onClick={this.incrementTallyC} />
+          <h2>tally D: {this.state.tallyD}</h2>
+          <ButtonD onClick={this.incrementTallyD} />
+       
         <div className="gamepad">
 
 
