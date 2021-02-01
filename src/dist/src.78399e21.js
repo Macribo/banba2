@@ -29858,9 +29858,10 @@ require("./button-a.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ButtonA() {
+function ButtonA(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
-    className: "button-a"
+    className: "button-a",
+    onClick: props.onClick
   }, "hello");
 }
 },{"react":"../node_modules/react/index.js","./button-a.scss":"components/main-view/button-a/button-a.scss"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
@@ -29899,6 +29900,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var MainView = /*#__PURE__*/function (_React$Component) {
   _inherits(MainView, _React$Component);
 
@@ -29910,8 +29913,17 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, MainView);
 
     _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
+      _this.setState({
+        tallyA: _this.state.tallyA += 1
+      });
+
+      console.log("inc-tal" + _this.state.tallyA);
+    });
+
     _this.state = {
-      color: "red"
+      tallyA: 0
     };
     return _this;
   }
@@ -29919,7 +29931,9 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, null), "hello");
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+        onClick: this.incrementTallyA
+      }));
     }
   }]);
 
