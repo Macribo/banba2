@@ -1,4 +1,4 @@
-
+html, body {margin: 0; height: 100%; overflow: hidden}
 @font-face {
 	font-family: urchlo;
 	src: url('../../fonts/Urchlo\ Romhanach.ttf');
@@ -26,12 +26,12 @@
 }
 
 
-gamepad{
+.gamepad{
 	// border:4px solid blueviolet;
 	position:fixed;
 	z-index: 60;
 	right:5%;
-	top:60%;
+	top:55%;
 	width:150px;
 	height:150px;
 
@@ -51,7 +51,14 @@ gamepad{
 	text-align: center;
   }
 
-
+#select-start{
+	top: 90%;
+    right: 32%;
+    position: fixed;
+    width: 25%;
+    justify-content: space-evenly;
+    display: flex;
+}
   #a-b-items{
 	border:4px solid rebeccapurple;
   }
@@ -71,10 +78,54 @@ gamepad{
   }
 
   .champ-container{
-	border:4px solid orange;
+	border:4px solid green;
 	display: grid;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	height:400px;
 
+  }
+
+
+.prompt-hor {
+	display: none;
+	color:black;
+  }
+  
+  @media screen and (orientation: portrait) {
+	html {
+	}
+  
+	.prompt-hor {
+	  font-size: 2em;
+	  z-index: 500;  
+		height:100% !important;
+		width:100%;
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  top:0%;
+  left:0%;
+	  background-color: black;
+	  // border:5px solid orange;
+  justify-content:center ;
+   background-image: url('../../img/g.png');
+  display: grid; 
+	}
+	.turn, .turn2{
+	  // border:4px solid blue;
+	  z-index: 501;
+   transform:translateY(250px) ;
+	  width: 500px !important;
+	  height: 500px;
+   background-image:url('../../img/turn.png');
+   background-repeat: no-repeat;
+  display: grid;
+  
+	}
+	.turn2{
+	  transform: rotate(90deg);
+	}
   }

@@ -3,5 +3,5 @@ import './button-c.scss'
 
  export function ButtonC(props) {
 
-	return (<button className="button-c"  onClick={props.onClick} >hello</button>)
+	return (<button className="button-c"  onClick={props.onClick} >C</button>)
   }

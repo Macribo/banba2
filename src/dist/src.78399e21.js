@@ -29912,7 +29912,7 @@ function ButtonC(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-c",
     onClick: props.onClick
-  }, "hello");
+  }, "C");
 }
 },{"react":"../node_modules/react/index.js","./button-c.scss":"components/ui/button-c/button-c.scss"}],"components/ui/button-d/button-d.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -29937,7 +29937,7 @@ function ButtonD(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-d",
     onClick: props.onClick
-  }, "hello");
+  }, "D");
 }
 },{"react":"../node_modules/react/index.js","./button-d.scss":"components/ui/button-d/button-d.scss"}],"components/ui/directional-pad/left/left.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -30044,7 +30044,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../fonts/Urchlo Romhanach.ttf":[["Urchlo Romhanach.8a14d1c9.ttf","fonts/Urchlo Romhanach.ttf"],"fonts/Urchlo Romhanach.ttf"],"./../../fonts/aonchlo.ttf":[["aonchlo.4519089d.ttf","fonts/aonchlo.ttf"],"fonts/aonchlo.ttf"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
+},{"./../../fonts/Urchlo Romhanach.ttf":[["Urchlo Romhanach.8a14d1c9.ttf","fonts/Urchlo Romhanach.ttf"],"fonts/Urchlo Romhanach.ttf"],"./../../fonts/aonchlo.ttf":[["aonchlo.4519089d.ttf","fonts/aonchlo.ttf"],"fonts/aonchlo.ttf"],"./../../img/g.png":[["g.18891092.png","img/g.png"],"img/g.png"],"./../../img/turn.png":[["turn.20c74d85.png","img/turn.png"],"img/turn.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
 module.exports = "/poster.430e6e78.png";
 },{}],"vid/j1.mp4":[function(require,module,exports) {
 module.exports = "/j1.d6051879.mp4";
@@ -30117,6 +30117,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, MainView);
 
     _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "toggleEng", function () {
+      setState(_this.state.engMode = !_this.state.engMode);
+      console.log(_this.state.engMode);
+    });
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
       _this.setState({
@@ -30203,7 +30208,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       tallyD: 0,
       tallyX: 0,
       tallyY: 0,
-      engMode: false
+      engMode: false,
+      isLoggedIn: true
     };
     return _this;
   }
@@ -30211,58 +30217,123 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
+      if (this.state.tallyA >= 1) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          id: "main-view"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "show-champions"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "container champ-container"
+        }, /*#__PURE__*/_react.default.createElement("h1", {
+          alt: "Champion"
+        }, "Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
+          id: "bg2"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          id: "bg1"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          id: "characters"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          id: "all-champions",
+          className: ".text-center"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          id: "stage"
+        }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+          variant: "outline-primary",
+          alt: "rogue"
+        }, "R\xF3gaire"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Sage",
+          variant: "outline-secondary"
+        }, "Saoi"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Poet",
+          variant: "outline-success"
+        }, "File"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Druid",
+          variant: "outline-warning"
+        }, "Draoi"), ' ', /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Sorceress",
+          variant: "outline-danger"
+        }, "Sp\xE9irbhean"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Witch",
+          variant: "outline-info"
+        }, "Cailleach"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Occultist",
+          variant: "outline-dark"
+        }, "Diamhra\xED"), ' ', /*#__PURE__*/_react.default.createElement("button", {
+          alt: "Warrior",
+          variant: "outline-light"
+        }, "F\xE9inn\xED")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
+          id: "main-canvas",
+          width: "640px",
+          height: "480px"
+        }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))), /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement("div", {
+          id: "select-start"
+        }, /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
+          onClick: this.incrementTallyC
+        }), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
+          onClick: this.incrementTallyD
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          id: "a-b-buttons"
+        }, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+          onClick: this.incrementTallyA
+        }), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
+          ontouchend: function ontouchend() {
+            console.log('et');
+          },
+          ontouchstart: function ontouchstart() {
+            console.log('st');
+          },
+          onClick: this.incrementTallyB
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "gamepad"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-container"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }, "      ", /*#__PURE__*/_react.default.createElement(_up.ButtonUp, {
+          onClick: this.incrementY
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }, "      ", /*#__PURE__*/_react.default.createElement(_left.ButtonLeft, {
+          onClick: this.decrementX
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }, "      ", /*#__PURE__*/_react.default.createElement(_right.ButtonRight, {
+          onClick: this.incrementX
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }, "      ", /*#__PURE__*/_react.default.createElement(_down.ButtonDown, {
+          onClick: this.decrementY
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "grid-item"
+        }))), /*#__PURE__*/_react.default.createElement("button", {
+          id: "full-screen",
+          onClick: this.goFullScreen
+        }, "fs"), /*#__PURE__*/_react.default.createElement("div", {
+          className: "prompt-hor"
+        }, /*#__PURE__*/_react.default.createElement("h1", null, "Flip it."), /*#__PURE__*/_react.default.createElement("div", {
+          className: ""
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "turn2"
+        })));
+      }
+
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "show-champions"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "container champ-container"
-      }, /*#__PURE__*/_react.default.createElement("h1", {
-        alt: "Champion"
-      }, "Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
-        id: "bg2"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: "bg1"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: "characters"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "all-champions",
-        className: ".text-center"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "stage"
-      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-        variant: "outline-primary",
-        alt: "rogue"
-      }, "R\xF3gaire"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Sage",
-        variant: "outline-secondary"
-      }, "Saoi"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Poet",
-        variant: "outline-success"
-      }, "File"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Druid",
-        variant: "outline-warning"
-      }, "Draoi"), ' ', /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Sorceress",
-        variant: "outline-danger"
-      }, "Sp\xE9irbhean"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Witch",
-        variant: "outline-info"
-      }, "Cailleach"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Occultist",
-        variant: "outline-dark"
-      }, "Diamhra\xED"), ' ', /*#__PURE__*/_react.default.createElement("button", {
-        alt: "Warrior",
-        variant: "outline-light"
-      }, "F\xE9inn\xED")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
-        id: "main-canvas",
-        width: "640px",
-        height: "480px"
-      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))), /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "tally C: ", this.state.tallyC), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement("div", {
+        id: "select-start"
+      }, /*#__PURE__*/_react.default.createElement(_buttonC.ButtonC, {
         onClick: this.incrementTallyC
-      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
+      }), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
         onClick: this.incrementTallyD
-      }), /*#__PURE__*/_react.default.createElement("div", {
+      })), /*#__PURE__*/_react.default.createElement("div", {
         id: "a-b-buttons"
       }, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
         onClick: this.incrementTallyA
@@ -30301,7 +30372,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/_react.default.createElement("button", {
         id: "full-screen",
         onClick: this.goFullScreen
-      }, "fs"));
+      }, "fs"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "prompt-hor"
+      }, /*#__PURE__*/_react.default.createElement("h1", null, "Flip it."), /*#__PURE__*/_react.default.createElement("div", {
+        className: ""
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "turn2"
+      })));
     }
   }]);
 
@@ -30403,7 +30480,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44763" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40963" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

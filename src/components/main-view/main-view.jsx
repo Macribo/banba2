@@ -22,9 +22,15 @@ export class MainView extends React.Component {
       tallyD: 0,
       tallyX: 0,
       tallyY: 0,
-      engMode: false
+      engMode: false,
+      isLoggedIn: true
     };
   }
+
+toggleEng = () =>{
+  setState(this.state.engMode = !this.state.engMode)
+  console.log(this.state.engMode)
+}
   incrementTallyA = () => {
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
@@ -61,21 +67,25 @@ export class MainView extends React.Component {
     console.log("dec-talX" + this.state.tallyX)
   }
 
-goFullScreen = ()=>{
-  var elem = document.getElementById('main-view')
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
+  goFullScreen = () => {
+    var elem = document.getElementById('main-view')
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
   }
-}
 
 
   render() {
-    return (
-      <div id="main-view">
+
+    if(this.state.tallyA>=1)
+    {
+return(
+
+ <div id="main-view">
         <div className="show-champions">
 
 
@@ -93,9 +103,10 @@ goFullScreen = ()=>{
 
             <div id="bg1"></div>
             <div id="characters">
+
               <div id="all-champions" className=".text-center">
-          
-          {/* <h2>tally A: {this.state.tallyA}</h2>
+
+                {/* <h2>tally A: {this.state.tallyA}</h2>
           <h2>tally B: {this.state.tallyB}</h2> */}
                 <div id="stage">
                   <div>
@@ -124,21 +135,72 @@ goFullScreen = ()=>{
               </div>
             </div>
           </div>
-          
+
 
         </div>
 
 
-       
-          <h2>tally C: {this.state.tallyC}</h2>
+
+        <h2>tally C: {this.state.tallyC}</h2>
+        <h2>tally D: {this.state.tallyD}</h2>
+        <div id="select-start">
           <ButtonC onClick={this.incrementTallyC} />
-          <h2>tally D: {this.state.tallyD}</h2>
           <ButtonD onClick={this.incrementTallyD} />
-       
+        </div>
+
+
+        <div id="a-b-buttons">
+          <ButtonA onClick={this.incrementTallyA} />
+          <ButtonB 
+          ontouchend={() => { console.log('et') }} ontouchstart={() => { console.log('st'); }}
+ 
+          onClick={this.incrementTallyB} />
+
+        </div>
+        <div className="gamepad">
+
+          <div className="grid-container">
+            <div className="grid-item"></div>
+            <div className="grid-item">      <ButtonUp onClick={this.incrementY} />
+            </div>
+            <div className="grid-item"></div>
+            <div className="grid-item">      <ButtonLeft onClick={this.decrementX} />
+            </div>
+            <div className="grid-item"></div>
+            <div className="grid-item">      <ButtonRight onClick={this.incrementX} />
+            </div>
+            <div className="grid-item"></div>
+            <div className="grid-item">      <ButtonDown onClick={this.decrementY} />
+            </div>
+            <div className="grid-item"></div>
+          </div>
+
+        </div>
+        <button id="full-screen" onClick={this.goFullScreen}>fs</button>
+ 
+        <div className="prompt-hor"><h1>Flip it.</h1><div className=""></div><div className="turn2"></div></div>
+      </div>
+
+)
+
+      
+    }
+    return (
+     
+ <div id="main-view">
+        
 
 
 
-              <div id="a-b-buttons">
+        <h2>tally C: {this.state.tallyC}</h2>
+        <h2>tally D: {this.state.tallyD}</h2>
+        <div id="select-start">
+          <ButtonC onClick={this.incrementTallyC} />
+          <ButtonD onClick={this.incrementTallyD} />
+        </div>
+
+
+        <div id="a-b-buttons">
           <ButtonA onClick={this.incrementTallyA} />
           <ButtonB onClick={this.incrementTallyB} />
 
@@ -162,8 +224,13 @@ goFullScreen = ()=>{
           </div>
 
         </div>
-        <button id="full-screen"onClick={this.goFullScreen}>fs</button>
+        <button id="full-screen" onClick={this.goFullScreen}>fs</button>
+ 
+        <div className="prompt-hor"><h1>Flip it.</h1><div className=""></div><div className="turn2"></div></div>
       </div>
+
+
+
     )
   }
 }
