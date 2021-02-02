@@ -29862,7 +29862,7 @@ function ButtonA(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-a",
     onClick: props.onClick
-  }, "hello");
+  }, "A");
 }
 },{"react":"../node_modules/react/index.js","./button-a.scss":"components/ui/button-a/button-a.scss"}],"components/ui/button-b/button-b.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -29887,7 +29887,7 @@ function ButtonB(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-b",
     onClick: props.onClick
-  }, "hello");
+  }, "B");
 }
 },{"react":"../node_modules/react/index.js","./button-b.scss":"components/ui/button-b/button-b.scss"}],"components/ui/button-c/button-c.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -30044,7 +30044,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/g.png":[["g.18891092.png","img/g.png"],"img/g.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
+},{"./../../fonts/Urchlo Romhanach.ttf":[["Urchlo Romhanach.8a14d1c9.ttf","fonts/Urchlo Romhanach.ttf"],"fonts/Urchlo Romhanach.ttf"],"./../../fonts/aonchlo.ttf":[["aonchlo.4519089d.ttf","fonts/aonchlo.ttf"],"fonts/aonchlo.ttf"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/poster.png":[function(require,module,exports) {
 module.exports = "/poster.430e6e78.png";
 },{}],"vid/j1.mp4":[function(require,module,exports) {
 module.exports = "/j1.d6051879.mp4";
@@ -30182,6 +30182,20 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       console.log("dec-talX" + _this.state.tallyX);
     });
 
+    _defineProperty(_assertThisInitialized(_this), "goFullScreen", function () {
+      var elem = document.getElementById('main-view');
+
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    });
+
     _this.state = {
       tallyA: 0,
       tallyB: 0,
@@ -30202,15 +30216,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "show-champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "container",
-        className: "d-flex justify-content-center"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "bg3"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: "county-data"
+        className: "container champ-container"
       }, /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "Tuairghneach")), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg1"
@@ -30220,12 +30229,6 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "all-champions",
         className: ".text-center"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "a-b-buttons"
-      }, /*#__PURE__*/_react.default.createElement("h2", null, "tally A: ", this.state.tallyA), /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
-        onClick: this.incrementTallyA
-      }), /*#__PURE__*/_react.default.createElement("h2", null, "tally B: ", this.state.tallyB), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
-        onClick: this.incrementTallyB
-      })), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
         variant: "outline-primary",
@@ -30260,6 +30263,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("h2", null, "tally D: ", this.state.tallyD), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
         onClick: this.incrementTallyD
       }), /*#__PURE__*/_react.default.createElement("div", {
+        id: "a-b-buttons"
+      }, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+        onClick: this.incrementTallyA
+      }), /*#__PURE__*/_react.default.createElement(_buttonB.ButtonB, {
+        onClick: this.incrementTallyB
+      })), /*#__PURE__*/_react.default.createElement("div", {
         className: "gamepad"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-container"
@@ -30289,7 +30298,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         onClick: this.decrementY
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
-      }))));
+      }))), /*#__PURE__*/_react.default.createElement("button", {
+        id: "full-screen",
+        onClick: this.goFullScreen
+      }, "fs"));
     }
   }]);
 

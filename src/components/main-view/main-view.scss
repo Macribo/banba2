@@ -1,14 +1,24 @@
 
+@font-face {
+	font-family: urchlo;
+	src: url('../../fonts/Urchlo\ Romhanach.ttf');
+  }
+  
+  @font-face {
+	font-family: aonchlo;
+	src: url('../../fonts/aonchlo.ttf');
+  }
+  
 #main-view{
-	border:4px solid orange;
+	// border:4px solid orange;
 	justify-content: center;
 	display: grid;
 	align-items: center;
 	display: grid;
 	justify-content: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-image: url('../../img/g.png');
+	// background-repeat: no-repeat;
+	// background-size: 100% 100%;
+	// background-image: url('../../img/g.png');
 	width:100%;
 	height:100%;
 	z-index: -1;
@@ -47,8 +57,24 @@ gamepad{
   }
 
   #a-b-buttons{
-	  border:4px solid purple;
-	  position: relative;
-	  top:0%;
+
+	// border:4px solid purple;
+	  position: fixed;
+	  top:72%;
+	  left:5%;
+	  width:20%;
+	  display: flex;
+	  justify-content: space-around;
+	align-items: center;
+	text-align: center;
 	  z-index: 12;
+  }
+
+  .champ-container{
+	border:4px solid orange;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
   }

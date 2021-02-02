@@ -1,13 +1,42 @@
 .button-a {
+  font-family: "aonchlo";
+  position: fixed;
+  display: flex;
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: rebeccapurple;
+  border: 5px solid #3d263d;
+  border-radius: 50%;
+  margin-right: 40px;
+  color: #b184dd;
+  cursor: "pointer";
+  font-size: 2em;
+  font-size: 3em;
+}
+.button-b {
+  font-family: "aonchlo";
+  position: fixed;
+  display: flex;
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: rebeccapurple;
+  border: 5px solid #3d263d;
+  border-radius: 50%;
+  margin-left: 20%;
+  color: #b184dd;
+  cursor: "pointer";
+  font-size: 3em;
+}
+.button-c {
   border: 4px solid orange;
 }
-.button-a {
-  border: 4px solid orange;
-}
-.button-a {
-  border: 4px solid orange;
-}
-.button-a {
+.button-d {
   border: 4px solid orange;
 }
 .button-left {
@@ -42,16 +71,20 @@
   position: relative;
   z-index: 50;
 }
+@font-face {
+  font-family: urchlo;
+  src: url("/Urchlo Romhanach.8a14d1c9.ttf");
+}
+@font-face {
+  font-family: aonchlo;
+  src: url("/aonchlo.4519089d.ttf");
+}
 #main-view {
-  border: 4px solid orange;
   justify-content: center;
   display: grid;
   align-items: center;
   display: grid;
   justify-content: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("/g.18891092.png");
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -81,10 +114,23 @@ gamepad {
 }
 
 #a-b-buttons {
-  border: 4px solid purple;
-  position: relative;
-  top: 0%;
+  position: fixed;
+  top: 72%;
+  left: 5%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
   z-index: 12;
+}
+
+.champ-container {
+  border: 4px solid orange;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .my-flix {
   color: steelblue;

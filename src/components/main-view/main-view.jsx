@@ -61,7 +61,16 @@ export class MainView extends React.Component {
     console.log("dec-talX" + this.state.tallyX)
   }
 
-
+goFullScreen = ()=>{
+  var elem = document.getElementById('main-view')
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 
 
   render() {
@@ -72,11 +81,8 @@ export class MainView extends React.Component {
 
 
 
-          <div id="container" className="d-flex justify-content-center">
-            <div id="bg3"></div>
-            <div id="county-data">
-              <h1 alt="Champion">Tuairghneach</h1>
-            </div>
+          <div className="container champ-container" >
+            <h1 alt="Champion">Tuairghneach</h1>
             <div id="bg2"></div>
             {/* <div id="¬water"></div> */}
 
@@ -89,13 +95,8 @@ export class MainView extends React.Component {
             <div id="characters">
               <div id="all-champions" className=".text-center">
           
-              <div id="a-b-buttons">
-          <h2>tally A: {this.state.tallyA}</h2>
-          <ButtonA onClick={this.incrementTallyA} />
-          <h2>tally B: {this.state.tallyB}</h2>
-          <ButtonB onClick={this.incrementTallyB} />
-
-        </div>
+          {/* <h2>tally A: {this.state.tallyA}</h2>
+          <h2>tally B: {this.state.tallyB}</h2> */}
                 <div id="stage">
                   <div>
                     <button variant="outline-primary" alt="rogue">Rógaire</button>{' '}
@@ -134,10 +135,15 @@ export class MainView extends React.Component {
           <h2>tally D: {this.state.tallyD}</h2>
           <ButtonD onClick={this.incrementTallyD} />
        
+
+
+
+              <div id="a-b-buttons">
+          <ButtonA onClick={this.incrementTallyA} />
+          <ButtonB onClick={this.incrementTallyB} />
+
+        </div>
         <div className="gamepad">
-
-
-
 
           <div className="grid-container">
             <div className="grid-item"></div>
@@ -156,6 +162,7 @@ export class MainView extends React.Component {
           </div>
 
         </div>
+        <button id="full-screen"onClick={this.goFullScreen}>fs</button>
       </div>
     )
   }
