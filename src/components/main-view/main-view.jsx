@@ -35,7 +35,7 @@ bBtnTouchStart = ()=>{
   console.log('start');
 }
 toggleEng = () =>{
-  setState(this.state.engMode = !this.state.engMode)
+  this.setState({engMode :this.state.engMode = !this.state.engMode})
   console.log(this.state.engMode)
 }
   incrementTallyA = () => {
@@ -209,8 +209,8 @@ return(
 
         <div id="a-b-buttons">
           <ButtonA onClick={this.incrementTallyA} />
-          <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.bBtnTouchEnd}
-          onTouchStart={this.bBtnTouchStart}/>
+          <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.toggleEng}
+          onTouchStart={this.toggleEng}/>
 
         </div>
         <div className="gamepad">

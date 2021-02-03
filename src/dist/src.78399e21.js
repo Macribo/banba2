@@ -34215,7 +34215,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "toggleEng", function () {
-      setState(_this.state.engMode = !_this.state.engMode);
+      _this.setState({
+        engMode: _this.state.engMode = !_this.state.engMode
+      });
+
       console.log(_this.state.engMode);
     });
 
@@ -34430,8 +34433,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         onClick: this.incrementTallyA
       }), /*#__PURE__*/_react.default.createElement(_buttonB.default, {
         onClick: this.incrementTallyB,
-        onTouchEnd: this.bBtnTouchEnd,
-        onTouchStart: this.bBtnTouchStart
+        onTouchEnd: this.toggleEng,
+        onTouchStart: this.toggleEng
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "gamepad"
       }, /*#__PURE__*/_react.default.createElement("div", {
