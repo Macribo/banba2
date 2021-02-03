@@ -1,7 +1,9 @@
 import React from 'react'
 import './button-b.scss'
 
- export function ButtonB(props) {
+function ButtonB(props) {
 
-	return (<button className="button-b"  onClick={props.onClick} >B</button>)
+	return (<button className="button-b"  onClick={props.onClick}  onTouchEnd={props.onTouchEnd}
+	onTouchStart={props.onTouchStart} >B</button>)
   }
+  export default ButtonB

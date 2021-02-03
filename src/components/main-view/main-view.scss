@@ -16,13 +16,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	align-items: center;
 	display: grid;
 	justify-content: center;
-	// background-repeat: no-repeat;
-	// background-size: 100% 100%;
-	// background-image: url('../../img/g.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../../img/g.png');
 	width:100%;
-	height:100%;
+	height: 100vh;;
 	z-index: -1;
-	
+	// border:1px solid blue;
 }
 
 
@@ -111,8 +111,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	  background-color: black;
 	  // border:5px solid orange;
   justify-content:center ;
-   background-image: url('../../img/g.png');
+   background-image: url('../../img/g90.png');
   display: grid; 
+  background-repeat:no-repeat;
+  background-size: cover;
 	}
 	.turn, .turn2{
 	  // border:4px solid blue;

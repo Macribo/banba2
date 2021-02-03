@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ButtonA } from '../ui/button-a/button-a'
-import { ButtonB } from '../ui/button-b/button-b'
+import  ButtonB  from '../ui/button-b/button-b'
 import { ButtonC } from '../ui/button-c/button-c'
 import { ButtonD } from '../ui/button-d/button-d'
 import { ButtonLeft } from '../ui/directional-pad/left/left'
@@ -18,7 +20,7 @@ export class MainView extends React.Component {
     this.state = {
       tallyA: 0,
       tallyB: 0,
-      tallyC: 0,
+      menuCOpen:false,
       tallyD: 0,
       tallyX: 0,
       tallyY: 0,
@@ -26,7 +28,12 @@ export class MainView extends React.Component {
       isLoggedIn: true
     };
   }
-
+bBtnTouchEnd = ()=>{
+  console.log('end');
+}
+bBtnTouchStart = ()=>{
+  console.log('start');
+}
 toggleEng = () =>{
   setState(this.state.engMode = !this.state.engMode)
   console.log(this.state.engMode)
@@ -41,9 +48,9 @@ toggleEng = () =>{
     console.log("inc-tal" + this.state.tallyB)
   }
 
-  incrementTallyC = () => {
-    this.setState({ tallyC: this.state.tallyC += 1 });
-    console.log("inc-tal" + this.state.tallyC)
+  toggleCmenu = () => {
+    this.setState({ menuCopen: this.state.menuCOpen = !this.state.menuCOpen  });
+    console.log("menu c open:" + this.state.menuCOpen)
   }
 
   incrementTallyD = () => {
@@ -152,9 +159,9 @@ return(
         <div id="a-b-buttons">
           <ButtonA onClick={this.incrementTallyA} />
           <ButtonB 
-          ontouchend={() => { console.log('et') }} ontouchstart={() => { console.log('st'); }}
+          onTouchEnd={this.bBtnTouchEnd } onTouchStart={ this.bBtnTouchStart }
  
-          onClick={this.incrementTallyB} />
+      />
 
         </div>
         <div className="gamepad">
@@ -191,18 +198,19 @@ return(
         
 
 
-
+{/* 
         <h2>tally C: {this.state.tallyC}</h2>
-        <h2>tally D: {this.state.tallyD}</h2>
+        <h2>tally D: {this.state.tallyD}</h2> */}
         <div id="select-start">
-          <ButtonC onClick={this.incrementTallyC} />
+          <ButtonC onClick={this.toggleCmenu} />
           <ButtonD onClick={this.incrementTallyD} />
         </div>
 
 
         <div id="a-b-buttons">
           <ButtonA onClick={this.incrementTallyA} />
-          <ButtonB onClick={this.incrementTallyB} />
+          <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.bBtnTouchEnd}
+          onTouchStart={this.bBtnTouchStart}/>
 
         </div>
         <div className="gamepad">
@@ -226,7 +234,7 @@ return(
         </div>
         <button id="full-screen" onClick={this.goFullScreen}>fs</button>
  
-        <div className="prompt-hor"><h1>Flip it.</h1><div className=""></div><div className="turn2"></div></div>
+        <div className="prompt-hor"><h1></h1><div className=""></div></div>
       </div>
 
 

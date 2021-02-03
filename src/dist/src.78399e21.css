@@ -101,8 +101,11 @@ html, body {
   align-items: center;
   display: grid;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/g.18891092.png");
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
 }
 
@@ -178,8 +181,10 @@ html, body {
     left: 0%;
     background-color: black;
     justify-content: center;
-    background-image: url("/g.18891092.png");
+    background-image: url("/g90.ae61ad8d.png");
     display: grid;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .turn, .turn2 {
