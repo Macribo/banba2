@@ -3,6 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { MainView } from './components/main-view/main-view';
+import { Champions } from './components/champions/champions';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // Import statement to indicate that we need to bundle `./index.scss`
 import './index.scss';
@@ -11,11 +19,18 @@ import './index.scss';
 class BanbaApp extends React.Component {
   render() {
     return (
-<div>
-    <MainView />
-    </div>
+      <Router>
+        <Route exact path="/">
+          <MainView />
+        </Route>
+
+        <Route exact path="/champions">
+          <MainView />
+          <Champions />
+        </Route>
+      </Router>
     )
-    
+
   }
 }
 
