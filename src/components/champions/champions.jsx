@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './champions.scss'
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 
 export class Champions extends React.Component {
@@ -9,18 +9,11 @@ export class Champions extends React.Component {
 	constructor() {
 		super();
 		this.state = {}
-
-
-
 	}
+
 	render() {
 		return (
-
 				<div className="champions">
-
-
-
-
 					<div className="container champ-container" >
 						<h1 alt="Champion">Tuairghneach</h1>
 						<div id="bg2"></div>
@@ -38,14 +31,14 @@ export class Champions extends React.Component {
 								<div id="stage">
 									<div>
 										<Button variant="outline-primary" alt="rogue">Rógaire</Button>{' '}
-										<button alt="Sage" variant="outline-secondary">Saoi</button>{' '}
-										<button alt="Poet" variant="outline-success">File</button>{' '}
-										<button alt="Druid" variant="outline-warning">Draoi</button>{' '}
+										<Button alt="Sage" variant="outline-secondary">Saoi</Button>{' '}
+										<Button alt="Poet" variant="outline-success">File</Button>{' '}
+										<Button alt="Druid" variant="outline-warning">Draoi</Button>{' '}
 										<br />
-										<button alt="Sorceress" variant="outline-danger">Spéirbhean</button>{' '}
-										<button alt="Witch" variant="outline-info">Cailleach</button>{' '}
-										<button alt="Occultist" variant="outline-dark">Diamhraí</button>{' '}
-										<button alt="Warrior" variant="outline-light">Féinní</button>
+										<Button alt="Sorceress" variant="outline-danger">Spéirbhean</Button>{' '}
+										<Button alt="Witch" variant="outline-info">Cailleach</Button>{' '}
+										<Button alt="Occultist" variant="outline-dark">Diamhraí</Button>{' '}
+										<Button alt="Warrior" variant="outline-light">Féinní</Button>
 									</div>
 
 								</div>

@@ -1,7 +1,7 @@
 // client/src/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { MainView } from './components/main-view/main-view';
 import { Champions } from './components/champions/champions';
 
