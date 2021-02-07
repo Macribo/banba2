@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+import {Dropdown} from 'react-bootstrap'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
 import  ButtonB  from '../ui/button-b/button-b'
 import { ButtonC } from '../ui/button-c/button-c'
@@ -44,6 +43,8 @@ toggleEng = () =>{
   incrementTallyA = () => {
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
+    if(this.state.tallyA>0){alert()}
+
   }
 
   incrementTallyB = () => {
@@ -88,7 +89,6 @@ toggleEng = () =>{
     }
   }
 
-
   render() {
 
     return (
@@ -101,7 +101,18 @@ toggleEng = () =>{
         <h2>tally C: {this.state.tallyC}</h2>
         <h2>tally D: {this.state.tallyD}</h2> */}
         <div id="select-start">
-          <ButtonC onClick={this.toggleCmenu} />
+        <Dropdown>
+  <Dropdown.Toggle id="dropdown-basic">
+    C
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1" id="full-screen" onClick={this.goFullScreen}>Full Screen</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">About Project</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Credits</Dropdown.Item>
+    <Dropdown.Item href="#/action-4"></Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
           <ButtonD onClick={this.incrementTallyD} />
         </div>
 
@@ -121,7 +132,7 @@ toggleEng = () =>{
             <div className="grid-item"></div>
             <div className="grid-item">      <ButtonLeft onClick={this.decrementX} />
             </div>
-            <div className="grid-item"></div>
+            <div className="grid-item"><ButtonLeft /></div>
             <div className="grid-item">      <ButtonRight onClick={this.incrementX} />
             </div>
             <div className="grid-item"></div>
@@ -131,8 +142,7 @@ toggleEng = () =>{
           </div>
 
         </div>
-        <button id="full-screen" onClick={this.goFullScreen}>fs</button>
- 
+       
         <div className="prompt-hor"><h1></h1><div className=""></div></div>
       </div>
 

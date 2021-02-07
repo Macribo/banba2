@@ -50,7 +50,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	font-size: 30px;
 	text-align: center;
   }
-
+  #dropdown-basic::after{
+	 display:none; }
 #select-start{
 	top: 90%;
     right: 32%;

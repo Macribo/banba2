@@ -135,6 +135,10 @@ html, body {
   text-align: center;
 }
 
+#dropdown-basic::after {
+  display: none;
+}
+
 #select-start {
   top: 90%;
   right: 32%;
@@ -216,6 +220,19 @@ html, body {
   align-items: center;
   text-align: center;
   height: 99%;
+}
+
+#stage {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+button {
+  font-size: 1.7em;
+  width: 20%;
+  height: 20%;
 }
 .my-flix {
   color: steelblue;
