@@ -73,7 +73,7 @@
   z-index: 50;
 }
 .button-up {
-  border: 5px solid blueviolet;
+  border: 15px solid blueviolet;
   background-color: blueviolet;
   height: 50px;
   width: 50px;
@@ -81,8 +81,9 @@
   z-index: 50;
 }
 .button-down {
-  border: 5px solid blueviolet;
+  border: 15px solid blueviolet;
   background-color: blueviolet;
+  top: -6px;
   height: 50px;
   width: 50px;
   position: relative;
@@ -133,6 +134,9 @@ html, body {
 .grid-item {
   font-size: 30px;
   text-align: center;
+  border: 0px;
+  padding: 0px;
+  margin: 0px !important;
 }
 
 #dropdown-basic::after {
