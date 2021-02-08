@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dropdown} from 'react-bootstrap'
+import {Dropdown, Container, Row, Col} from 'react-bootstrap'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
 import  ButtonB  from '../ui/button-b/button-b'
@@ -95,15 +95,16 @@ toggleEng = () =>{
      
  <div id="main-view">
         
-
-
-{/* 
-        <h2>tally C: {this.state.tallyC}</h2>
-        <h2>tally D: {this.state.tallyD}</h2> */}
         <div id="select-start">
-        <Dropdown>
-  <Dropdown.Toggle id="dropdown-basic">
-    C
+<Container>
+  <Row>
+    <Col>
+    <ButtonD onClick={this.incrementTallyD} />   
+    </Col>
+    <Col>
+    <Dropdown >
+          <Dropdown.Toggle id="dropdown-basic" className="button-c">
+   
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
@@ -113,7 +114,14 @@ toggleEng = () =>{
     <Dropdown.Item href="#/action-4"></Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
-          <ButtonD onClick={this.incrementTallyD} />
+    </Col>
+  </Row>
+</Container>
+{/* 
+        <h2>tally C: {this.state.tallyC}</h2>
+        <h2>tally D: {this.state.tallyD}</h2> */}
+        
+ 
         </div>
 
 

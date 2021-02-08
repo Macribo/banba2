@@ -56,13 +56,18 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 //   Hide dropdown menu triangle
   #dropdown-basic::after{
 	 display:none; }
+
+	 .dropdown{
+		width:55px;
+		height:100%;
+	 }
 #select-start{
 	top: 90%;
     right: 32%;
     position: fixed;
     width: 25%;
     justify-content: space-evenly;
-    display: flex;
+    display:flexbox;
 }
   #a-b-items{
 	border:4px solid rebeccapurple;

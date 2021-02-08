@@ -49149,7 +49149,7 @@ function ButtonD(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-d",
     onClick: props.onClick
-  }, "D");
+  });
 }
 },{"react":"../node_modules/react/index.js","./button-d.scss":"components/ui/button-d/button-d.scss"}],"components/ui/directional-pad/left/left.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -49560,9 +49560,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "select-start"
-      }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Toggle, {
-        id: "dropdown-basic"
-      }, "C"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Menu, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Item, {
+      }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
+        onClick: this.incrementTallyD
+      })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Toggle, {
+        id: "dropdown-basic",
+        className: "button-c"
+      }), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Menu, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Item, {
         href: "#/action-1",
         id: "full-screen",
         onClick: this.goFullScreen
@@ -49572,9 +49575,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         href: "#/action-3"
       }, "Credits"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Item, {
         href: "#/action-4"
-      }))), /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
-        onClick: this.incrementTallyD
-      })), /*#__PURE__*/_react.default.createElement("div", {
+      }))))))), /*#__PURE__*/_react.default.createElement("div", {
         id: "a-b-buttons"
       }, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
         onClick: this.incrementTallyA
@@ -49730,7 +49731,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34405" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40723" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
