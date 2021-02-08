@@ -2,7 +2,7 @@ import React from 'react';
 import {Dropdown, Container, Row, Col} from 'react-bootstrap'
 import { Redirect, BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
-import  ButtonB  from '../ui/button-b/button-b'
+
 import { ButtonC } from '../ui/button-c/button-c'
 import { ButtonD } from '../ui/button-d/button-d'
 import { ButtonLeft } from '../ui/directional-pad/left/left'
@@ -21,25 +21,14 @@ export class MainView extends React.Component {
     super();
     this.state = {
       tallyA: 0,
-      tallyB: 0,
       menuCOpen:false,
       tallyD: 0,
       tallyX: 0,
       tallyY: 0,
-      engMode: false,
       isLoggedIn: true
     };
   }
-bBtnTouchEnd = ()=>{
-  console.log('end');
-}
-bBtnTouchStart = ()=>{
-  console.log('start');
-}
-toggleEng = () =>{
-  this.setState({engMode :this.state.engMode = !this.state.engMode})
-  console.log(this.state.engMode)
-}
+
 incrementTallyA = () => {
     if(this.state.tallyA===0){
       console.log('btn A ok')
@@ -49,10 +38,6 @@ incrementTallyA = () => {
 
   }
 
-  incrementTallyB = () => {
-    this.setState({ tallyb: this.state.tallyB += 1 });
-    console.log("inc-tal" + this.state.tallyB)
-  }
 
   toggleCmenu = () => {
     this.setState({ menuCopen: this.state.menuCOpen = !this.state.menuCOpen  });
@@ -133,9 +118,7 @@ incrementTallyA = () => {
           />
 {this.state.tallyA >= 1 ? <Redirect to="/champions" />:null}
   </>
-          <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.toggleEng}
-          onTouchStart={this.toggleEng}/>
-
+          
         </div>
         <div className="gamepad">
 

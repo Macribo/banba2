@@ -5,17 +5,21 @@ import Button from 'react-bootstrap/Button';
 
 
 export class Champions extends React.Component {
-
+	
 	constructor() {
 		super();
 		this.state = {}
 	}
-
+	
 	render() {
-		return (
+			// const engMode = props.engMode;
+		console.log('hey'+ this.props.engMode)
+
+return (
 				<div className="champions">
 					<div className="container champ-container" >
-						<h1 alt="Champion">Tuairghneach</h1>
+						
+						{this.props.engMode ? <h1 alt="Champion">Tuairghneach</h1>: <h2>hello</h2>}
 						<div id="bg2"></div>
 						{/* <div id="¬water"></div> */}
 
