@@ -2,6 +2,7 @@ import React from 'react';
 import {Dropdown, Container, Row, Col} from 'react-bootstrap'
 import { Redirect, BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
+import  ButtonB  from '../ui/button-b/button-b';
 
 import { ButtonC } from '../ui/button-c/button-c'
 import { ButtonD } from '../ui/button-d/button-d'
@@ -27,6 +28,12 @@ export class MainView extends React.Component {
       tallyY: 0,
       isLoggedIn: true
     };
+  }
+  bBtnTouchEnd = ()=>{
+    console.log('end');
+  }
+  bBtnTouchStart = ()=>{
+    console.log('start');
   }
 
 incrementTallyA = () => {
@@ -77,7 +84,7 @@ incrementTallyA = () => {
   }
 
   render() {
-
+const toggleEng = this.props.toggleEng;
     return (
      
  <div id="main-view">
@@ -116,6 +123,7 @@ incrementTallyA = () => {
           <>
           <ButtonA onClick={this.incrementTallyA} 
           />
+          <ButtonB onClick={this.incrementTallyB} onTouchEnd={toggleEng} onTouchStart={toggleEng}/>
 {this.state.tallyA >= 1 ? <Redirect to="/champions" />:null}
   </>
           

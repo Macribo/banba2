@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MainView } from './components/main-view/main-view';
 import { Champions } from './components/champions/champions';
-import  ButtonB  from './components/ui/button-b/button-b';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,34 +23,31 @@ class BanbaApp extends React.Component {
           tallyB: 0,
           engMode: false,
         }}
-        bBtnTouchEnd = ()=>{
-          console.log('end');
-        }
-        bBtnTouchStart = ()=>{
-          console.log('start');
-        }
-        toggleEng = () =>{
-          this.setState({engMode :this.state.engMode = !this.state.engMode})
-          console.log(this.state.engMode)
-        }
+
 
   incrementTallyB = () => {
     this.setState({ tallyb: this.state.tallyB += 1 });
     console.log("inc-tal" + this.state.tallyB)
   }
+  toggleEng = () =>{
+    this.setState({engMode :this.state.engMode = !this.state.engMode})
+    console.log(">>"+this.state.engMode)
+  }
+
+  
   render() {
     
     return (
       <Router>
         <Route exact path="/">
-          <MainView />
+          <MainView toggleEng = {this.toggleEng}engMode={this.state.engMode}/>
         </Route>
 
         <Route exact path="/champions">
-          <MainView />
-          <Champions  engMode={this.state.engMode}  />
-          <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.toggleEng}
-          onTouchStart={this.toggleEng}/>
+        <MainView toggleEng = {this.toggleEng}engMode={this.state.engMode}/>
+          <Champions  engMode= {this.state.engMode} />
+         
+         
 
           
         </Route>

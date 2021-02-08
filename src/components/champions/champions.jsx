@@ -13,13 +13,12 @@ export class Champions extends React.Component {
 	
 	render() {
 			// const engMode = props.engMode;
-		console.log('hey'+ this.props.engMode)
 
 return (
 				<div className="champions">
 					<div className="container champ-container" >
 						
-						{this.props.engMode ? <h1 alt="Champion">Tuairghneach</h1>: <h2>hello</h2>}
+						{this.props.engMode ? <h1>Select Champion</h1>:<h1 alt="Champion">Tuairghneach</h1> }
 						<div id="bg2"></div>
 						{/* <div id="¬water"></div> */}
 

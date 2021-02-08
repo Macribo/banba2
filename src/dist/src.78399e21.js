@@ -49071,7 +49071,37 @@ function ButtonA(props) {
     onClick: props.onClick
   }, "A");
 }
-},{"react":"../node_modules/react/index.js","./button-a.scss":"components/ui/button-a/button-a.scss"}],"components/ui/button-c/button-c.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./button-a.scss":"components/ui/button-a/button-a.scss"}],"components/ui/button-b/button-b.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-b/button-b.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./button-b.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonB(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-b",
+    onClick: props.onClick,
+    onTouchEnd: props.onTouchEnd,
+    onTouchStart: props.onTouchStart
+  }, "B");
+}
+
+var _default = ButtonB;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./button-b.scss":"components/ui/button-b/button-b.scss"}],"components/ui/button-c/button-c.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -49290,14 +49320,13 @@ var Champions = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // const engMode = props.engMode;
-      console.log('hey' + this.props.engMode);
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "container champ-container"
-      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", {
+      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "Tuairghneach") : /*#__PURE__*/_react.default.createElement("h2", null, "hello"), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -49358,6 +49387,8 @@ var _reactRouterDom = require("react-router-dom");
 
 var _buttonA = require("../ui/button-a/button-a");
 
+var _buttonB = _interopRequireDefault(require("../ui/button-b/button-b"));
+
 var _buttonC = require("../ui/button-c/button-c");
 
 var _buttonD = require("../ui/button-d/button-d");
@@ -49411,6 +49442,14 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, MainView);
 
     _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "bBtnTouchEnd", function () {
+      console.log('end');
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "bBtnTouchStart", function () {
+      console.log('start');
+    });
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
       if (_this.state.tallyA === 0) {
@@ -49500,6 +49539,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
+      var toggleEng = this.props.toggleEng;
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49523,6 +49563,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "a-b-buttons"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
         onClick: this.incrementTallyA
+      }), /*#__PURE__*/_react.default.createElement(_buttonB.default, {
+        onClick: this.incrementTallyB,
+        onTouchEnd: toggleEng,
+        onTouchStart: toggleEng
       }), this.state.tallyA >= 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
         to: "/champions"
       }) : null)), /*#__PURE__*/_react.default.createElement("div", {
@@ -49567,37 +49611,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.MainView = MainView;
-},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"components/ui/button-b/button-b.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/button-b/button-b.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("./button-b.scss");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function ButtonB(props) {
-  return /*#__PURE__*/_react.default.createElement("button", {
-    className: "button-b",
-    onClick: props.onClick,
-    onTouchEnd: props.onTouchEnd,
-    onTouchStart: props.onTouchStart
-  }, "B");
-}
-
-var _default = ButtonB;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","./button-b.scss":"components/ui/button-b/button-b.scss"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -49614,8 +49628,6 @@ require("bootstrap/dist/css/bootstrap.min.css");
 var _mainView = require("./components/main-view/main-view");
 
 var _champions = require("./components/champions/champions");
-
-var _buttonB = _interopRequireDefault(require("./components/ui/button-b/button-b"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -49660,12 +49672,12 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
 
-    _defineProperty(_assertThisInitialized(_this), "bBtnTouchEnd", function () {
-      console.log('end');
-    });
+    _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
+      _this.setState({
+        tallyb: _this.state.tallyB += 1
+      });
 
-    _defineProperty(_assertThisInitialized(_this), "bBtnTouchStart", function () {
-      console.log('start');
+      console.log("inc-tal" + _this.state.tallyB);
     });
 
     _defineProperty(_assertThisInitialized(_this), "toggleEng", function () {
@@ -49673,15 +49685,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         engMode: _this.state.engMode = !_this.state.engMode
       });
 
-      console.log(_this.state.engMode);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
-      _this.setState({
-        tallyb: _this.state.tallyB += 1
-      });
-
-      console.log("inc-tal" + _this.state.tallyB);
+      console.log(">>" + _this.state.engMode);
     });
 
     _this.state = {
@@ -49697,15 +49701,17 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/"
-      }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+        toggleEng: this.toggleEng,
+        engMode: this.state.engMode
+      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/champions"
-      }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null), /*#__PURE__*/_react.default.createElement(_champions.Champions, {
+      }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+        toggleEng: this.toggleEng,
         engMode: this.state.engMode
-      }), /*#__PURE__*/_react.default.createElement(_buttonB.default, {
-        onClick: this.incrementTallyB,
-        onTouchEnd: this.toggleEng,
-        onTouchStart: this.toggleEng
+      }), /*#__PURE__*/_react.default.createElement(_champions.Champions, {
+        engMode: this.state.engMode
       })));
     }
   }]);
@@ -49717,7 +49723,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
 var container = document.getElementsByClassName('app-container')[0]; // Tell React to render our app in the root DOM element
 
 _reactDom.default.render(_react.default.createElement(BanbaApp), container);
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./components/main-view/main-view":"components/main-view/main-view.jsx","./components/champions/champions":"components/champions/champions.jsx","./components/ui/button-b/button-b":"components/ui/button-b/button-b.jsx","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./index.scss":"index.scss"}],"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./components/main-view/main-view":"components/main-view/main-view.jsx","./components/champions/champions":"components/champions/champions.jsx","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./index.scss":"index.scss"}],"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -49745,7 +49751,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40677" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33693" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

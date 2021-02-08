@@ -23,6 +23,23 @@
   font-size: 2em;
   font-size: 3em;
 }
+.button-b {
+  font-family: "aonchlo";
+  position: fixed;
+  display: flex;
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: rebeccapurple;
+  border: 5px solid #3d263d;
+  border-radius: 50%;
+  margin-left: 20%;
+  color: #b184dd;
+  cursor: "pointer";
+  font-size: 3em;
+}
 .button-c {
   width: 55px;
   height: 100%;
@@ -227,23 +244,6 @@ button {
   font-size: 1.7em;
   width: 20%;
   height: 20%;
-}
-.button-b {
-  font-family: "aonchlo";
-  position: fixed;
-  display: flex;
-  z-index: 5000;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  width: 100px;
-  background-color: rebeccapurple;
-  border: 5px solid #3d263d;
-  border-radius: 50%;
-  margin-left: 20%;
-  color: #b184dd;
-  cursor: "pointer";
-  font-size: 3em;
 }
 .my-flix {
   color: steelblue;
