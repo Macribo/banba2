@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dropdown, Container, Row, Col} from 'react-bootstrap'
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { Redirect, BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
 import  ButtonB  from '../ui/button-b/button-b'
 import { ButtonC } from '../ui/button-c/button-c'
@@ -40,10 +40,12 @@ toggleEng = () =>{
   this.setState({engMode :this.state.engMode = !this.state.engMode})
   console.log(this.state.engMode)
 }
-  incrementTallyA = () => {
+incrementTallyA = () => {
+    if(this.state.tallyA===0){
+      console.log('btn A ok')
+    }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
-    if(this.state.tallyA>0){alert()}
 
   }
 
@@ -126,7 +128,11 @@ toggleEng = () =>{
 
 
         <div id="a-b-buttons">
-          <ButtonA onClick={this.incrementTallyA} />
+          <>
+          <ButtonA onClick={this.incrementTallyA} 
+          />
+{this.state.tallyA >= 1 ? <Redirect to="/champions" />:null}
+  </>
           <ButtonB onClick={this.incrementTallyB} onTouchEnd={this.toggleEng}
           onTouchStart={this.toggleEng}/>
 

@@ -49459,15 +49459,15 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
+      if (_this.state.tallyA === 0) {
+        console.log('btn A ok');
+      }
+
       _this.setState({
         tallyA: _this.state.tallyA += 1
       });
 
       console.log("inc-tal" + _this.state.tallyA);
-
-      if (_this.state.tallyA > 0) {
-        alert();
-      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
@@ -49577,9 +49577,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         href: "#/action-4"
       }))))))), /*#__PURE__*/_react.default.createElement("div", {
         id: "a-b-buttons"
-      }, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_buttonA.ButtonA, {
         onClick: this.incrementTallyA
-      }), /*#__PURE__*/_react.default.createElement(_buttonB.default, {
+      }), this.state.tallyA >= 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+        to: "/champions"
+      }) : null), /*#__PURE__*/_react.default.createElement(_buttonB.default, {
         onClick: this.incrementTallyB,
         onTouchEnd: this.toggleEng,
         onTouchStart: this.toggleEng
