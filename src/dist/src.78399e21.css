@@ -128,6 +128,14 @@ html, body {
   height: 150px;
 }
 
+.title-container {
+  width: 500px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5%;
+  height: 100%;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -214,6 +222,9 @@ html, body {
     transform: rotate(90deg);
   }
 }
+.hidden {
+  display: none;
+}
 .champions {
   position: fixed;
   z-index: 500;
@@ -225,7 +236,6 @@ html, body {
 
 .champ-container {
   font-family: urchlo;
-  border: 4px solid green;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -235,7 +245,7 @@ html, body {
 
 #stage {
   pointer-events: all;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   padding-top: 10%;
   padding-bottom: 10%;
 }
@@ -244,6 +254,45 @@ button {
   font-size: 1.7em;
   width: 20%;
   height: 20%;
+}
+
+.highlight {
+  border: 4px solid green;
+  background-color: rgba(199, 199, 98, 0.5);
+}
+
+.champ {
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media all and (display-mode: fullscreen) {
+  .button-b {
+    font-family: "aonchlo";
+    position: fixed;
+    display: flex;
+    z-index: 5000;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    background-color: rebeccapurple;
+    border: 5px solid #3d263d;
+    border-radius: 50%;
+    margin-left: 20%;
+    color: #b184dd;
+    cursor: "pointer";
+    font-size: 2.5em;
+  }
+
+  .button-a {
+    height: 80px;
+    width: 80px;
+    margin-left: -5%;
+    color: #b184dd;
+    cursor: "pointer";
+    font-size: 2.5em;
+  }
 }
 .my-flix {
   color: steelblue;

@@ -49301,32 +49301,43 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Champions = /*#__PURE__*/function (_React$Component) {
   _inherits(Champions, _React$Component);
 
   var _super = _createSuper(Champions);
 
-  function Champions() {
+  function Champions(props) {
     var _this;
 
     _classCallCheck(this, Champions);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "addHighlight", function () {
+      _reactDom.default.findDOMNode(element).classList.add("highlight-champ");
+
+      console.log('highlight-champ');
+    });
+
     _this.state = {};
+    var tallyX = props.tallyX;
     return _this;
   }
 
   _createClass(Champions, [{
     key: "render",
     value: function render() {
-      // const engMode = props.engMode;
+      var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallóglaċ', 'Witch', 'Occultist', 'Warrior'];
+      var laoch = ['Rógaire', 'Saoi', 'File', 'Draoi', 'fís', 'Caillach', 'Diamhraí', 'Féinní'];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "container champ-container"
-      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
+      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Roghnaigh Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Select Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -49336,34 +49347,55 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        variant: "outline-primary",
-        alt: "rogue"
-      }, "R\xF3gaire"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Sage",
-        variant: "outline-secondary"
-      }, "Saoi"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Poet",
-        variant: "outline-success"
-      }, "File"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Druid",
-        variant: "outline-warning"
-      }, "Draoi"), ' ', /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Sorceress",
-        variant: "outline-danger"
-      }, "Sp\xE9irbhean"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Witch",
-        variant: "outline-info"
-      }, "Cailleach"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Occultist",
-        variant: "outline-dark"
-      }, "Diamhra\xED"), ' ', /*#__PURE__*/_react.default.createElement(_Button.default, {
-        alt: "Warrior",
-        variant: "outline-light"
-      }, "F\xE9inn\xED")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
+        className: this.props.tallyX == 0 ? 'highlight' : "rog"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 1 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 2 ? 'highlight' : "bar"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 3 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 4 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 5 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 6 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 7 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 8 ? 'highlight' : "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: "",
+        alt: "bar"
+      }, "bar"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: "outline-info rog",
+        alt: "rog"
+      }, "rog"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " wiz",
+        alt: "wiz"
+      }, "file"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " bar",
+        alt: "bar"
+      }, "draoi"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " rog",
+        alt: "rog"
+      }, "ciar\xF3g"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " wiz",
+        alt: "wiz"
+      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " bar",
+        alt: "bar"
+      }, "bar"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " rog",
+        alt: "rog"
+      }, "rog"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: " wiz",
+        alt: "wiz"
+      }, "file")), this.props.tallyX == 0 ? "" : "", ";", this.props.tallyX == 1 ? 'outline-info' : null, ";"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
         id: "main-canvas",
         width: "640px",
         height: "480px"
-      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh."))))));
+      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))));
     }
   }]);
 
@@ -49487,28 +49519,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       console.log("inc-talY" + _this.state.tallyY);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "incrementX", function () {
-      _this.setState({
-        tallyX: _this.state.tallyX += 1
-      });
-
-      console.log("inc-talX" + _this.state.tallyX);
-    });
-
     _defineProperty(_assertThisInitialized(_this), "decrementY", function () {
       _this.setState({
         tallyY: _this.state.tallyY -= 1
       });
 
       console.log("dec-talY" + _this.state.tallyY);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "decrementX", function () {
-      _this.setState({
-        tallyX: _this.state.tallyX -= 1
-      });
-
-      console.log("dec-talX" + _this.state.tallyX);
     });
 
     _defineProperty(_assertThisInitialized(_this), "goFullScreen", function () {
@@ -49529,7 +49545,6 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       tallyA: 0,
       menuCOpen: false,
       tallyD: 0,
-      tallyX: 0,
       tallyY: 0,
       isLoggedIn: true
     };
@@ -49540,6 +49555,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var toggleEng = this.props.toggleEng;
+      var incrementX = this.props.incrementX;
+      var decrementX = this.props.decrementX;
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49584,13 +49601,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, "      ", /*#__PURE__*/_react.default.createElement(_left.ButtonLeft, {
-        onClick: this.decrementX
+        onClick: decrementX
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, /*#__PURE__*/_react.default.createElement(_left.ButtonLeft, null)), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, "      ", /*#__PURE__*/_react.default.createElement(_right.ButtonRight, {
-        onClick: this.incrementX
+        onClick: incrementX
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }), /*#__PURE__*/_react.default.createElement("div", {
@@ -49672,6 +49689,34 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
 
+    _defineProperty(_assertThisInitialized(_this), "incrementX", function () {
+      _this.setState({
+        tallyX: _this.state.tallyX += 1
+      });
+
+      console.log("inc-talX" + _this.state.tallyX);
+
+      if (_this.state.tallyX >= 8) {
+        _this.setState({
+          tallyX: 0
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "decrementX", function () {
+      _this.setState({
+        tallyX: _this.state.tallyX -= 1
+      });
+
+      console.log("dec-talX" + _this.state.tallyX);
+
+      if (_this.state.tallyX <= -1) {
+        _this.setState({
+          tallyX: 7
+        });
+      }
+    });
+
     _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
       _this.setState({
         tallyb: _this.state.tallyB += 1
@@ -49690,6 +49735,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
 
     _this.state = {
       tallyB: 0,
+      tallyX: 0,
       engMode: false
     };
     return _this;
@@ -49702,16 +49748,21 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         exact: true,
         path: "/"
       }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+        incrementX: this.incrementX,
+        decrementX: this.decrementX,
         toggleEng: this.toggleEng,
         engMode: this.state.engMode
       })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/champions"
       }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+        incrementX: this.incrementX,
+        decrementX: this.decrementX,
         toggleEng: this.toggleEng,
         engMode: this.state.engMode
       }), /*#__PURE__*/_react.default.createElement(_champions.Champions, {
-        engMode: this.state.engMode
+        engMode: this.state.engMode,
+        tallyX: this.state.tallyX
       })));
     }
   }]);
@@ -49751,7 +49802,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33693" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38975" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

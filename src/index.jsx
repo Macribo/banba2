@@ -21,9 +21,25 @@ class BanbaApp extends React.Component {
         super();
         this.state = {
           tallyB: 0,
+          tallyX: 0,
+
           engMode: false,
         }}
-
+       
+        incrementX = () => {
+          this.setState({ tallyX: this.state.tallyX += 1 });
+          console.log("inc-talX" + this.state.tallyX)
+          if (this.state.tallyX >= 8){
+            this.setState({tallyX : 0})
+          }
+        }
+        decrementX = () => {
+          this.setState({ tallyX: this.state.tallyX -= 1 });
+          console.log("dec-talX" + this.state.tallyX)
+          if (this.state.tallyX <= -1){
+            this.setState({tallyX : 7})
+          }
+        }
 
   incrementTallyB = () => {
     this.setState({ tallyb: this.state.tallyB += 1 });
@@ -34,18 +50,19 @@ class BanbaApp extends React.Component {
     console.log(">>"+this.state.engMode)
   }
 
-  
+
   render() {
     
     return (
       <Router>
         <Route exact path="/">
-          <MainView toggleEng = {this.toggleEng}engMode={this.state.engMode}/>
+          <MainView incrementX={this.incrementX} decrementX={this.decrementX}   toggleEng = {this.toggleEng}engMode={this.state.engMode} />
         </Route>
 
         <Route exact path="/champions">
-        <MainView toggleEng = {this.toggleEng}engMode={this.state.engMode}/>
-          <Champions  engMode= {this.state.engMode} />
+        <MainView incrementX={this.incrementX}  decrementX={this.decrementX} toggleEng = {this.toggleEng} engMode={this.state.engMode}/>
+
+          <Champions  engMode= {this.state.engMode}  tallyX ={this.state.tallyX} />
          
          
 

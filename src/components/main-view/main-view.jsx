@@ -1,8 +1,8 @@
 import React from 'react';
-import {Dropdown, Container, Row, Col} from 'react-bootstrap'
+import { Dropdown, Container, Row, Col } from 'react-bootstrap'
 import { Redirect, BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { ButtonA } from '../ui/button-a/button-a'
-import  ButtonB  from '../ui/button-b/button-b';
+import ButtonB from '../ui/button-b/button-b';
 
 import { ButtonC } from '../ui/button-c/button-c'
 import { ButtonD } from '../ui/button-d/button-d'
@@ -22,22 +22,22 @@ export class MainView extends React.Component {
     super();
     this.state = {
       tallyA: 0,
-      menuCOpen:false,
+      menuCOpen: false,
       tallyD: 0,
-      tallyX: 0,
+     
       tallyY: 0,
       isLoggedIn: true
     };
   }
-  bBtnTouchEnd = ()=>{
+  bBtnTouchEnd = () => {
     console.log('end');
   }
-  bBtnTouchStart = ()=>{
+  bBtnTouchStart = () => {
     console.log('start');
   }
 
-incrementTallyA = () => {
-    if(this.state.tallyA===0){
+  incrementTallyA = () => {
+    if (this.state.tallyA === 0) {
       console.log('btn A ok')
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
@@ -47,7 +47,7 @@ incrementTallyA = () => {
 
 
   toggleCmenu = () => {
-    this.setState({ menuCopen: this.state.menuCOpen = !this.state.menuCOpen  });
+    this.setState({ menuCopen: this.state.menuCOpen = !this.state.menuCOpen });
     console.log("menu c open:" + this.state.menuCOpen)
   }
 
@@ -59,18 +59,12 @@ incrementTallyA = () => {
     this.setState({ tallyY: this.state.tallyY += 1 });
     console.log("inc-talY" + this.state.tallyY)
   }
-  incrementX = () => {
-    this.setState({ tallyX: this.state.tallyX += 1 });
-    console.log("inc-talX" + this.state.tallyX)
-  }
+  
   decrementY = () => {
     this.setState({ tallyY: this.state.tallyY -= 1 });
     console.log("dec-talY" + this.state.tallyY)
   }
-  decrementX = () => {
-    this.setState({ tallyX: this.state.tallyX -= 1 });
-    console.log("dec-talX" + this.state.tallyX)
-  }
+ 
 
   goFullScreen = () => {
     var elem = document.getElementById('main-view')
@@ -84,49 +78,51 @@ incrementTallyA = () => {
   }
 
   render() {
-const toggleEng = this.props.toggleEng;
+    const toggleEng = this.props.toggleEng;
+    const incrementX = this.props.incrementX;
+    const decrementX = this.props.decrementX;
     return (
-     
- <div id="main-view">
+
+      <div id="main-view">
         
         <div id="select-start">
-<Container>
-  <Row>
-    <Col>
-    <ButtonD onClick={this.incrementTallyD} />   
-    </Col>
-    <Col>
-    <Dropdown >
-          <Dropdown.Toggle id="dropdown-basic" className="button-c">
-   
-  </Dropdown.Toggle>
+          <Container>
+            <Row>
+              <Col>
+                <ButtonD onClick={this.incrementTallyD} />
+              </Col>
+              <Col>
+                <Dropdown >
+                  <Dropdown.Toggle id="dropdown-basic" className="button-c">
 
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1" id="full-screen" onClick={this.goFullScreen}>Full Screen</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">About Project</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Credits</Dropdown.Item>
-    <Dropdown.Item href="#/action-4"></Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-    </Col>
-  </Row>
-</Container>
-{/* 
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1" id="full-screen" onClick={this.goFullScreen}>Full Screen</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">About Project</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Credits</Dropdown.Item>
+                    <Dropdown.Item href="#/action-4"></Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+            </Row>
+          </Container>
+          {/* 
         <h2>tally C: {this.state.tallyC}</h2>
         <h2>tally D: {this.state.tallyD}</h2> */}
-        
- 
+
+
         </div>
 
 
         <div id="a-b-buttons">
           <>
-          <ButtonA onClick={this.incrementTallyA} 
-          />
-          <ButtonB onClick={this.incrementTallyB} onTouchEnd={toggleEng} onTouchStart={toggleEng}/>
-{this.state.tallyA >= 1 ? <Redirect to="/champions" />:null}
-  </>
-          
+            <ButtonA onClick={this.incrementTallyA}
+            />
+            <ButtonB onClick={this.incrementTallyB} onTouchEnd={toggleEng} onTouchStart={toggleEng} />
+            {this.state.tallyA >= 1 ? <Redirect to="/champions" /> : null}
+          </>
+
         </div>
         <div className="gamepad">
 
@@ -135,10 +131,10 @@ const toggleEng = this.props.toggleEng;
             <div className="grid-item">      <ButtonUp onClick={this.incrementY} />
             </div>
             <div className="grid-item"></div>
-            <div className="grid-item">      <ButtonLeft onClick={this.decrementX} />
+            <div className="grid-item">      <ButtonLeft onClick={decrementX} />
             </div>
             <div className="grid-item"><ButtonLeft /></div>
-            <div className="grid-item">      <ButtonRight onClick={this.incrementX} />
+            <div className="grid-item">      <ButtonRight onClick={incrementX} />
             </div>
             <div className="grid-item"></div>
             <div className="grid-item">      <ButtonDown onClick={this.decrementY} />
@@ -147,14 +143,14 @@ const toggleEng = this.props.toggleEng;
           </div>
 
         </div>
-       
+
         <div className="prompt-hor"><h1></h1><div className=""></div></div>
       </div>
 
 
 
 
-)
+    )
 
 
   }

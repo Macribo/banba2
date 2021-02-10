@@ -5,66 +5,71 @@ import Button from 'react-bootstrap/Button';
 
 
 export class Champions extends React.Component {
-	
-	constructor() {
-		super();
-		this.state = {}
+
+	constructor(props) {
+		super(props);
+		this.state = {
+
+
+		}
+		const tallyX = props.tallyX;
+
 	}
-	
+
+	addHighlight = () => {
+		ReactDOM.findDOMNode(element).classList.add("highlight-champ"); 
+		console.log('highlight-champ')
+	}
 	render() {
-			// const engMode = props.engMode;
+		var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallóglaċ', 'Witch', 'Occultist', 'Warrior'];
+		var laoch = ['Rógaire', 'Saoi', 'File', 'Draoi', 'fís', 'Caillach', 'Diamhraí', 'Féinní'];
 
-return (
-				<div className="champions">
-					<div className="container champ-container" >
-						
-						{this.props.engMode ? <h1>Select Champion</h1>:<h1 alt="Champion">Tuairghneach</h1> }
-						<div id="bg2"></div>
-						{/* <div id="¬water"></div> */}
-
-						{/* <video id="county-vid" autoPlay loop muted poster={Poster}>
-		   <source src={clip} type='video/mp4' />
-		   <source src={clip} type="video/ogg" />
-		 </video> */}
-
-						<div id="characters">
-
-							<div id="all-champions" className=".text-center">
-
-								<div id="stage">
-									<div>
-										<Button variant="outline-primary" alt="rogue">Rógaire</Button>{' '}
-										<Button alt="Sage" variant="outline-secondary">Saoi</Button>{' '}
-										<Button alt="Poet" variant="outline-success">File</Button>{' '}
-										<Button alt="Druid" variant="outline-warning">Draoi</Button>{' '}
-										<br />
-										<Button alt="Sorceress" variant="outline-danger">Spéirbhean</Button>{' '}
-										<Button alt="Witch" variant="outline-info">Cailleach</Button>{' '}
-										<Button alt="Occultist" variant="outline-dark">Diamhraí</Button>{' '}
-										<Button alt="Warrior" variant="outline-light">Féinní</Button>
-									</div>
-
+		return (
+			<div className="champions">
+				<div className="container champ-container" >
+					{this.props.engMode ? <h1>Roghnaigh Champion</h1> : <h1 alt="Champion">Select Tuairghneach</h1>}
+					<div id="bg2"></div>
+					<div id="characters">
+						<div id="all-champions" className=".text-center">
+							<div id="stage">
+								<div>
+								<Button className={this.props.tallyX == 0 ? 'highlight' : "rog"}>wiz</Button>
+								<Button className={this.props.tallyX == 1 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 2 ? 'highlight' : "bar"}>wiz</Button>
+								<Button className={this.props.tallyX == 3 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 4 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 5 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 6 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 7 ? 'highlight' : "wiz"}>wiz</Button>
+								<Button className={this.props.tallyX == 8 ? 'highlight' : "wiz"}>wiz</Button>
+				
+									<Button className="" alt="bar" >bar</Button>
+									<Button className="outline-info rog" alt="rog" >rog</Button>
+									<Button className=" wiz" alt="wiz"  >file</Button>
+									<Button className=" bar" alt="bar" >draoi</Button>
+									<Button className=" rog" alt="rog" >ciaróg</Button>
+									<Button className=" wiz" alt="wiz"  >wiz</Button>
+									<Button className=" bar" alt="bar" >bar</Button>
+									<Button className=" rog" alt="rog" >rog</Button>
+									<Button className=" wiz" alt="wiz"  >file</Button>
 								</div>
-							</div>
-
-							<div>
-								<canvas id="main-canvas"
-									width="640px" height="480px">
-									<p>Canbhás ar iarraidh</p>
-								</canvas>
-								<noscript>
-									<p>javaScript ar iarraidh.</p>
-								</noscript>
-							</div>
+								{this.props.tallyX == 0 ? "" : ""};
+								{this.props.tallyX == 1 ? 'outline-info' : null};
+								
+						</div>
+						<div>
+							<canvas id="main-canvas"
+								width="640px" height="480px">
+								<p>Canbhás ar iarraidh</p>
+							</canvas>
+							<noscript>
+								<p>javaScript ar iarraidh.</p>
+							</noscript>
 						</div>
 					</div>
-
-
 				</div>
-
-
-
+			</div>
+			</div>
 		)
-
 	}
 }

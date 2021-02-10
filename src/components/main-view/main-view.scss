@@ -36,14 +36,23 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	height:150px;
 
 }
+
+.title-container{
+	// border:3px solid red;
+	width:500px;
+	justify-content: center;
+	text-align: center;
+	padding-top:5%;
+	height:100%;
+}
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto;
 	// background-color: #2196F3;
 	// padding: 10px;
-  }
-  
-  .grid-item {
+}
+
+.grid-item {
 	// background-color: rgba(255, 255, 255, 0.8);
 	// border: 1px solid rgba(0, 0, 0, 0.8);
 	// padding: 20px;
@@ -52,83 +61,84 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	border:0px;
 	padding:0px;
 	margin:0px !important;
-  }
+}
 //   Hide dropdown menu triangle
-  #dropdown-basic::after{
-	 display:none; }
-
-	 .dropdown{
+#dropdown-basic::after{
+	display:none; }
+	
+	.dropdown{
 		width:55px;
 		height:100%;
-	 }
-#select-start{
-	top: 90%;
-    right: 32%;
-    position: fixed;
-    width: 25%;
-    justify-content: space-evenly;
-    display:flexbox;
-}
-  #a-b-items{
-	border:4px solid rebeccapurple;
-  }
-
-  #a-b-buttons{
-
-	// border:4px solid purple;
-	  position: fixed;
-	  top:72%;
-	  left:5%;
-	  width:20%;
-	  display: flex;
-	  justify-content: space-around;
-	align-items: center;
-	text-align: center;
-	  z-index: 12;
-  }
-
-
-
-.prompt-hor {
-	display: none;
-	color:black;
-  }
-  
-  @media screen and (orientation: portrait) {
-	html {
 	}
-  
+	#select-start{
+		top: 90%;
+		right: 32%;
+		position: fixed;
+		width: 25%;
+		justify-content: space-evenly;
+		display:flexbox;
+	}
+	#a-b-items{
+		border:4px solid rebeccapurple;
+	}
+	
+	#a-b-buttons{
+		
+		// border:4px solid purple;
+		position: fixed;
+		top:72%;
+		left:5%;
+		width:20%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		z-index: 12;
+	}
+	
+	
+	
 	.prompt-hor {
-	  font-size: 2em;
-	  z-index: 500;  
-		height:100% !important;
-		width:100%;
-  position: fixed;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  top:0%;
-  left:0%;
-	  background-color: black;
-	  // border:5px solid orange;
-  justify-content:center ;
-   background-image: url('../../img/g90.png');
-  display: grid; 
-  background-repeat:no-repeat;
-  background-size: cover;
+		display: none;
+		color:black;
 	}
-	.turn, .turn2{
-	  // border:4px solid blue;
-	  z-index: 501;
-   transform:translateY(250px) ;
-	  width: 500px !important;
-	  height: 500px;
-   background-image:url('../../img/turn.png');
-   background-repeat: no-repeat;
-  display: grid;
-  
+	
+	@media screen and (orientation: portrait) {
+		html {
+		}
+		
+		.prompt-hor {
+			font-size: 2em;
+			z-index: 500;  
+			height:100% !important;
+			width:100%;
+			position: fixed;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			top:0%;
+			left:0%;
+			background-color: black;
+			// border:5px solid orange;
+			justify-content:center ;
+			background-image: url('../../img/g90.png');
+			display: grid; 
+			background-repeat:no-repeat;
+			background-size: cover;
+		}
+		.turn, .turn2{
+			// border:4px solid blue;
+			z-index: 501;
+			transform:translateY(250px) ;
+			width: 500px !important;
+			height: 500px;
+			background-image:url('../../img/turn.png');
+			background-repeat: no-repeat;
+			display: grid;
+			
+		}
+		.turn2{
+			transform: rotate(90deg);
+		}
 	}
-	.turn2{
-	  transform: rotate(90deg);
-	}
-  }
+	.hidden{display:none}
