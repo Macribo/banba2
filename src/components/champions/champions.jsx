@@ -8,12 +8,8 @@ export class Champions extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-
-
-		}
+		this.state = {}
 		const tallyX = props.tallyX;
-
 	}
 
 	addHighlight = () => {
@@ -50,7 +46,7 @@ export class Champions extends React.Component {
 						<div id="all-champions" className=".text-center">
 							<div id="stage">
 								<div>
-									<Button className={this.props.tallyX == 0 ? ' highlight' : ' champ'} >{this.props.engMode ? champion[0] : laoch[0]}</Button>
+									<Button onClick={this.props.setTallyX} className={this.props.tallyX == 0 ? ' highlight' : ' champ'} >{this.props.engMode ? champion[0] : laoch[0]}</Button>
 									<Button className={this.props.tallyX == 1 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[1] : laoch[1]}</Button>
 									<Button className={this.props.tallyX == 2 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[2] : laoch[2]}</Button>
 									<Button className={this.props.tallyX == 3 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[3] : laoch[3]}</Button>
@@ -76,7 +72,7 @@ export class Champions extends React.Component {
 								</>
 
 							</div>
-							<div className="Dinneen">
+							<div className="dinneen">
 								<div className={this.props.engMode == true ? ' dinneen-container' : "hidden"}>
 
 									<>

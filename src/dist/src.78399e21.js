@@ -49350,6 +49350,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onClick: this.props.setTallyX,
         className: this.props.tallyX == 0 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[0] : laoch[0]), /*#__PURE__*/_react.default.createElement(_Button.default, {
         className: this.props.tallyX == 1 ? ' highlight' : ' champ'
@@ -49382,7 +49383,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 7 ? "portrait fenian" : null
       }))), /*#__PURE__*/_react.default.createElement("div", {
-        className: "Dinneen"
+        className: "dinneen"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.engMode == true ? ' dinneen-container' : "hidden"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
@@ -49493,12 +49494,6 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       console.log('start');
     });
 
-    _defineProperty(_assertThisInitialized(_this), "setTallyX", function (tally) {
-      _this.setState({
-        tallyX: _this.state.tallyX = tally
-      });
-    });
-
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
       if (_this.state.tallyA === 0) {
         console.log('btn A ok');
@@ -49557,6 +49552,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "setTallyX", function () {
+      console.log('helo from setTally X'); // this.setState({tallyX: this.state.tallyX = tally})
+    });
+
     _this.state = {
       tallyA: 0,
       menuCOpen: false,
@@ -49570,6 +49569,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   _createClass(MainView, [{
     key: "render",
     value: function render() {
+      var setTallyX = this.props.setTallyX;
       var toggleEng = this.props.toggleEng;
       var incrementX = this.props.incrementX;
       var decrementX = this.props.decrementX;
@@ -49749,6 +49749,10 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       console.log(">>" + _this.state.engMode);
     });
 
+    _defineProperty(_assertThisInitialized(_this), "setTallyX", function () {
+      console.log('helo from setTally X'); // this.setState({tallyX: this.state.tallyX = tally})
+    });
+
     _this.state = {
       tallyB: 0,
       tallyX: 0,
@@ -49773,7 +49777,8 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         path: "/champions"
       }, /*#__PURE__*/_react.default.createElement(_champions.Champions, {
         engMode: this.state.engMode,
-        tallyX: this.state.tallyX
+        tallyX: this.state.tallyX,
+        setTallyX: this.setTallyX
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
         decrementX: this.decrementX,

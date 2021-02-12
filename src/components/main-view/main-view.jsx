@@ -24,7 +24,7 @@ export class MainView extends React.Component {
       tallyA: 0,
       menuCOpen: false,
       tallyD: 0,
-     
+
       tallyY: 0,
       isLoggedIn: true
     };
@@ -35,11 +35,7 @@ export class MainView extends React.Component {
   bBtnTouchStart = () => {
     console.log('start');
   }
-setTallyX = (tally)=>{
 
-  this.setState({tallyX: this.state.tallyX = tally})
-
-}
   incrementTallyA = () => {
     if (this.state.tallyA === 0) {
       console.log('btn A ok')
@@ -63,12 +59,12 @@ setTallyX = (tally)=>{
     this.setState({ tallyY: this.state.tallyY += 1 });
     console.log("inc-talY" + this.state.tallyY)
   }
-  
+
   decrementY = () => {
     this.setState({ tallyY: this.state.tallyY -= 1 });
     console.log("dec-talY" + this.state.tallyY)
   }
- 
+
 
   goFullScreen = () => {
     var elem = document.getElementById('main-view')
@@ -80,15 +76,20 @@ setTallyX = (tally)=>{
       elem.msRequestFullscreen();
     }
   }
+  setTallyX = () => {
+    console.log('helo from setTally X')
+    // this.setState({tallyX: this.state.tallyX = tally})
 
+  }
   render() {
+   const setTallyX  = this.props.setTallyX; 
     const toggleEng = this.props.toggleEng;
     const incrementX = this.props.incrementX;
     const decrementX = this.props.decrementX;
     return (
 
       <div id="main-view">
-        
+
         <div id="select-start">
           <Container>
             <Row>

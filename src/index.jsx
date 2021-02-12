@@ -49,8 +49,12 @@ class BanbaApp extends React.Component {
     this.setState({engMode :this.state.engMode = !this.state.engMode})
     console.log(">>"+this.state.engMode)
   }
+ 
+  setTallyX = () => {
+    console.log('helo from setTally X')
+    // this.setState({tallyX: this.state.tallyX = tally})
 
-
+  }
   render() {
     
     return (
@@ -60,7 +64,8 @@ class BanbaApp extends React.Component {
         </Route>
 
         <Route exact path="/champions">
-          <Champions  engMode= {this.state.engMode}  tallyX ={this.state.tallyX} />
+          <Champions  engMode= {this.state.engMode}  tallyX ={this.state.tallyX} 
+          setTallyX = {this.setTallyX}/>
          
          
         <MainView incrementX={this.incrementX}  decrementX={this.decrementX} toggleEng = {this.toggleEng} engMode={this.state.engMode}/>
