@@ -35,7 +35,11 @@ export class MainView extends React.Component {
   bBtnTouchStart = () => {
     console.log('start');
   }
+setTallyX = (tally)=>{
 
+  this.setState({tallyX: this.state.tallyX = tally})
+
+}
   incrementTallyA = () => {
     if (this.state.tallyA === 0) {
       console.log('btn A ok')

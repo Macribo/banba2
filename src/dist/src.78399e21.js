@@ -49261,7 +49261,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
+},{"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49330,15 +49330,19 @@ var Champions = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
-      var laoch = ['Rógaire', 'Saoi', 'File', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
-      var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "g. -leadh and -lidh, pl. -lidh, -leadha and -lidhe, gpl. fileadh, m., a poet, a professor (nom.\n\t\t\talso fileadh.).", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", "ban-draoi, f., a druidess."];
+      var laoch = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+      var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "and d\xE1mhna, m., a poet, a learned man; a school of poets; poets in\n\t\t\tgeneral; learning; a poem.", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", "ban-draoi, f., a druidess."];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "foreground"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "foreground-0"
+      })), /*#__PURE__*/_react.default.createElement("div", {
         className: "container champ-container"
       }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "RoghnaighTuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Roghnaigh Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -49489,6 +49493,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "bBtnTouchStart", function () {
       console.log('start');
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTallyX", function (tally) {
+      _this.setState({
+        tallyX: _this.state.tallyX = tally
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
@@ -49810,7 +49820,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44223" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35881" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
