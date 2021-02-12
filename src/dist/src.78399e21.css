@@ -341,7 +341,9 @@ html {
   width: 150px;
   background-repeat: no-repeat;
   background-size: contain;
-  top: 57%;
+  transform: scale(0.7);
+  opacity: 0.6;
+  top: 70%;
   right: 38%;
   position: fixed;
   z-index: 25;
