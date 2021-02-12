@@ -23,10 +23,15 @@
   font-size: 2em;
   font-size: 3em;
 }
+
+p {
+  padding-top: 5px;
+  pointer-events: none;
+}
 .button-b {
   font-family: "aonchlo";
   position: fixed;
-  display: flex;
+  display: grid;
   z-index: 5000;
   align-items: center;
   justify-content: center;
@@ -39,6 +44,11 @@
   color: #b184dd;
   cursor: "pointer";
   font-size: 3em;
+}
+
+p {
+  padding-top: 5px;
+  pointer-events: none;
 }
 .button-c {
   width: 55px;
@@ -246,7 +256,7 @@ html, body {
 #stage {
   pointer-events: all;
   background-color: rgba(0, 0, 0, 0);
-  padding-top: 10%;
+  padding-top: 0%;
   padding-bottom: 10%;
 }
 
@@ -257,11 +267,13 @@ button {
 }
 
 .highlight {
-  border: 4px solid green;
-  background-color: rgba(199, 199, 98, 0.5);
+  border: 1px solid #f084f0;
+  background-color: rgba(95, 6, 91, 0.5);
+  margin: 5px;
 }
 
 .champ {
+  margin: 5px;
   border: 3px solid rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -293,6 +305,68 @@ button {
     cursor: "pointer";
     font-size: 2.5em;
   }
+}
+html {
+  scroll-behaviour: smooth;
+}
+
+.dinneen-container {
+  color: whitesmoke;
+  position: fixed;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  z-index: 2;
+  left: 10%;
+  height: 30%;
+  text-align: center;
+  width: 80%;
+  font-size: 1.4em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.portrait {
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 57%;
+  right: 38%;
+  position: fixed;
+  z-index: 25;
+}
+
+.rogue {
+  background-image: url(/rogue.86109208.png);
+}
+
+.sage {
+  background-image: url("/sage.28c21fc8.png");
+}
+
+.poet {
+  background-image: url("/poet.9429061b.gif");
+}
+
+.druid {
+  background-image: url("/druid.7fd67975.gif");
+}
+
+.gallowglas {
+  background-image: url("/gallowglas.babbd36d.png");
+}
+
+.detective {
+  background-image: url("/detective.4791e824.png");
+}
+
+.occultist {
+  background-image: url("/occultist.d6b9a21b.gif");
+}
+
+.fenian {
+  background-image: url("/fenian.e1aff9c7.png");
 }
 .my-flix {
   color: steelblue;

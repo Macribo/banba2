@@ -49069,7 +49069,7 @@ function ButtonA(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-a",
     onClick: props.onClick
-  }, "A");
+  }, /*#__PURE__*/_react.default.createElement("p", null, "A"));
 }
 },{"react":"../node_modules/react/index.js","./button-a.scss":"components/ui/button-a/button-a.scss"}],"components/ui/button-b/button-b.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -49096,7 +49096,7 @@ function ButtonB(props) {
     onClick: props.onClick,
     onTouchEnd: props.onTouchEnd,
     onTouchStart: props.onTouchStart
-  }, "B");
+  }, /*#__PURE__*/_react.default.createElement("p", null, "B"));
 }
 
 var _default = ButtonB;
@@ -49261,7 +49261,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
+},{"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49329,15 +49329,16 @@ var Champions = /*#__PURE__*/function (_React$Component) {
   _createClass(Champions, [{
     key: "render",
     value: function render() {
-      var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallóglaċ', 'Witch', 'Occultist', 'Warrior'];
-      var laoch = ['Rógaire', 'Saoi', 'File', 'Draoi', 'fís', 'Caillach', 'Diamhraí', 'Féinní'];
+      var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
+      var laoch = ['Rógaire', 'Saoi', 'File', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+      var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "g. -leadh and -lidh, pl. -lidh, -leadha and -lidhe, gpl. fileadh, m., a poet, a professor (nom.\n\t\t\talso fileadh.).", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", "ban-draoi, f., a druidess."];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "container champ-container"
-      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Roghnaigh Champion") : /*#__PURE__*/_react.default.createElement("h1", {
+      }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "Select Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
+      }, "RoghnaighTuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -49347,55 +49348,62 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 0 ? 'highlight' : "rog"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 1 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 2 ? 'highlight' : "bar"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 3 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 4 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 5 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 6 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 7 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: this.props.tallyX == 8 ? 'highlight' : "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: "",
-        alt: "bar"
-      }, "bar"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: "outline-info rog",
-        alt: "rog"
-      }, "rog"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " wiz",
-        alt: "wiz"
-      }, "file"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " bar",
-        alt: "bar"
-      }, "draoi"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " rog",
-        alt: "rog"
-      }, "ciar\xF3g"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " wiz",
-        alt: "wiz"
-      }, "wiz"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " bar",
-        alt: "bar"
-      }, "bar"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " rog",
-        alt: "rog"
-      }, "rog"), /*#__PURE__*/_react.default.createElement(_Button.default, {
-        className: " wiz",
-        alt: "wiz"
-      }, "file")), this.props.tallyX == 0 ? "" : "", ";", this.props.tallyX == 1 ? 'outline-info' : null, ";"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
+        className: this.props.tallyX == 0 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[0] : laoch[0]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 1 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[1] : laoch[1]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 2 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[2] : laoch[2]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 3 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[3] : laoch[3]), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 4 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[4] : laoch[4]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 5 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[5] : laoch[5]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 6 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[6] : laoch[6]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        className: this.props.tallyX == 7 ? ' highlight' : ' champ'
+      }, this.props.engMode ? champion[7] : laoch[7])), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 0 ? "portrait rogue" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 1 ? "portrait sage" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 2 ? "portrait poet" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 3 ? "portrait druid" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 4 ? "portrait gallowglas" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 5 ? "portrait detective" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 6 ? "portrait occultist" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 7 ? "portrait fenian" : null
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "Dinneen"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.engMode == true ? ' dinneen-container' : "hidden"
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+        id: "rogue"
+      }, "  ", this.props.tallyX == 0 ? dinneen[0] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "sage"
+      }, "  ", this.props.tallyX == 1 ? dinneen[1] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "poet"
+      }, "  ", this.props.tallyX == 2 ? dinneen[2] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "druid"
+      }, "  ", this.props.tallyX == 3 ? dinneen[3] + dinneen[8] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "gallowglas"
+      }, "  ", this.props.tallyX == 4 ? dinneen[4] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "detective"
+      }, "  ", this.props.tallyX == 5 ? dinneen[5] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "occultist"
+      }, "  ", this.props.tallyX == 6 ? dinneen[6] : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "warrior"
+      }, "  ", this.props.tallyX == 7 ? dinneen[7] : null), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("p", null, " ")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("canvas", {
         id: "main-canvas",
         width: "640px",
         height: "480px"
-      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh.")))))));
+      }, /*#__PURE__*/_react.default.createElement("p", null, "Canbh\xE1s ar iarraidh")), /*#__PURE__*/_react.default.createElement("noscript", null, /*#__PURE__*/_react.default.createElement("p", null, "javaScript ar iarraidh."))))));
     }
   }]);
 
@@ -49802,7 +49810,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38975" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44223" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
