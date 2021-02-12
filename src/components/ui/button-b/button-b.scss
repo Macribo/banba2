@@ -17,7 +17,8 @@
 	cursor: 'pointer';
 	font-size: 3em;
   }
-  
+  .className{-webkit-touch-callout: none !important; 
+	-webkit-user-select: none !important; }
 p{
 	padding-top:5px;
 	pointer-events: none;}

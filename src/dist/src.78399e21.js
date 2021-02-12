@@ -49335,10 +49335,8 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "foreground"
-      }, /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-0"
-      })), /*#__PURE__*/_react.default.createElement("div", {
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "container champ-container"
       }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
@@ -49773,14 +49771,14 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/champions"
-      }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+      }, /*#__PURE__*/_react.default.createElement(_champions.Champions, {
+        engMode: this.state.engMode,
+        tallyX: this.state.tallyX
+      }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
         toggleEng: this.toggleEng,
         engMode: this.state.engMode
-      }), /*#__PURE__*/_react.default.createElement(_champions.Champions, {
-        engMode: this.state.engMode,
-        tallyX: this.state.tallyX
       })));
     }
   }]);
@@ -49820,7 +49818,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35881" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37993" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

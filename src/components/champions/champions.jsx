@@ -37,12 +37,11 @@ export class Champions extends React.Component {
 			`ban-draoi, f., a druidess.`]
 		return (
 			<div className="champions">
-
-				<div className="foreground">
-					<div id="foreground-0">
-
-					</div>
-				</div>
+		
+		
+			<div id="foreground-0">
+		
+		</div>
 				<div className="container champ-container" >
 					{this.props.engMode ? <h1>Select Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
 					<div id="bg2"></div>
@@ -109,6 +108,7 @@ export class Champions extends React.Component {
 					</div>
 				</div>
 			</div>
+		
 		)
 	}
 }
