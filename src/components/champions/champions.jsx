@@ -39,22 +39,23 @@ export class Champions extends React.Component {
 		
 		</div>
 				<div className="container champ-container" >
-					{this.props.engMode ? <h1>Select Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
+					{this.props.engMode ? <h1>Select
+						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
 					<div id="bg2"></div>
 
 					<div id="characters">
 						<div id="all-champions" className=".text-center">
 							<div id="stage">
 								<div>
-									<Button onClick={this.props.setTallyX} className={this.props.tallyX == 0 ? ' highlight' : ' champ'} >{this.props.engMode ? champion[0] : laoch[0]}</Button>
-									<Button className={this.props.tallyX == 1 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[1] : laoch[1]}</Button>
-									<Button className={this.props.tallyX == 2 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[2] : laoch[2]}</Button>
-									<Button className={this.props.tallyX == 3 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[3] : laoch[3]}</Button>
+									<Button onTouchEnd={this.props.setTallyX} className={this.props.tallyX == 0 ? ' highlight' : ' champ'} >{this.props.engMode ? champion[0] : laoch[0]}</Button>
+									<Button onTouchEnd={this.props.setTally1} className={this.props.tallyX == 1 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[1] : laoch[1]}</Button>
+									<Button onTouchEnd={this.props.setTally2}className={this.props.tallyX == 2 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[2] : laoch[2]}</Button>
+									<Button onTouchEnd={this.props.setTally3}className={this.props.tallyX == 3 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[3] : laoch[3]}</Button>
 									<br />
-									<Button className={this.props.tallyX == 4 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[4] : laoch[4]}</Button>
-									<Button className={this.props.tallyX == 5 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[5] : laoch[5]}</Button>
-									<Button className={this.props.tallyX == 6 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[6] : laoch[6]}</Button>
-									<Button className={this.props.tallyX == 7 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[7] : laoch[7]}</Button>
+									<Button onTouchEnd={this.props.setTally4}className={this.props.tallyX == 4 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[4] : laoch[4]}</Button>
+									<Button onTouchEnd={this.props.setTally5}className={this.props.tallyX == 5 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[5] : laoch[5]}</Button>
+									<Button onTouchEnd={this.props.setTally6}className={this.props.tallyX == 6 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[6] : laoch[6]}</Button>
+									<Button onTouchEnd={this.props.setTally7}className={this.props.tallyX == 7 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[7] : laoch[7]}</Button>
 
 
 								</div>

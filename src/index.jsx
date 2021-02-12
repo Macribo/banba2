@@ -52,7 +52,56 @@ class BanbaApp extends React.Component {
  
   setTallyX = () => {
     console.log('helo from setTally X')
-    // this.setState({tallyX: this.state.tallyX = tally})
+    this.setState({ tallyX: 0 });
+
+
+  }
+  setTally1 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 1 });
+
+
+  }
+  setTally2 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 2 });
+
+
+  }
+  setTally3 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 3 });
+
+
+  }
+  setTally4 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 4 });
+
+
+  }
+  setTally5 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 5 });
+
+
+  }
+  setTally6 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 6 });
+
+
+  }
+  setTally7 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 7 });
+
+
+  }
+  setTally8 = () => {
+    console.log('helo from setTally X')
+    this.setState({ tallyX: 8 });
+
 
   }
   render() {
@@ -65,7 +114,18 @@ class BanbaApp extends React.Component {
 
         <Route exact path="/champions">
           <Champions  engMode= {this.state.engMode}  tallyX ={this.state.tallyX} 
-          setTallyX = {this.setTallyX}/>
+          setTally1 = {this.setTally1}
+          setTally2 = {this.setTally2}
+          setTally3 = {this.setTally3}
+          setTally4 = {this.setTally4}
+          setTally5 = {this.setTally5}
+          setTally6 = {this.setTally6}
+          setTally7 = {this.setTally7}
+          setTally8 = {this.setTally8}
+          
+          
+          
+          />
          
          
         <MainView incrementX={this.incrementX}  decrementX={this.decrementX} toggleEng = {this.toggleEng} engMode={this.state.engMode}/>

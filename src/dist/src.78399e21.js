@@ -49350,21 +49350,28 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
       }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        onClick: this.props.setTallyX,
+        onTouchEnd: this.props.setTallyX,
         className: this.props.tallyX == 0 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[0] : laoch[0]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally1,
         className: this.props.tallyX == 1 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[1] : laoch[1]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally2,
         className: this.props.tallyX == 2 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[2] : laoch[2]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally3,
         className: this.props.tallyX == 3 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[3] : laoch[3]), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally4,
         className: this.props.tallyX == 4 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[4] : laoch[4]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally5,
         className: this.props.tallyX == 5 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[5] : laoch[5]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally6,
         className: this.props.tallyX == 6 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[6] : laoch[6]), /*#__PURE__*/_react.default.createElement(_Button.default, {
+        onTouchEnd: this.props.setTally7,
         className: this.props.tallyX == 7 ? ' highlight' : ' champ'
       }, this.props.engMode ? champion[7] : laoch[7])), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 0 ? "portrait rogue" : null
@@ -49750,7 +49757,75 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "setTallyX", function () {
-      console.log('helo from setTally X'); // this.setState({tallyX: this.state.tallyX = tally})
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 0
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally1", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 1
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally2", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 2
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally3", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 3
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally4", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 4
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally5", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 5
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally6", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 6
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally7", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 7
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTally8", function () {
+      console.log('helo from setTally X');
+
+      _this.setState({
+        tallyX: 8
+      });
     });
 
     _this.state = {
@@ -49778,7 +49853,14 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_champions.Champions, {
         engMode: this.state.engMode,
         tallyX: this.state.tallyX,
-        setTallyX: this.setTallyX
+        setTally1: this.setTally1,
+        setTally2: this.setTally2,
+        setTally3: this.setTally3,
+        setTally4: this.setTally4,
+        setTally5: this.setTally5,
+        setTally6: this.setTally6,
+        setTally7: this.setTally7,
+        setTally8: this.setTally8
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
