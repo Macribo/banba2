@@ -86,51 +86,53 @@ p {
   position: relative;
   z-index: 50;
   background-color: #533c5a;
-  border-top: 5px solid rgba(170, 176, 177, 0.5);
-  border-right: 5px solid rgba(170, 176, 177, 0);
-  border-left: 5px solid rgba(170, 176, 177, 0.5);
-  border-bottom: 5px solid rgba(170, 176, 177, 0.5);
-  left: 1px;
+  border-top: 3px solid rgba(170, 176, 177, 0.5);
+  border-right: 0px solid #533c5a;
+  border-left: 3px solid rgba(170, 176, 177, 0.5);
+  border-bottom: 3px solid rgba(170, 176, 177, 0.5);
+  left: 3px;
 }
 .button-middle {
   background-image: url("/middle.0aabbddb.png");
-  border: solid 1px rgba(83, 60, 90, 0);
+  outline: solid 1px #533c5a;
+  border: solid 3px #533c5a;
   background-size: contain;
   height: 50px;
   width: 50px;
   position: relative;
-  z-index: 50;
+  z-index: 5;
 }
 .button-right {
   background-color: #533c5a;
-  border-top: 5px solid rgba(170, 176, 177, 0.5);
-  border-bottom: 5px solid rgba(170, 176, 177, 0.5);
-  border-right: 5px solid rgba(170, 176, 177, 0.5);
-  border-left: 5px solid rgba(170, 176, 177, 0);
+  border-top: 3px solid rgba(170, 176, 177, 0.5);
+  border-bottom: 3px solid rgba(170, 176, 177, 0.5);
+  border-right: 3px solid rgba(170, 176, 177, 0.5);
+  border-left: 0px solid #533c5a;
   height: 50px;
   width: 50px;
   position: relative;
   z-index: 50;
+  right: 3px;
 }
 .button-up {
   background-color: #533c5a;
-  border-top: 5px solid rgba(170, 176, 177, 0.5);
-  border-right: 5px solid rgba(170, 176, 177, 0.5);
-  border-left: 5px solid rgba(170, 176, 177, 0.5);
-  border-bottom: 5px solid rgba(170, 176, 177, 0);
+  border-top: 3px solid rgba(170, 176, 177, 0.5);
+  border-right: 3px solid rgba(170, 176, 177, 0.5);
+  border-left: 3px solid rgba(170, 176, 177, 0.5);
+  border-bottom: 0px solid #533c5a;
   height: 50px;
   width: 50px;
   position: relative;
   z-index: 50;
-  top: 8px;
+  top: 13px;
 }
 .button-down {
   background-color: #533c5a;
-  border-top: 5px solid rgba(170, 176, 177, 0);
-  border-right: 5px solid rgba(170, 176, 177, 0.5);
-  border-left: 5px solid rgba(170, 176, 177, 0.5);
-  border-bottom: 5px solid rgba(170, 176, 177, 0.5);
-  top: -12px;
+  border-top: 0px solid #533c5a;
+  border-right: 3px solid rgba(170, 176, 177, 0.5);
+  border-left: 3px solid rgba(170, 176, 177, 0.5);
+  border-bottom: 3px solid rgba(170, 176, 177, 0.5);
+  top: -10px;
   height: 50px;
   width: 50px;
   position: relative;
@@ -282,7 +284,7 @@ html, body {
 .champ-class {
   z-index: 501;
   position: fixed;
-  top: 31%;
+  top: 35%;
   left: 10%;
 }
 
@@ -293,13 +295,18 @@ html, body {
   align-items: center;
   text-align: center;
   height: 99%;
+  margin-bottom: 0;
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 #stage {
   pointer-events: all;
   background-color: rgba(0, 0, 0, 0);
   padding-top: 0%;
-  padding-bottom: 10%;
+  padding-bottom: 2%;
 }
 
 button {
@@ -366,13 +373,14 @@ html {
   display: grid;
   justify-content: center;
   align-items: center;
-  top: 40%;
+  top: 44%;
   z-index: 52;
   left: 10%;
   height: 30%;
   text-align: center;
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("/dinneen-bg.06be2ab9.png");
+  background-size: contain;
   font-size: 1.4em;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

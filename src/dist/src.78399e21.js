@@ -49286,7 +49286,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
+},{"./../../img/dinneen-bg.png":[["dinneen-bg.06be2ab9.png","img/dinneen-bg.png"],"img/dinneen-bg.png"],"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50008,7 +50008,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33059" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41503" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
