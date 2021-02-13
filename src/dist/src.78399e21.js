@@ -49582,6 +49582,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       });
 
       console.log("inc-talY" + _this.state.tallyY);
+      _this.props.upAndDown;
     });
 
     _defineProperty(_assertThisInitialized(_this), "decrementY", function () {
@@ -49627,6 +49628,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       var toggleEng = this.props.toggleEng;
       var incrementX = this.props.incrementX;
       var decrementX = this.props.decrementX;
+      var upAndDown = this.props.upAndDown;
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49665,7 +49667,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, "      ", /*#__PURE__*/_react.default.createElement(_up.ButtonUp, {
-        onClick: this.incrementY
+        onClick: upAndDown
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }), /*#__PURE__*/_react.default.createElement("div", {
@@ -49683,7 +49685,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, "      ", /*#__PURE__*/_react.default.createElement(_down.ButtonDown, {
-        onClick: this.decrementY
+        onClick: upAndDown
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }))), /*#__PURE__*/_react.default.createElement("div", {
@@ -49875,6 +49877,58 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "upAndDown", function () {
+      console.log("tallyX: " + _this.state.tallyX);
+
+      if (_this.state.tallyX == 0) {
+        _this.setState({
+          tallyX: 4
+        });
+      }
+
+      if (_this.state.tallyX == 1) {
+        _this.setState({
+          tallyX: 5
+        });
+      }
+
+      if (_this.state.tallyX == 2) {
+        _this.setState({
+          tallyX: 6
+        });
+      }
+
+      if (_this.state.tallyX == 3) {
+        _this.setState({
+          tallyX: 7
+        });
+      }
+
+      if (_this.state.tallyX == 4) {
+        _this.setState({
+          tallyX: 0
+        });
+      }
+
+      if (_this.state.tallyX == 5) {
+        _this.setState({
+          tallyX: 1
+        });
+      }
+
+      if (_this.state.tallyX == 6) {
+        _this.setState({
+          tallyX: 2
+        });
+      }
+
+      if (_this.state.tallyX == 0) {
+        _this.setState({
+          tallyX: 4
+        });
+      }
+    });
+
     _this.state = {
       tallyB: 0,
       tallyX: 0,
@@ -49893,7 +49947,8 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
         toggleEng: this.toggleEng,
-        engMode: this.state.engMode
+        engMode: this.state.engMode,
+        upAndDown: this.upAndDown
       })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/champions"
@@ -49912,7 +49967,8 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
         toggleEng: this.toggleEng,
-        engMode: this.state.engMode
+        engMode: this.state.engMode,
+        upAndDown: this.upAndDown
       })));
     }
   }]);
@@ -49952,7 +50008,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33559" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33059" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

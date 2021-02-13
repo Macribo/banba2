@@ -63,6 +63,8 @@ export class MainView extends React.Component {
   incrementY = () => {
     this.setState({ tallyY: this.state.tallyY += 1 });
     console.log("inc-talY" + this.state.tallyY)
+    this.props.upAndDown;
+
   }
 
   decrementY = () => {
@@ -91,6 +93,7 @@ export class MainView extends React.Component {
     const toggleEng = this.props.toggleEng;
     const incrementX = this.props.incrementX;
     const decrementX = this.props.decrementX;
+    const upAndDown = this.props.upAndDown;
     return (
 
       <div id="main-view">
@@ -138,7 +141,7 @@ export class MainView extends React.Component {
 
           <div className="grid-container">
             <div className="grid-item"></div>
-            <div className="grid-item">      <ButtonUp onClick={this.incrementY} />
+            <div className="grid-item">      <ButtonUp onClick={upAndDown}  />
             </div>
             <div className="grid-item"></div>
             <div className="grid-item">      <ButtonLeft onClick={decrementX} />
@@ -147,7 +150,7 @@ export class MainView extends React.Component {
             <div className="grid-item">      <ButtonRight onClick={incrementX} />
             </div>
             <div className="grid-item"></div>
-            <div className="grid-item">      <ButtonDown onClick={this.decrementY} />
+            <div className="grid-item">      <ButtonDown onClick={upAndDown} />
             </div>
             <div className="grid-item"></div>
           </div>
