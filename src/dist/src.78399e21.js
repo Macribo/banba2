@@ -49176,7 +49176,32 @@ function ButtonLeft(props) {
     onClick: props.onClick
   });
 }
-},{"react":"../node_modules/react/index.js","./left.scss":"components/ui/directional-pad/left/left.scss"}],"components/ui/directional-pad/right/right.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./left.scss":"components/ui/directional-pad/left/left.scss"}],"components/ui/directional-pad/mid/button-middle.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../../../../img/middle.png":[["middle.0aabbddb.png","img/middle.png"],"img/middle.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ui/directional-pad/mid/button-middle.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonMiddle = ButtonMiddle;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./button-middle.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonMiddle(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
+    className: "button-middle",
+    onClick: props.onClick
+  });
+}
+},{"react":"../node_modules/react/index.js","./button-middle.scss":"components/ui/directional-pad/mid/button-middle.scss"}],"components/ui/directional-pad/right/right.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -49329,7 +49354,8 @@ var Champions = /*#__PURE__*/function (_React$Component) {
   _createClass(Champions, [{
     key: "render",
     value: function render() {
-      var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
+      var champion = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann']; // ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
+
       var laoch = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
       var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "and d\xE1mhna, m., a poet, a learned man; a school of poets; poets in\n\t\t\tgeneral; learning; a poem.", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", "ban-draoi, f., a druidess."];
       return /*#__PURE__*/_react.default.createElement("div", {
@@ -49445,6 +49471,8 @@ var _buttonD = require("../ui/button-d/button-d");
 
 var _left = require("../ui/directional-pad/left/left");
 
+var _buttonMiddle = require("../ui/directional-pad/mid/button-middle");
+
 var _right = require("../ui/directional-pad/right/right");
 
 var _up = require("../ui/directional-pad/up/up");
@@ -49511,6 +49539,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       });
 
       console.log("inc-tal" + _this.state.tallyA);
+
+      if (_this.state.tallyA >= 1) {
+        // alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
+        _this.history.pushState(null, 'champions');
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "toggleCmenu", function () {
@@ -49627,7 +49660,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         onClick: decrementX
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
-      }, /*#__PURE__*/_react.default.createElement(_left.ButtonLeft, null)), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement(_buttonMiddle.ButtonMiddle, null)), /*#__PURE__*/_react.default.createElement("div", {
         className: "grid-item"
       }, "      ", /*#__PURE__*/_react.default.createElement(_right.ButtonRight, {
         onClick: incrementX
@@ -49651,7 +49684,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.MainView = MainView;
-},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/mid/button-middle":"components/ui/directional-pad/mid/button-middle.js","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -49905,7 +49938,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37993" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33559" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

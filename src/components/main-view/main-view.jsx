@@ -7,6 +7,7 @@ import ButtonB from '../ui/button-b/button-b';
 import { ButtonC } from '../ui/button-c/button-c'
 import { ButtonD } from '../ui/button-d/button-d'
 import { ButtonLeft } from '../ui/directional-pad/left/left'
+import { ButtonMiddle } from '../ui/directional-pad/mid/button-middle'
 import { ButtonRight } from '../ui/directional-pad/right/right'
 import { ButtonUp } from '../ui/directional-pad/up/up'
 import { ButtonDown } from '../ui/directional-pad/down/down'
@@ -42,6 +43,10 @@ export class MainView extends React.Component {
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
+    if (this.state.tallyA >= 1) {
+      // alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
+      this.history.pushState(null, 'champions');
+    }
 
   }
 
@@ -138,7 +143,7 @@ export class MainView extends React.Component {
             <div className="grid-item"></div>
             <div className="grid-item">      <ButtonLeft onClick={decrementX} />
             </div>
-            <div className="grid-item"><ButtonLeft /></div>
+            <div className="grid-item"><ButtonMiddle /></div>
             <div className="grid-item">      <ButtonRight onClick={incrementX} />
             </div>
             <div className="grid-item"></div>

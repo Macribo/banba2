@@ -17,7 +17,9 @@ export class Champions extends React.Component {
 		console.log('highlight-champ')
 	}
 	render() {
-		var champion = ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
+		var champion = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+		
+		// ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
 		var laoch = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
 
 		var dinneen = [`a villain, a knave; often used like the English rogue, as a
