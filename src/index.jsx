@@ -113,7 +113,8 @@ class BanbaApp extends React.Component {
           <MainView incrementX={this.incrementX} decrementX={this.decrementX}   toggleEng = {this.toggleEng}engMode={this.state.engMode} />
         </Route>
 
-        <Route exact path="/champions">
+        <Route exact path="/champions" > 
+           
           <Champions  engMode= {this.state.engMode}  tallyX ={this.state.tallyX} 
           setTally1 = {this.setTally1}
           setTally2 = {this.setTally2}

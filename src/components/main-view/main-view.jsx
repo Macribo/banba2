@@ -45,7 +45,7 @@ export class MainView extends React.Component {
     console.log("inc-tal" + this.state.tallyA)
     if (this.state.tallyA >= 1) {
       // alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
-      this.history.pushState(null, 'champions');
+     
     }
 
   }

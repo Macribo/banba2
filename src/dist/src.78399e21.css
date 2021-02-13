@@ -278,6 +278,13 @@ html, body {
   pointer-events: none;
 }
 
+.champ-class {
+  z-index: 501;
+  position: fixed;
+  top: 31%;
+  left: 10%;
+}
+
 .champ-container {
   font-family: urchlo;
   display: grid;

@@ -17,22 +17,21 @@ export class Champions extends React.Component {
 		console.log('highlight-champ')
 	}
 	render() {
-		var champion = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+		var champion = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
 		
 		// ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
-		var laoch = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+		var laoch = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
 
 		var dinneen = [`a villain, a knave; often used like the English rogue, as a
 		term of endearment`,
 			`a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. `,
-			`and dámhna, m., a poet, a learned man; a school of poets; poets in
-			general; learning; a poem.`,
+			`spéir-bhean, f., a beautiful woman, a goddess, a fair lady, a universal song-word.`,
 			`a druid, a wizard, a magician, a sorcerer, a man of knowledge.`,
 			`a heavy armed Irish soldier, a gallowglass; a servant.`,
 			` g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.`,
-			``,
+			`An occultist.`,
 			`a Fenian, a soldier; hero, champion; one of the Fianna Éireann.`,
-			`ban-draoi, f., a druidess.`]
+			` _ban-draoi, f., a druidess.`]
 		return (
 			<div className="champions">
 		
@@ -43,6 +42,15 @@ export class Champions extends React.Component {
 				<div className="container champ-container" >
 					{this.props.engMode ? <h1>Select
 						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
+						 <h1 className={this.props.tallyX==0 && this.props.engMode==true ?"champ-class":"hidden"}>Rógaire</h1>
+						 <h1 className={this.props.tallyX==1 && this.props.engMode==true ?"champ-class":"hidden"}>Saoi</h1>
+						 <h1 className={this.props.tallyX==2 && this.props.engMode==true ?"champ-class":"hidden"}>spéir-bhean</h1>
+
+						 <h1 className={this.props.tallyX==3 && this.props.engMode==true ?"champ-class":"hidden"}>Draoi</h1>
+						 <h1 className={this.props.tallyX==4 && this.props.engMode==true ?"champ-class":"hidden"}>Gallóglaċ</h1>
+						 <h1 className={this.props.tallyX==5 && this.props.engMode==true ?"champ-class":"hidden"}>Bleachtaire</h1>
+						 <h1 className={this.props.tallyX==6 && this.props.engMode==true ?"champ-class":"hidden"}>Diamhraí</h1>
+						 <h1 className={this.props.tallyX==7 && this.props.engMode==true ?"champ-class":"hidden"}>Fiann</h1>
 					<div id="bg2"></div>
 
 					<div id="characters">

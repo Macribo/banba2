@@ -49354,10 +49354,10 @@ var Champions = /*#__PURE__*/function (_React$Component) {
   _createClass(Champions, [{
     key: "render",
     value: function render() {
-      var champion = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann']; // ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
+      var champion = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann']; // ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
 
-      var laoch = ['Rógaire', 'Saoi', 'Dámh', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
-      var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "and d\xE1mhna, m., a poet, a learned man; a school of poets; poets in\n\t\t\tgeneral; learning; a poem.", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", "ban-draoi, f., a druidess."];
+      var laoch = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
+      var dinneen = ["a villain, a knave; often used like the English rogue, as a\n\t\tterm of endearment", "a sage, a scholar, a man of letters, a savant, a nobleman; a worthy, generous person; used loosely in poet. ", "sp\xE9ir-bhean, f., a beautiful woman, a goddess, a fair lady, a universal song-word.", "a druid, a wizard, a magician, a sorcerer, a man of knowledge.", "a heavy armed Irish soldier, a gallowglass; a servant.", " g. id., pl. -ridhe, m., a person that milks cows; a manager of milk; one who deaL in milk; a wheedler, a flatterer; a detective.", "An occultist.", "a Fenian, a soldier; hero, champion; one of the Fianna \xC9ireann.", " _ban-draoi, f., a druidess."];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "champions"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49366,7 +49366,23 @@ var Champions = /*#__PURE__*/function (_React$Component) {
         className: "container champ-container"
       }, this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, "Select Champion") : /*#__PURE__*/_react.default.createElement("h1", {
         alt: "Champion"
-      }, "Roghnaigh Tuairghneach"), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Roghnaigh Tuairghneach"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 0 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "R\xF3gaire"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 1 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Saoi"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 2 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "sp\xE9ir-bhean"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 3 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Draoi"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 4 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Gall\xF3gla\u010B"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 5 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Bleachtaire"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 6 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Diamhra\xED"), /*#__PURE__*/_react.default.createElement("h1", {
+        className: this.props.tallyX == 7 && this.props.engMode == true ? "champ-class" : "hidden"
+      }, "Fiann"), /*#__PURE__*/_react.default.createElement("div", {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
@@ -49540,9 +49556,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
       console.log("inc-tal" + _this.state.tallyA);
 
-      if (_this.state.tallyA >= 1) {
-        // alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
-        _this.history.pushState(null, 'champions');
+      if (_this.state.tallyA >= 1) {// alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
       }
     });
 
