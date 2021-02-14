@@ -44,8 +44,9 @@ export class MainView extends React.Component {
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
     if (this.state.tallyA >= 1) {
-      // alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
-     
+      alert(this.state.tallyA+" roghnaithe in development -> March 1st 2021")
+    //  return(<h1> hi</h1>)
+    { this.props.toRing }
     }
 
   }
