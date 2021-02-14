@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MainView } from './components/main-view/main-view';
 import { Champions } from './components/champions/champions';
+import { Geaga } from './components/geaga/geaga';
 import {
   BrowserRouter as Router,
   Switch,
@@ -162,6 +163,17 @@ class BanbaApp extends React.Component {
 
 
 
+        </Route>
+
+        <Route>
+          
+          <Geaga exact path="geaga" />
+        
+        <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
+
+
+
+        
         </Route>
       </Router>
     )

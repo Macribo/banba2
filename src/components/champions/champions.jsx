@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './champions.scss'
 import Button from 'react-bootstrap/Button';
+import FadeIn from "react-fade-in";
 
 
 export class Champions extends React.Component {
 
-	constructor(props) {
+		constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {delay:4000}
 		const tallyX = props.tallyX;
 	}
 
@@ -71,7 +72,7 @@ export class Champions extends React.Component {
 								</div>
 								{/* {this.props.tallyX == 0 ? "" : ""};
 								{this.props.tallyX == 1 ? 'outline-info' : null}; */}
-								<>
+								<><FadeIn delay={this.state.delay}>
 									<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
 									<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
 									<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
@@ -80,7 +81,7 @@ export class Champions extends React.Component {
 									<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
 									<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
 									<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
-								</>
+									</FadeIn></>
 
 							</div>
 							<div className="dinneen">

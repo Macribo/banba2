@@ -49093,6 +49093,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ButtonB(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-b",
+    onMouseDown: props.onTouchStart,
+    onMouseUp: props.onTouchEnd,
     onClick: props.onClick,
     onTouchEnd: props.onTouchEnd,
     onTouchStart: props.onTouchStart
@@ -49286,7 +49288,84 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/dinneen-bg.png":[["dinneen-bg.06be2ab9.png","img/dinneen-bg.png"],"img/dinneen-bg.png"],"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
+},{"./../../img/dinneen-bg.png":[["dinneen-bg.06be2ab9.png","img/dinneen-bg.png"],"img/dinneen-bg.png"],"./../../img/characters/rogue.png":[["rogue.86109208.png","img/characters/rogue.png"],"img/characters/rogue.png"],"./../../img/characters/detective.png":[["detective.4791e824.png","img/characters/detective.png"],"img/characters/detective.png"],"./../../img/characters/poet.gif":[["poet.9429061b.gif","img/characters/poet.gif"],"img/characters/poet.gif"],"./../../img/characters/druid.gif":[["druid.7fd67975.gif","img/characters/druid.gif"],"img/characters/druid.gif"],"./../../img/characters/gallowglas.png":[["gallowglas.babbd36d.png","img/characters/gallowglas.png"],"img/characters/gallowglas.png"],"./../../img/characters/sage.png":[["sage.28c21fc8.png","img/characters/sage.png"],"img/characters/sage.png"],"./../../img/characters/occultist.gif":[["occultist.d6b9a21b.gif","img/characters/occultist.gif"],"img/characters/occultist.gif"],"./../../img/characters/fenian.png":[["fenian.e1aff9c7.png","img/characters/fenian.png"],"img/characters/fenian.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-fade-in/lib/FadeIn.js":[function(require,module,exports) {
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(require("react"));
+function FadeIn(props) {
+    var _a = react_1.useState(0), maxIsVisible = _a[0], setMaxIsVisible = _a[1];
+    var transitionDuration = props.transitionDuration || 400;
+    var delay = props.delay || 50;
+    var WrapperTag = props.wrapperTag || "div";
+    var ChildTag = props.childTag || "div";
+    var visible = typeof props.visible === "undefined" ? true : props.visible;
+    react_1.useEffect(function () {
+        var count = react_1.default.Children.count(props.children);
+        if (!visible) {
+            // Animate all children out
+            count = 0;
+        }
+        if (count == maxIsVisible) {
+            // We're done updating maxVisible, notify when animation is done
+            var timeout_1 = setTimeout(function () {
+                if (props.onComplete)
+                    props.onComplete();
+            }, transitionDuration);
+            return function () { return clearTimeout(timeout_1); };
+        }
+        // Move maxIsVisible toward count
+        var increment = count > maxIsVisible ? 1 : -1;
+        var timeout = setTimeout(function () {
+            setMaxIsVisible(maxIsVisible + increment);
+        }, delay);
+        return function () { return clearTimeout(timeout); };
+    }, [
+        react_1.default.Children.count(props.children),
+        delay,
+        maxIsVisible,
+        visible,
+        transitionDuration,
+    ]);
+    return (react_1.default.createElement(WrapperTag, { className: props.className }, react_1.default.Children.map(props.children, function (child, i) {
+        return (react_1.default.createElement(ChildTag, { className: props.childClassName, style: {
+                transition: "opacity " + transitionDuration + "ms, transform " + transitionDuration + "ms",
+                transform: maxIsVisible > i ? "none" : "translateY(20px)",
+                opacity: maxIsVisible > i ? 1 : 0,
+            } }, child));
+    })));
+}
+exports.default = FadeIn;
+
+},{"react":"../node_modules/react/index.js"}],"../node_modules/react-fade-in/lib/index.js":[function(require,module,exports) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = void 0;
+var FadeIn_1 = require("./FadeIn");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(FadeIn_1).default; } });
+
+},{"./FadeIn":"../node_modules/react-fade-in/lib/FadeIn.js"}],"components/champions/champions.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49301,6 +49380,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 require("./champions.scss");
 
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+
+var _reactFadeIn = _interopRequireDefault(require("react-fade-in"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49346,7 +49427,9 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       console.log('highlight-champ');
     });
 
-    _this.state = {};
+    _this.state = {
+      delay: 4000
+    };
     var tallyX = props.tallyX;
     return _this;
   }
@@ -49415,7 +49498,9 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, this.props.engMode ? champion[6] : laoch[6]), /*#__PURE__*/_react.default.createElement(_Button.default, {
         onTouchEnd: this.props.setTally7,
         className: this.props.tallyX == 7 ? ' highlight' : ' champ'
-      }, this.props.engMode ? champion[7] : laoch[7])), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+      }, this.props.engMode ? champion[7] : laoch[7])), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
+        delay: this.state.delay
+      }, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 0 ? "portrait rogue" : null
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 1 ? "portrait sage" : null
@@ -49431,7 +49516,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
         className: this.props.tallyX == 6 ? "portrait occultist" : null
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 7 ? "portrait fenian" : null
-      }))), /*#__PURE__*/_react.default.createElement("div", {
+      })))), /*#__PURE__*/_react.default.createElement("div", {
         className: "dinneen"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.engMode == true ? ' dinneen-container' : "hidden"
@@ -49463,7 +49548,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.Champions = Champions;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./champions.scss":"components/champions/champions.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./champions.scss":"components/champions/champions.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-fade-in":"../node_modules/react-fade-in/lib/index.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49556,7 +49641,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
       console.log("inc-tal" + _this.state.tallyA);
 
-      if (_this.state.tallyA >= 1) {// alert(this.state.tallyA+" roghnaithe. Deireadh le céim a náid.")
+      if (_this.state.tallyA == 2) {// alert("Update in development - March 1st 2021")
+        //  return(<h1> hi</h1>)
       }
     });
 
@@ -49658,6 +49744,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         onTouchStart: toggleEng
       }), this.state.tallyA >= 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
         to: "/champions"
+      }) : null, this.state.tallyA == 2 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+        to: "/geaga"
       }) : null)), /*#__PURE__*/_react.default.createElement("div", {
         className: "gamepad"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49700,7 +49788,81 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.MainView = MainView;
-},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/mid/button-middle":"components/ui/directional-pad/mid/button-middle.js","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../ui/button-a/button-a":"components/ui/button-a/button-a.jsx","../ui/button-b/button-b":"components/ui/button-b/button-b.jsx","../ui/button-c/button-c":"components/ui/button-c/button-c.jsx","../ui/button-d/button-d":"components/ui/button-d/button-d.jsx","../ui/directional-pad/left/left":"components/ui/directional-pad/left/left.jsx","../ui/directional-pad/mid/button-middle":"components/ui/directional-pad/mid/button-middle.js","../ui/directional-pad/right/right":"components/ui/directional-pad/right/right.jsx","../ui/directional-pad/up/up":"components/ui/directional-pad/up/up.jsx","../ui/directional-pad/down/down":"components/ui/directional-pad/down/down.jsx","./main-view.scss":"components/main-view/main-view.scss","../champions/champions":"components/champions/champions.jsx"}],"components/geaga/geaga.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/geaga/geaga.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Geaga = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+require("./geaga.scss");
+
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var Geaga = /*#__PURE__*/function (_React$Component) {
+  _inherits(Geaga, _React$Component);
+
+  var _super = _createSuper(Geaga);
+
+  function Geaga(props) {
+    var _this;
+
+    _classCallCheck(this, Geaga);
+
+    _this = _super.call(this, props);
+    _this.state = {};
+    var tallyX = props.tallyX;
+    return _this;
+  }
+
+  _createClass(Geaga, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "geaga"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "Hello"));
+    }
+  }]);
+
+  return Geaga;
+}(_react.default.Component);
+
+exports.Geaga = Geaga;
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./geaga.scss":"components/geaga/geaga.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -49717,6 +49879,8 @@ require("bootstrap/dist/css/bootstrap.min.css");
 var _mainView = require("./components/main-view/main-view");
 
 var _champions = require("./components/champions/champions");
+
+var _geaga = require("./components/geaga/geaga");
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -49969,6 +50133,15 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         toggleEng: this.toggleEng,
         engMode: this.state.engMode,
         upAndDown: this.upAndDown
+      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
+        exact: true,
+        path: "geaga"
+      }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
+        incrementX: this.incrementX,
+        decrementX: this.decrementX,
+        toggleEng: this.toggleEng,
+        engMode: this.state.engMode,
+        upAndDown: this.upAndDown
       })));
     }
   }]);
@@ -49980,7 +50153,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
 var container = document.getElementsByClassName('app-container')[0]; // Tell React to render our app in the root DOM element
 
 _reactDom.default.render(_react.default.createElement(BanbaApp), container);
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./components/main-view/main-view":"components/main-view/main-view.jsx","./components/champions/champions":"components/champions/champions.jsx","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./index.scss":"index.scss"}],"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./components/main-view/main-view":"components/main-view/main-view.jsx","./components/champions/champions":"components/champions/champions.jsx","./components/geaga/geaga":"components/geaga/geaga.jsx","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./index.scss":"index.scss"}],"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -50008,7 +50181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41503" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36711" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

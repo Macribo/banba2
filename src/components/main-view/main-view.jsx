@@ -43,10 +43,9 @@ export class MainView extends React.Component {
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
-    if (this.state.tallyA >= 1) {
-      alert(this.state.tallyA+" roghnaithe in development -> March 1st 2021")
+    if (this.state.tallyA == 2) {
+      // alert("Update in development - March 1st 2021")
     //  return(<h1> hi</h1>)
-    { this.props.toRing }
     }
 
   }
@@ -89,6 +88,8 @@ export class MainView extends React.Component {
     // this.setState({tallyX: this.state.tallyX = tally})
 
   }
+
+
   render() {
    const setTallyX  = this.props.setTallyX; 
     const toggleEng = this.props.toggleEng;
@@ -135,6 +136,7 @@ export class MainView extends React.Component {
             />
             <ButtonB onClick={this.incrementTallyB} onTouchEnd={toggleEng} onTouchStart={toggleEng} />
             {this.state.tallyA >= 1 ? <Redirect to="/champions" /> : null}
+            {this.state.tallyA == 2 ? <Redirect to="/geaga" /> : null}
           </>
 
         </div>
