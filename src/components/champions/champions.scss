@@ -116,19 +116,16 @@ html{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   .portrait{
-    opacity:0;
     height:150px;
     width:150px;
     background-repeat: no-repeat;
     background-size:contain;
     transform: scale(0.7);
-    opacity: 0.6;
     top:50%;
     right: 38%;
-;
     position: fixed;
 // border: 3px solid blue;
-z-index: 25;;
+z-index: 250;
   }
 
   .rogue{
@@ -168,29 +165,15 @@ background-repeat:no-repeat;
 background-size: cover;
     // border:1px solid red;
     background-image: url('../../img/foreground/24BG.png');
-    animation: scroll-to-champions 4s forwards;
-    @keyframes fade-in-champ{
-    0% {
-		  opacity: 0;
-		}
-	  
-		 90% {
-		opacity:0 }
-	  
-		100% {
-		  opacity: 1;
-		}
-  }
+    animation: scroll-to-champions 2s forwards;
+    
+  
 
 }
 	@keyframes scroll-to-champions {
 		0% {
 		  top: 100%;
 		}
-	  
-		// 50% {
-		//   fill: #fcffad;
-		// }
 	  
 		100% {
 		  top: 35%;

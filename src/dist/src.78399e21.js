@@ -49428,7 +49428,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
     });
 
     _this.state = {
-      delay: 4000
+      delay: 2000
     };
     var tallyX = props.tallyX;
     return _this;
@@ -49469,7 +49469,23 @@ var Champions = /*#__PURE__*/function (_React$Component) {
         id: "bg2"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
-      }, /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 0 ? "portrait rogue" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 1 ? "portrait sage" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 2 ? "portrait poet" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 3 ? "portrait druid" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 4 ? "portrait gallowglas" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 5 ? "portrait detective" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 6 ? "portrait occultist" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.tallyX == 7 ? "portrait fenian" : null
+      })), /*#__PURE__*/_react.default.createElement("div", {
         id: "all-champions",
         className: ".text-center"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49498,25 +49514,7 @@ var Champions = /*#__PURE__*/function (_React$Component) {
       }, this.props.engMode ? champion[6] : laoch[6]), /*#__PURE__*/_react.default.createElement(_Button.default, {
         onTouchEnd: this.props.setTally7,
         className: this.props.tallyX == 7 ? ' highlight' : ' champ'
-      }, this.props.engMode ? champion[7] : laoch[7])), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
-        delay: this.state.delay
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 0 ? "portrait rogue" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 1 ? "portrait sage" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 2 ? "portrait poet" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 3 ? "portrait druid" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 4 ? "portrait gallowglas" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 5 ? "portrait detective" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 6 ? "portrait occultist" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: this.props.tallyX == 7 ? "portrait fenian" : null
-      })))), /*#__PURE__*/_react.default.createElement("div", {
+      }, this.props.engMode ? champion[7] : laoch[7]))), /*#__PURE__*/_react.default.createElement("div", {
         className: "dinneen"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.engMode == true ? ' dinneen-container' : "hidden"
@@ -49641,7 +49639,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
       console.log("inc-tal" + _this.state.tallyA);
 
-      if (_this.state.tallyA == 2) {// alert("Update in development - March 1st 2021")
+      if (_this.state.tallyA == 1) {// alert("Update in development - March 1st 2021")
         //  return(<h1> hi</h1>)
       }
     });
@@ -49801,6 +49799,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Geaga = void 0;
 
+var _reactFadeIn = _interopRequireDefault(require("react-fade-in"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
@@ -49833,6 +49833,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Geaga = /*#__PURE__*/function (_React$Component) {
   _inherits(Geaga, _React$Component);
 
@@ -49844,17 +49846,80 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Geaga);
 
     _this = _super.call(this, props);
-    _this.state = {};
-    var tallyX = props.tallyX;
+
+    _defineProperty(_assertThisInitialized(_this), "getCharClass", function (tallyX) {
+      switch (tallyX) {
+        case 0:
+          return " rogue";
+          break;
+
+        case 1:
+          return " sage";
+          break;
+
+        case 2:
+          return " poet";
+          break;
+
+        case 3:
+          return " druid";
+          break;
+
+        case 4:
+          return " gallowglass";
+          break;
+
+        case 5:
+          return " detective";
+          break;
+
+        case 6:
+          return " occultist";
+          break;
+
+        case 7:
+          return " fenian";
+          break;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "addHighlight", function () {
+      _reactDom.default.findDOMNode(element).classList.add("highlight-champ");
+
+      console.log('highlight-champ');
+    });
+
+    _this.state = {
+      class: ''
+    };
+    var _tallyX = props.tallyX;
     return _this;
   }
 
   _createClass(Geaga, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var tallyX = this.props.tallyX;
+      var charClass = this.getCharClass(tallyX);
+      this.setState({
+        class: charClass
+      });
+      console.log(charClass);
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "geaga"
-      }, /*#__PURE__*/_react.default.createElement("h2", null, "Hello"));
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "foreground-geaga"
+      }), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
+        delay: 2000
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container geaga-container"
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "portrait" + this.state.class
+      }))));
     }
   }]);
 
@@ -49862,7 +49927,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.Geaga = Geaga;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./geaga.scss":"components/geaga/geaga.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"index.scss":[function(require,module,exports) {
+},{"react-fade-in":"../node_modules/react-fade-in/lib/index.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./geaga.scss":"components/geaga/geaga.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -50133,9 +50198,12 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         toggleEng: this.toggleEng,
         engMode: this.state.engMode,
         upAndDown: this.upAndDown
-      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
+      })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
-        path: "geaga"
+        path: "/geaga"
+      }, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
+        tallyX: this.state.tallyX,
+        getCharClass: this.getCharClass
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
@@ -50181,7 +50249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36711" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -43,7 +43,7 @@ export class MainView extends React.Component {
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
-    if (this.state.tallyA == 2) {
+    if (this.state.tallyA == 1) {
       // alert("Update in development - March 1st 2021")
     //  return(<h1> hi</h1>)
     }

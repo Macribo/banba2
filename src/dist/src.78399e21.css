@@ -386,17 +386,15 @@ html {
 }
 
 .portrait {
-  opacity: 0;
   height: 150px;
   width: 150px;
   background-repeat: no-repeat;
   background-size: contain;
   transform: scale(0.7);
-  opacity: 0.6;
   top: 50%;
   right: 38%;
   position: fixed;
-  z-index: 25;
+  z-index: 250;
 }
 
 .rogue {
@@ -442,18 +440,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("/24BG.e49c1066.png");
-  animation: scroll-to-champions 4s forwards;
-}
-@keyframes fade-in-champ {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: scroll-to-champions 2s forwards;
 }
 
 @keyframes scroll-to-champions {
@@ -464,6 +451,21 @@ html {
     top: 35%;
   }
 }
+.geaga-container {
+  font-family: urchlo;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 99%;
+  margin-bottom: 0;
+  z-index: 499;
+  top: 3px !important;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
 #foreground-geaga {
   position: absolute;
   z-index: 5;

@@ -7,9 +7,9 @@ import FadeIn from "react-fade-in";
 
 export class Champions extends React.Component {
 
-		constructor(props) {
+	constructor(props) {
 		super(props);
-		this.state = {delay:4000}
+		this.state = { delay: 2000 }
 		const tallyX = props.tallyX;
 	}
 
@@ -19,7 +19,7 @@ export class Champions extends React.Component {
 	}
 	render() {
 		var champion = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
-		
+
 		// ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
 		var laoch = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann'];
 
@@ -35,53 +35,52 @@ export class Champions extends React.Component {
 			` _ban-draoi, f., a druidess.`]
 		return (
 			<div className="champions">
-		
-		
-			<div id="foreground-0">
-		
-		</div>
+
+
+				<div id="foreground-0">
+
+				</div>
 				<div className="container champ-container" >
 					{this.props.engMode ? <h1>Select
 						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
-						 <h1 className={this.props.tallyX==0 && this.props.engMode==true ?"champ-class":"hidden"}>Rógaire</h1>
-						 <h1 className={this.props.tallyX==1 && this.props.engMode==true ?"champ-class":"hidden"}>Saoi</h1>
-						 <h1 className={this.props.tallyX==2 && this.props.engMode==true ?"champ-class":"hidden"}>spéir-bhean</h1>
+					<h1 className={this.props.tallyX == 0 && this.props.engMode == true ? "champ-class" : "hidden"}>Rógaire</h1>
+					<h1 className={this.props.tallyX == 1 && this.props.engMode == true ? "champ-class" : "hidden"}>Saoi</h1>
+					<h1 className={this.props.tallyX == 2 && this.props.engMode == true ? "champ-class" : "hidden"}>spéir-bhean</h1>
 
-						 <h1 className={this.props.tallyX==3 && this.props.engMode==true ?"champ-class":"hidden"}>Draoi</h1>
-						 <h1 className={this.props.tallyX==4 && this.props.engMode==true ?"champ-class":"hidden"}>Gallóglaċ</h1>
-						 <h1 className={this.props.tallyX==5 && this.props.engMode==true ?"champ-class":"hidden"}>Bleachtaire</h1>
-						 <h1 className={this.props.tallyX==6 && this.props.engMode==true ?"champ-class":"hidden"}>Diamhraí</h1>
-						 <h1 className={this.props.tallyX==7 && this.props.engMode==true ?"champ-class":"hidden"}>Fiann</h1>
+					<h1 className={this.props.tallyX == 3 && this.props.engMode == true ? "champ-class" : "hidden"}>Draoi</h1>
+					<h1 className={this.props.tallyX == 4 && this.props.engMode == true ? "champ-class" : "hidden"}>Gallóglaċ</h1>
+					<h1 className={this.props.tallyX == 5 && this.props.engMode == true ? "champ-class" : "hidden"}>Bleachtaire</h1>
+					<h1 className={this.props.tallyX == 6 && this.props.engMode == true ? "champ-class" : "hidden"}>Diamhraí</h1>
+					<h1 className={this.props.tallyX == 7 && this.props.engMode == true ? "champ-class" : "hidden"}>Fiann</h1>
 					<div id="bg2"></div>
 
 					<div id="characters">
+						<>
+							<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
+							<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
+							<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
+							<div className={this.props.tallyX == 3 ? "portrait druid" : null}></div>
+							<div className={this.props.tallyX == 4 ? "portrait gallowglas" : null}></div>
+							<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
+							<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
+							<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
+						</>
 						<div id="all-champions" className=".text-center">
 							<div id="stage">
 								<div>
 									<Button onTouchEnd={this.props.setTallyX} className={this.props.tallyX == 0 ? ' highlight' : ' champ'} >{this.props.engMode ? champion[0] : laoch[0]}</Button>
 									<Button onTouchEnd={this.props.setTally1} className={this.props.tallyX == 1 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[1] : laoch[1]}</Button>
-									<Button onTouchEnd={this.props.setTally2}className={this.props.tallyX == 2 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[2] : laoch[2]}</Button>
-									<Button onTouchEnd={this.props.setTally3}className={this.props.tallyX == 3 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[3] : laoch[3]}</Button>
+									<Button onTouchEnd={this.props.setTally2} className={this.props.tallyX == 2 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[2] : laoch[2]}</Button>
+									<Button onTouchEnd={this.props.setTally3} className={this.props.tallyX == 3 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[3] : laoch[3]}</Button>
 									<br />
-									<Button onTouchEnd={this.props.setTally4}className={this.props.tallyX == 4 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[4] : laoch[4]}</Button>
-									<Button onTouchEnd={this.props.setTally5}className={this.props.tallyX == 5 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[5] : laoch[5]}</Button>
-									<Button onTouchEnd={this.props.setTally6}className={this.props.tallyX == 6 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[6] : laoch[6]}</Button>
-									<Button onTouchEnd={this.props.setTally7}className={this.props.tallyX == 7 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[7] : laoch[7]}</Button>
+									<Button onTouchEnd={this.props.setTally4} className={this.props.tallyX == 4 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[4] : laoch[4]}</Button>
+									<Button onTouchEnd={this.props.setTally5} className={this.props.tallyX == 5 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[5] : laoch[5]}</Button>
+									<Button onTouchEnd={this.props.setTally6} className={this.props.tallyX == 6 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[6] : laoch[6]}</Button>
+									<Button onTouchEnd={this.props.setTally7} className={this.props.tallyX == 7 ? ' highlight' : ' champ'}>{this.props.engMode ? champion[7] : laoch[7]}</Button>
 
 
 								</div>
-								{/* {this.props.tallyX == 0 ? "" : ""};
-								{this.props.tallyX == 1 ? 'outline-info' : null}; */}
-								<><FadeIn delay={this.state.delay}>
-									<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
-									<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
-									<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
-									<div className={this.props.tallyX == 3 ? "portrait druid" : null}></div>
-									<div className={this.props.tallyX == 4 ? "portrait gallowglas" : null}></div>
-									<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
-									<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
-									<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
-									</FadeIn></>
+
 
 							</div>
 							<div className="dinneen">
@@ -116,7 +115,7 @@ export class Champions extends React.Component {
 					</div>
 				</div>
 			</div>
-		
+
 		)
 	}
 }
