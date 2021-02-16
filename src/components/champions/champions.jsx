@@ -12,7 +12,11 @@ export class Champions extends React.Component {
 		this.state = { delay: 2000 }
 		const tallyX = props.tallyX;
 	}
+	componentDidMount(){
+		
+		console.log(this.state)
 
+}
 	addHighlight = () => {
 		ReactDOM.findDOMNode(element).classList.add("highlight-champ");
 		console.log('highlight-champ')

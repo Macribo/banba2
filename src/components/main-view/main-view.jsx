@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dropdown, Container, Row, Col } from 'react-bootstrap'
-import { Redirect, BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { Redirect, BrowserRouter, Link, Route, Switch, useNavigate } from 'react-router-dom';
+
 import { ButtonA } from '../ui/button-a/button-a'
 import ButtonB from '../ui/button-b/button-b';
 
@@ -25,7 +26,7 @@ export class MainView extends React.Component {
       tallyA: 0,
       menuCOpen: false,
       tallyD: 0,
-
+      redirect: false,
       tallyY: 0,
       isLoggedIn: true
     };
@@ -43,10 +44,12 @@ export class MainView extends React.Component {
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
-    if (this.state.tallyA == 1) {
+    if (this.state.tallyA == 2) {
       // alert("Update in development - March 1st 2021")
     //  return(<h1> hi</h1>)
-    }
+    console.log("xxx")
+    this.setState({ redirect: true })
+  }
 
   }
 
@@ -96,6 +99,7 @@ export class MainView extends React.Component {
     const incrementX = this.props.incrementX;
     const decrementX = this.props.decrementX;
     const upAndDown = this.props.upAndDown;
+    { this.state.redirect ? (<Redirect push to="/geaga"/>) : null }
     return (
 
       <div id="main-view">
@@ -135,8 +139,8 @@ export class MainView extends React.Component {
             <ButtonA onClick={this.incrementTallyA}
             />
             <ButtonB onClick={this.incrementTallyB} onTouchEnd={toggleEng} onTouchStart={toggleEng} />
-            {this.state.tallyA >= 1 ? <Redirect to="/champions" /> : null}
-            {this.state.tallyA == 2 ? <Redirect to="/geaga" /> : null}
+            {this.state.tallyA == 1 ? <Redirect to="/champions" /> : null}
+            {this.state.tallyA > 1 ? <Redirect to="/geaga" /> : null}
           </>
 
         </div>

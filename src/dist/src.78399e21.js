@@ -49435,6 +49435,11 @@ var Champions = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Champions, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      console.log(this.state);
+    }
+  }, {
     key: "render",
     value: function render() {
       var champion = ['Rógaire', 'Saoi', 'Spéir-bhean', 'Draoi', 'Gallóglaċ', 'Bleachtaire', 'Diamhraí', 'Fiann']; // ['Rogue', 'Sage', 'Poet', 'Druid', 'Gallowglass', 'Detective', 'Occultist', 'Fenian'];
@@ -49554,7 +49559,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MainView = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactBootstrap = require("react-bootstrap");
 
@@ -49583,6 +49588,10 @@ require("./main-view.scss");
 var _champions = require("../champions/champions");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -49639,8 +49648,14 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
       console.log("inc-tal" + _this.state.tallyA);
 
-      if (_this.state.tallyA == 1) {// alert("Update in development - March 1st 2021")
+      if (_this.state.tallyA == 2) {
+        // alert("Update in development - March 1st 2021")
         //  return(<h1> hi</h1>)
+        console.log("xxx");
+
+        _this.setState({
+          redirect: true
+        });
       }
     });
 
@@ -49699,6 +49714,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       tallyA: 0,
       menuCOpen: false,
       tallyD: 0,
+      redirect: false,
       tallyY: 0,
       isLoggedIn: true
     };
@@ -49713,6 +49729,12 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       var incrementX = this.props.incrementX;
       var decrementX = this.props.decrementX;
       var upAndDown = this.props.upAndDown;
+      {
+        this.state.redirect ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+          push: true,
+          to: "/geaga"
+        }) : null;
+      }
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -49740,9 +49762,9 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         onClick: this.incrementTallyB,
         onTouchEnd: toggleEng,
         onTouchStart: toggleEng
-      }), this.state.tallyA >= 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+      }), this.state.tallyA == 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
         to: "/champions"
-      }) : null, this.state.tallyA == 2 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+      }) : null, this.state.tallyA > 1 ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
         to: "/geaga"
       }) : null)), /*#__PURE__*/_react.default.createElement("div", {
         className: "gamepad"
@@ -49890,7 +49912,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
     });
 
     _this.state = {
-      class: ''
+      charClass: ''
     };
     var _tallyX = props.tallyX;
     return _this;
@@ -49899,10 +49921,15 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
   _createClass(Geaga, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      console.log(this.state);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var tallyX = this.props.tallyX;
       var charClass = this.getCharClass(tallyX);
       this.setState({
-        class: charClass
+        charClass: charClass
       });
       console.log(charClass);
     }
@@ -49913,13 +49940,18 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         className: "geaga"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga"
-      }), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        id: "foreground-geaga-2"
+      })), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
         delay: 2000
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "container geaga-container"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-        className: "portrait" + this.state.class
-      }))));
+        className: "portrait" + this.state.charClass
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "stage",
+        className: "fortuna .text-center"
+      }), this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "What sort of druid ar you?") : /*#__PURE__*/_react.default.createElement("h1", null, "Hallo?"), this.state.charClass == 'rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "r") : null);
     }
   }]);
 
@@ -50161,12 +50193,20 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       tallyB: 0,
       tallyX: 0,
-      engMode: false
+      engMode: false,
+      fortuna1: 0,
+      fortuna2: 0,
+      fortuna3: 0
     };
     return _this;
   }
 
   _createClass(BanbaApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      console.log(this.state);
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -50203,6 +50243,9 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         path: "/geaga"
       }, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
         tallyX: this.state.tallyX,
+        setLocation: this.setLocation,
+        setCounty: this.setCounty,
+        setProvince: this.setProvince,
         getCharClass: this.getCharClass
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
@@ -50249,7 +50292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35117" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

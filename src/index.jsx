@@ -26,9 +26,18 @@ class BanbaApp extends React.Component {
       tallyX: 0,
 
       engMode: false,
+      fortuna1:0,
+      fortuna2:0,
+      fortuna3:0
+      
     }
+  
   }
+  componentDidMount(){
+		
+		console.log(this.state)
 
+}
   incrementX = () => {
     this.setState({ tallyX: this.state.tallyX += 1 });
     console.log("inc-talX" + this.state.tallyX)
@@ -167,7 +176,9 @@ class BanbaApp extends React.Component {
 
         <Route exact path="/geaga">
           
-          <Geaga tallyX={this.state.tallyX} getCharClass= {this.getCharClass} />
+          <Geaga tallyX={this.state.tallyX} setLocation = {this.setLocation}
+          setCounty = {this.setCounty} 
+          setProvince = {this.setProvince} getCharClass= {this.getCharClass} />
         
         <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
 
