@@ -49951,7 +49951,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage",
         className: "fortuna .text-center"
-      }), this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "What sort of druid ar you?") : /*#__PURE__*/_react.default.createElement("h1", null, "Hallo?"), this.state.charClass == 'rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "r") : null);
+      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil t\xFA?") : null, this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "File th\xFA.") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?") : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
     }
   }]);
 

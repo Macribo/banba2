@@ -67,12 +67,19 @@ export class Geaga extends React.Component {
 				</div>
 				<div id="stage" className="fortuna .text-center">
 				
+				{ this.state.charClass==' druid'?'' :null}
+				{this.state.charClass== ' rogue' ?<h1>Ní fheadar in Éirinn cá bhfuil tú?</h1>:null}
+				{this.state.charClass== ' sage' ?<h1>Cá bhfuil do thríall?</h1>:null}
+				{this.state.charClass== ' poet' ?<h1>File thú.</h1>:null}
+				{this.state.charClass== ' druid' ?<h1>Cén saighs Draoi thú?</h1>:null}
+				{this.state.charClass== ' gallowglass' ?<h1>Cá bhfuil do thríall?</h1>:null}
+
+				{this.state.charClass== ' detective' ?<h1>Cá bhfuil do thríall?</h1>:null}
+				{this.state.charClass== ' occultist' ?<h1>Cá raibh as dhuit?</h1>:null}
+				{this.state.charClass== ' fenian' ?<h1>Beir bua.</h1>:null}
+				
 				</div>
-				
-				{ this.state.charClass==' druid'?<h1>What sort of druid ar you?</h1> : <h1>Hallo?</h1>
-				}
-				{this.state.charClass== 'rogue' ?<h1>r</h1>:null}
-				
+								
 			</div>
 
 		)
