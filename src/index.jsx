@@ -177,7 +177,7 @@ class BanbaApp extends React.Component {
         <Route exact path="/geaga">
           
           <Geaga tallyX={this.state.tallyX} setLocation = {this.setLocation}
-          setCounty = {this.setCounty} 
+          setCounty = {this.setCounty}
           setProvince = {this.setProvince} getCharClass= {this.getCharClass} />
         
         <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />

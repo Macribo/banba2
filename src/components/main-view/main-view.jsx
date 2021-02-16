@@ -108,7 +108,7 @@ export class MainView extends React.Component {
           <Container>
             <Row>
               <Col>
-                <ButtonD onClick={this.incrementTallyD} />
+                <ButtonD onClick={this.goBack} />
               </Col>
               <Col>
                 <Dropdown >

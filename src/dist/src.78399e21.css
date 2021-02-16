@@ -451,6 +451,17 @@ html {
     top: 35%;
   }
 }
+.foreground-zero {
+  background-image: url("/25BG.0fbc79b7.png");
+  repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0%;
+  position: fixed;
+}
+
 .geaga-container {
   font-family: urchlo;
   display: grid;
@@ -480,6 +491,34 @@ html {
   animation: scroll-to-geaga 4s forwards;
 }
 
+#foreground-geaga {
+  position: absolute;
+  z-index: 0;
+  top: 35%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/24BG.e49c1066.png");
+  animation: scroll-to-geaga 4s forwards;
+}
+
+#foreground-geaga-2 {
+  position: absolute;
+  z-index: 1;
+  top: 35%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/geaga-bg1.7cd2f190.png");
+  animation: scroll-to-geaga 4s forwards;
+}
+
 @keyframes scroll-to-geaga {
   0% {
     top: 35%;
@@ -489,7 +528,6 @@ html {
   }
 }
 .fortuna {
-  border: 4px solid blue;
   z-index: 510;
   position: relative;
   display: grid;

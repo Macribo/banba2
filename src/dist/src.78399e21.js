@@ -49740,7 +49740,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "select-start"
       }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
-        onClick: this.incrementTallyD
+        onClick: this.goBack
       })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Toggle, {
         id: "dropdown-basic",
         className: "button-c"
@@ -49813,7 +49813,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/geaga/geaga.jsx":[function(require,module,exports) {
+},{"./../../img/foreground/25BG.png":[["25BG.0fbc79b7.png","img/foreground/25BG.png"],"img/foreground/25BG.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"./../../img/foreground/geaga-bg1.png":[["geaga-bg1.7cd2f190.png","img/foreground/geaga-bg1.png"],"img/foreground/geaga-bg1.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/geaga/geaga.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49936,9 +49936,12 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var greetings = ["N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?"];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "geaga"
       }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "foreground-zero"
+      }), /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga-2"
@@ -49951,7 +49954,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage",
         className: "fortuna .text-center"
-      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil t\xFA?") : null, this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "File th\xFA.") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?") : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
+      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, greetings[0]) : null, this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?") : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
     }
   }]);
 
@@ -50292,7 +50295,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35117" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45009" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

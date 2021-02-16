@@ -1,5 +1,4 @@
 import FadeIn from "react-fade-in";
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './geaga.scss'
@@ -44,12 +43,17 @@ export class Geaga extends React.Component {
 		this.setState({ charClass: charClass })
 		console.log(charClass)
 	}
-	render() {
 
-
-		return (
+render() {
+	
+	
+	let	greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`]
+	return (
+				
+				
+			
 			<div className="geaga">
-
+<div className="foreground-zero"></div>
 				<div id="foreground-geaga">
 					<div id="foreground-geaga-2"></div>
 
@@ -63,14 +67,17 @@ export class Geaga extends React.Component {
 					<div className={"portrait" + this.state.charClass}  ></div>
 
 				</>
-
+{/*{this.props.engMode ? <h1>Select
+						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}*/}
+				
+				
 				</div>
 				<div id="stage" className="fortuna .text-center">
 				
 				{ this.state.charClass==' druid'?'' :null}
-				{this.state.charClass== ' rogue' ?<h1>Ní fheadar in Éirinn cá bhfuil tú?</h1>:null}
+				{this.state.charClass== ' rogue' ? <h1>{greetings[0]}</h1>:null}
 				{this.state.charClass== ' sage' ?<h1>Cá bhfuil do thríall?</h1>:null}
-				{this.state.charClass== ' poet' ?<h1>File thú.</h1>:null}
+				{this.state.charClass== ' poet' ?<h1>Cá raibh as dhuit?</h1>:null}
 				{this.state.charClass== ' druid' ?<h1>Cén saighs Draoi thú?</h1>:null}
 				{this.state.charClass== ' gallowglass' ?<h1>Cá bhfuil do thríall?</h1>:null}
 
