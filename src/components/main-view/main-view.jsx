@@ -91,6 +91,11 @@ export class MainView extends React.Component {
     // this.setState({tallyX: this.state.tallyX = tally})
 
   }
+  goBack = () =>{
+    this.setState({ refresh: true })
+    console.log('goBack refresh: '+ this.state.refresh)
+    window.location.replace("http://167.172.184.73:1234/");
+  }
 
 
   render() {
@@ -100,6 +105,7 @@ export class MainView extends React.Component {
     const decrementX = this.props.decrementX;
     const upAndDown = this.props.upAndDown;
     { this.state.redirect ? (<Redirect push to="/geaga"/>) : null }
+    { this.state.refresh ? (<Redirect push to="/geaga"/>) : null }
     return (
 
       <div id="main-view">
@@ -108,7 +114,7 @@ export class MainView extends React.Component {
           <Container>
             <Row>
               <Col>
-                <ButtonD onClick={this.goBack} />
+                <ButtonD onTouchEnd ={this.goBack}onClick={this.goBack} />
               </Col>
               <Col>
                 <Dropdown >

@@ -44,22 +44,28 @@ export class Geaga extends React.Component {
 		console.log(charClass)
 	}
 
-render() {
-	
-	
-	let	greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`]
-	return (
-				
-				
-			
+	render() {
+
+
+		let greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`]
+		return (
+
+
+
 			<div className="geaga">
-<div className="foreground-zero"></div>
+				<div className="foreground-zero"></div>
 				<div id="foreground-geaga">
 					<div id="foreground-geaga-2"></div>
 
 				</div>
 				<FadeIn delay={2000}>
-
+					<>
+						<div className="fortuna .text-center">
+							<div className="o-fortuna o-fortuna1"></div>
+							<div className="o-fortuna o-fortuna2"></div>
+							<div className="o-fortuna o-fortuna3"></div>
+						</div>
+					</>
 				</FadeIn>
 
 				<div className="container geaga-container" ><>
@@ -67,26 +73,32 @@ render() {
 					<div className={"portrait" + this.state.charClass}  ></div>
 
 				</>
-{/*{this.props.engMode ? <h1>Select
+					{/*{this.props.engMode ? <h1>Select
 						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}*/}
-				
-				
-				</div>
-				<div id="stage" className="fortuna .text-center">
-				
-				{ this.state.charClass==' druid'?'' :null}
-				{this.state.charClass== ' rogue' ? <h1>{greetings[0]}</h1>:null}
-				{this.state.charClass== ' sage' ?<h1>Cá bhfuil do thríall?</h1>:null}
-				{this.state.charClass== ' poet' ?<h1>Cá raibh as dhuit?</h1>:null}
-				{this.state.charClass== ' druid' ?<h1>Cén saighs Draoi thú?</h1>:null}
-				{this.state.charClass== ' gallowglass' ?<h1>Cá bhfuil do thríall?</h1>:null}
 
-				{this.state.charClass== ' detective' ?<h1>Cá bhfuil do thríall?</h1>:null}
-				{this.state.charClass== ' occultist' ?<h1>Cá raibh as dhuit?</h1>:null}
-				{this.state.charClass== ' fenian' ?<h1>Beir bua.</h1>:null}
-				
+
+					<div id="stage">
+
+						{this.state.charClass == ' druid' ? '' : null}
+						{this.state.charClass == ' rogue' ? <h1>{greetings[0]}</h1> : null}
+					</div>
+					{this.state.charClass == ' sage' ? <h1>Cá bhfuil do thríall?</h1> : null}
+					{this.state.charClass == ' poet' ? <h1>Cá raibh as dhuit?</h1> : null}
+					{this.state.charClass == ' druid' ? <><h1>Cén saighs Draoi thú?</h1>
+						{/* <div className="druids">
+							<Button onTouchEnd={this.props.setTallyX}>liath le fia</Button>
+						</div> */}
+					</>
+
+						: null}
+					{this.state.charClass == ' gallowglass' ? <h1>Cá bhfuil do thríall?</h1> : null}
+
+					{this.state.charClass == ' detective' ? <h1>Cá bhfuil do thríall?</h1> : null}
+					{this.state.charClass == ' occultist' ? <h1>O fortuna....</h1> : null}
+					{this.state.charClass == ' fenian' ? <h1>Beir bua.</h1> : null}
+
 				</div>
-								
+
 			</div>
 
 		)
