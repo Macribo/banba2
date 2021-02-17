@@ -49991,10 +49991,8 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         src: _j.default,
         type: "video/ogg"
       }))), /*#__PURE__*/_react.default.createElement("div", {
-        id: this.state.province == '' ? "foreground-geaga" : "foreground-geaga-2"
+        id: this.state.province == '' ? "foreground-geaga" : "foreground-geaga-3"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        id: this.state.province == 'ulster' ? "foreground-ulster" : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga-2"
       })), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
         delay: 2000

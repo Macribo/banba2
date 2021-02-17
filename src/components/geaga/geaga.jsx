@@ -73,10 +73,9 @@ export class Geaga extends React.Component {
 					</video>}
 
 				</div>
-				<div id={this.state.province == '' ? "foreground-geaga" : "foreground-geaga-2"}>
-					<div id={this.state.province == 'ulster' ? "foreground-ulster" : null} />
+				<div id={this.state.province == '' ? "foreground-geaga" : "foreground-geaga-3"}>
+					
 					<div id="foreground-geaga-2"></div>
-
 				</div>
 				<FadeIn delay={2000}>
 					<>
