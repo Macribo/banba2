@@ -49150,7 +49150,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ButtonD(props) {
   return /*#__PURE__*/_react.default.createElement("button", {
     className: "button-d",
-    onClick: props.onClick
+    onTouchEnd: props.onTouchEnd,
+    onClick: props.onTouchEnd
   });
 }
 },{"react":"../node_modules/react/index.js","./button-d.scss":"components/ui/button-d/button-d.scss"}],"components/ui/directional-pad/left/left.scss":[function(require,module,exports) {
@@ -49710,6 +49711,15 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       console.log('helo from setTally X'); // this.setState({tallyX: this.state.tallyX = tally})
     });
 
+    _defineProperty(_assertThisInitialized(_this), "goBack", function () {
+      _this.setState({
+        refresh: true
+      });
+
+      console.log('goBack refresh: ' + _this.state.refresh);
+      window.location.replace("http://167.172.184.73:1234/");
+    });
+
     _this.state = {
       tallyA: 0,
       menuCOpen: false,
@@ -49735,11 +49745,18 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           to: "/geaga"
         }) : null;
       }
+      {
+        this.state.refresh ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+          push: true,
+          to: "/geaga"
+        }) : null;
+      }
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "select-start"
       }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
+        onTouchEnd: this.goBack,
         onClick: this.goBack
       })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Dropdown.Toggle, {
         id: "dropdown-basic",
@@ -49813,7 +49830,11 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/foreground/25BG.png":[["25BG.0fbc79b7.png","img/foreground/25BG.png"],"img/foreground/25BG.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"./../../img/foreground/geaga-bg1.png":[["geaga-bg1.7cd2f190.png","img/foreground/geaga-bg1.png"],"img/foreground/geaga-bg1.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/geaga/geaga.jsx":[function(require,module,exports) {
+},{"./../../img/foreground/25BG.png":[["25BG.0fbc79b7.png","img/foreground/25BG.png"],"img/foreground/25BG.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"./../../img/foreground/geaga-bg2.png":[["geaga-bg2.df5f2f41.png","img/foreground/geaga-bg2.png"],"img/foreground/geaga-bg2.png"],"./../../img/provinces/ulster-2.png":[["ulster-2.ebfd21c1.png","img/provinces/ulster-2.png"],"img/provinces/ulster-2.png"],"./../../img/foreground/geaga-bg1.png":[["geaga-bg1.7cd2f190.png","img/foreground/geaga-bg1.png"],"img/foreground/geaga-bg1.png"],"./../../img/provinces/munster-dark.png":[["munster-dark.4ca854a2.png","img/provinces/munster-dark.png"],"img/provinces/munster-dark.png"],"./../../img/provinces/ulster-dark.png":[["ulster-dark.19ddfe2b.png","img/provinces/ulster-dark.png"],"img/provinces/ulster-dark.png"],"./../../img/provinces/connacht-3dark.png":[["connacht-3dark.2c7e9e80.png","img/provinces/connacht-3dark.png"],"img/provinces/connacht-3dark.png"],"./../../img/provinces/leinster-dark.png":[["leinster-dark.7cc263d6.png","img/provinces/leinster-dark.png"],"img/provinces/leinster-dark.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"vid/j1.mp4":[function(require,module,exports) {
+module.exports = "/j1.d6051879.mp4";
+},{}],"img/poster-sky.png":[function(require,module,exports) {
+module.exports = "/956ecabc25a0d5c04f872e43c8d8c9bf.png";
+},{}],"components/geaga/geaga.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49830,6 +49851,10 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 require("./geaga.scss");
 
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+
+var _j = _interopRequireDefault(require("../../vid/j1.mp4"));
+
+var _posterSky = _interopRequireDefault(require("../../img/poster-sky.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49911,8 +49936,19 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
       console.log('highlight-champ');
     });
 
+    _defineProperty(_assertThisInitialized(_this), "fortuna1", function () {
+      console.log('ulster');
+
+      _this.setState({
+        province: 'ulster'
+      });
+    });
+
     _this.state = {
-      charClass: ''
+      charClass: '',
+      province: '',
+      county: '',
+      location: ''
     };
     var _tallyX = props.tallyX;
     return _this;
@@ -49937,24 +49973,49 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var greetings = ["N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?"];
+      var greetingsEng = ["Where in the world am I?"];
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "geaga"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "foreground-zero"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: "foreground-geaga"
+      }, this.state.province == '' ? null : /*#__PURE__*/_react.default.createElement("video", {
+        id: "sky-vid",
+        autoPlay: true,
+        loop: true,
+        muted: true,
+        poster: _posterSky.default
+      }, /*#__PURE__*/_react.default.createElement("source", {
+        src: _j.default,
+        type: "video/mp4"
+      }), /*#__PURE__*/_react.default.createElement("source", {
+        src: _j.default,
+        type: "video/ogg"
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        id: this.state.province == '' ? "foreground-geaga" : "foreground-geaga-2"
       }, /*#__PURE__*/_react.default.createElement("div", {
+        id: this.state.province == 'ulster' ? "foreground-ulster" : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga-2"
       })), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
         delay: 2000
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "fortuna .text-center"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        onTouchEnd: this.fortuna1,
+        className: "o-fortuna o-fortuna1"
       }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "o-fortuna o-fortuna2"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "o-fortuna o-fortuna3"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "o-fortuna o-fortuna4"
+      })))), /*#__PURE__*/_react.default.createElement("div", {
         className: "container geaga-container"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
         className: "portrait" + this.state.charClass
-      }))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "stage",
-        className: "fortuna .text-center"
-      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, greetings[0]) : null, this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?") : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        id: "stage"
+      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
     }
   }]);
 
@@ -49962,7 +50023,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.Geaga = Geaga;
-},{"react-fade-in":"../node_modules/react-fade-in/lib/index.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./geaga.scss":"components/geaga/geaga.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"index.scss":[function(require,module,exports) {
+},{"react-fade-in":"../node_modules/react-fade-in/lib/index.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./geaga.scss":"components/geaga/geaga.scss","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","../../vid/j1.mp4":"vid/j1.mp4","../../img/poster-sky.png":"img/poster-sky.png"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -50295,7 +50356,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45009" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46375" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

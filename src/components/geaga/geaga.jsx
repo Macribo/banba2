@@ -3,13 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './geaga.scss'
 import Button from 'react-bootstrap/Button';
-
-
+import clip1 from '../../vid/j1.mp4';
+import PosterSky from '../../img/poster-sky.png'
 export class Geaga extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { charClass: '' }
+		this.state = {
+			charClass: '',
+			province: '',
+			county: '',
+			location: ''
+		}
 		const tallyX = props.tallyX;
 
 	}
@@ -35,6 +40,11 @@ export class Geaga extends React.Component {
 		ReactDOM.findDOMNode(element).classList.add("highlight-champ");
 		console.log('highlight-champ')
 	}
+	fortuna1 = () => {
+		console.log('ulster')
+		this.setState({ province: 'ulster' })
+
+	}
 	componentDidMount() {
 
 		let tallyX = this.props.tallyX
@@ -47,23 +57,34 @@ export class Geaga extends React.Component {
 	render() {
 
 
-		let greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`]
+		let greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`];
+		let greetingsEng = [`Where in the world am I?`];
+
 		return (
 
 
 
 			<div className="geaga">
-				<div className="foreground-zero"></div>
-				<div id="foreground-geaga">
+				<div className={"foreground-zero"}>
+
+					{this.state.province==''?null:<video id="sky-vid" autoPlay loop muted poster={PosterSky}>
+						<source src={clip1} type='video/mp4' />
+						<source src={clip1} type="video/ogg" />
+					</video>}
+
+				</div>
+				<div id={this.state.province == '' ? "foreground-geaga" : "foreground-geaga-2"}>
+					<div id={this.state.province == 'ulster' ? "foreground-ulster" : null} />
 					<div id="foreground-geaga-2"></div>
 
 				</div>
 				<FadeIn delay={2000}>
 					<>
 						<div className="fortuna .text-center">
-							<div className="o-fortuna o-fortuna1"></div>
+							<div onTouchEnd={this.fortuna1} className="o-fortuna o-fortuna1"></div>
 							<div className="o-fortuna o-fortuna2"></div>
 							<div className="o-fortuna o-fortuna3"></div>
+							<div className="o-fortuna o-fortuna4"></div>
 						</div>
 					</>
 				</FadeIn>
@@ -80,7 +101,11 @@ export class Geaga extends React.Component {
 					<div id="stage">
 
 						{this.state.charClass == ' druid' ? '' : null}
-						{this.state.charClass == ' rogue' ? <h1>{greetings[0]}</h1> : null}
+
+						{/*
+						
+						*/}
+						{this.state.charClass == ' rogue' ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
 					</div>
 					{this.state.charClass == ' sage' ? <h1>Cá bhfuil do thríall?</h1> : null}
 					{this.state.charClass == ' poet' ? <h1>Cá raibh as dhuit?</h1> : null}
