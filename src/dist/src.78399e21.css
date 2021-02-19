@@ -478,6 +478,50 @@ html {
   left: 15%;
 }
 
+.portrait {
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(0.7);
+  top: 50%;
+  right: 38%;
+  position: fixed;
+  z-index: 250;
+}
+
+.rogue {
+  background-image: url(/rogue.86109208.png);
+}
+
+.sage {
+  background-image: url("/detective.4791e824.png");
+}
+
+.poet {
+  background-image: url("/poet.9429061b.gif");
+}
+
+.druid {
+  background-image: url("/druid.7fd67975.gif");
+}
+
+.gallowglas {
+  background-image: url("/gallowglas.babbd36d.png");
+}
+
+.detective {
+  background-image: url("/sage.28c21fc8.png");
+}
+
+.occultist {
+  background-image: url("/occultist.d6b9a21b.gif");
+}
+
+.fenian {
+  background-image: url("/fenian.e1aff9c7.png");
+}
+
 #sky-vid {
   height: 100%;
   display: grid;
@@ -515,6 +559,20 @@ html {
   animation: fade-to 4s forwards;
 }
 
+#foreground-geaga-3 {
+  position: absolute;
+  z-index: 0;
+  top: 35%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/24BG.e49c1066.png");
+  animation: scroll-to-geaga 4s forwards;
+}
+
 #foreground-ulster {
   position: absolute;
   z-index: 4;
@@ -525,7 +583,6 @@ html {
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/ulster-2.ebfd21c1.png");
   animation: fade-in 4s forwards;
 }
 

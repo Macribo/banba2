@@ -1,3 +1,10 @@
+/*component Geaga allows player to select
+character's province and county.
+
+
+*/
+
+
 import FadeIn from "react-fade-in";
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,29 +17,23 @@ export class Geaga extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			province:null
+			charClass:''
+			// province:null
 		}
 		const tallyX = props.tallyX;
 
 	}
 	componentDidMount() {
+		let tallyX = this.props.tallyX
+		let charClass = props.getCharClass(tallyX);
 
+		this.setState({ charClass: charClass })
+		console.log(charClass)
 		// console.log(this.state)
 
 	}
-	getCharClass = (tallyX) => {
-		switch (tallyX) {
-			case 0: return " rogue"; break;
-			case 1: return " sage"; break;
-			case 2: return " poet"; break;
-			case 3: return " druid"; break;
-			case 4: return " gallowglass"; break;
-			case 5: return " detective"; break;
-			case 6: return " occultist"; break;
-			case 7: return " fenian"; break;
 
-		}
-	}
+	
 	addHighlight = () => {
 		ReactDOM.findDOMNode(element).classList.add("highlight-champ");
 		console.log('highlight-champ')
@@ -41,15 +42,15 @@ export class Geaga extends React.Component {
 	componentDidMount() {
 
 		let tallyX = this.props.tallyX
-		let charClass = this.getCharClass(tallyX);
+		// console.log()
 
-		// 	console.log(charClass)
+		
+		let charClass = this.props.getCharClass(tallyX);
+		console.log("howdy "+charClass)
 	}
-componentDidUpdate(){
-	// let provinceX = this.props.province;
-
-	// this.setState({ province: provinceX })
-}
+	componentDidUpdate(){
+		
+	}
 	render() {
 
 
@@ -70,7 +71,7 @@ componentDidUpdate(){
 					</video>}
 
 				</div>
-				<div id={this.province == null ? "foreground-geaga" : "foreground-geaga-3"}>
+				<div id={this.props.province == null ? "foreground-geaga" : "foreground-geaga-3"}>
 
 
 					<div id="foreground-geaga-2"></div>
@@ -114,10 +115,17 @@ componentDidUpdate(){
 				</FadeIn>
 
 				<div className="container geaga-container" ><>
-
-					<div className={"portrait" + this.props.charClass}  >
-
-
+				<div id="characters">
+						<>
+							<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
+							<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
+							<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
+							<div className={this.props.tallyX == 3 ? "portrait druid" : null}></div>
+							<div className={this.props.tallyX == 4 ? "portrait gallowglas" : null}></div>
+							<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
+							<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
+							<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
+						</>
 
 					</div>
 
@@ -133,15 +141,14 @@ componentDidUpdate(){
 
 					<div id="stage">
 
-						{this.props.charClass == ' druid' ? '' : null}
+					
+						{this.props.charClass == 3 ? '' : null}
 
-						{/*
-						
-						*/}
-						{this.props.charClass == ' rogue' ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
+				
+						{this.props.charClass == 0 ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
 					</div>
-					{this.props.charClass == ' sage' ? <h1>Cá bhfuil do thríall?</h1> : null}
-					{this.props.charClass == ' poet' ? <h1>Cá raibh as dhuit?</h1> : null}
+					{this.props.charClass == 1 ? <h1>Cá bhfuil do thríall?</h1> : null}
+					{this.props.charClass == 2 ? <h1>Cá raibh as dhuit?</h1> : null}
 					{this.props.charClass == ' druid' ? <><h1>Cén saighs Draoi thú?</h1>
 						{/* <div className="druids">
 							<Button onTouchEnd={this.props.setTallyX}>liath le fia</Button>

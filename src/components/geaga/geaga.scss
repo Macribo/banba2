@@ -27,6 +27,45 @@ position: fixed;
     width: 100%;
     left:15%; 
 	}
+  .portrait{
+    height:150px;
+    width:150px;
+    background-repeat: no-repeat;
+    background-size:contain;
+    transform: scale(0.7);
+    top:50%;
+    right: 38%;
+    position: fixed;
+// border: 3px solid blue;
+z-index: 250;
+  }
+
+
+
+  .rogue{
+    background-image: url(../../img/characters/rogue.png);
+      }
+    
+      .sage {
+        background-image: url('../../img/characters/detective.png');
+      }
+      .poet {background-image: url('../../img/characters/poet.gif');}
+    
+      .druid {background-image: url('../../img/characters/druid.gif');}
+    
+      .gallowglas {background-image: url('../../img/characters/gallowglas.png');}
+    
+      .detective {
+        background-image: url('../../img/characters/sage.png');
+      }
+    
+      .occultist {
+        background-image: url('../../img/characters/occultist.gif')
+      }
+    
+      .fenian {background-image: url('../../img/characters/fenian.png');}
+    
+
   #sky-vid{
     // border:4px solid palevioletred;
     height:100%;
@@ -70,6 +109,25 @@ position: fixed;
       background-image: url('../../img/foreground/geaga-bg2.png');
     animation: fade-to 4s forwards;
     }
+
+
+    #foreground-geaga-3{
+      // display:none;
+      position: absolute;
+        z-index:0;
+      top:35%;
+      width:100%;
+      height:100%;
+      display:grid;
+      justify-content: center;
+      background-repeat:no-repeat;
+      background-size: cover;
+      //   border:1px solid red;
+        background-image: url('../../img/foreground/24BG.png');
+      animation: scroll-to-geaga 4s forwards;
+      }
+    
+
   #foreground-ulster{
     // display:none;
     position: absolute;
@@ -82,7 +140,7 @@ position: fixed;
     background-repeat:no-repeat;
     background-size: cover;
     //   border:1px solid red;
-      background-image: url('../../img/provinces/ulster-2.png');
+      // background-image: url('../../img/provinces/ulster-2.png');
     animation: fade-in 4s forwards;
     }
 

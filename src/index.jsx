@@ -175,7 +175,18 @@ class BanbaApp extends React.Component {
 		this.setState({ province: 'leinster'  + this.state.province})
 		console.log(this.state)
 	}
+	getCharClass = (tallyX) => {
+		switch (tallyX) {
+			case 0: return " rogue"; break;
+			case 1: return " sage"; break;
+			case 2: return " poet"; break;
+			case 3: return " druid"; break;
+			case 4: return " gallowglass"; break;
+			case 5: return " detective"; break;
+			case 6: return " occultist"; break;
+			case 7: return " fenian"; break;
 
+		}}
 
   render() {
 
@@ -212,7 +223,8 @@ class BanbaApp extends React.Component {
           
           <Geaga tallyX={this.state.tallyX} setLocation = {this.setLocation}
           setCounty = {this.setCounty}
-          setProvince = {this.setProvince} getCharClass= {this.getCharClass} 
+          setProvince = {this.setProvince} 
+          getCharClass= {(tallyX) => this.getCharClass= (tallyX)}
           fortuna1 = {this.fortuna1}
           fortuna2 = {this.fortuna2}
           fortuna3 = {this.fortuna3}
