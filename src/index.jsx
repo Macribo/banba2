@@ -166,13 +166,13 @@ class BanbaApp extends React.Component {
 	fortuna3 = () => {
 		this.setState({ fortuna3: 1 })
 		console.log('connacht')
-		this.setState({ province: 'connacht'  + this.state.province})
+		this.setState({ province: 'connacht'})
 		console.log(this.state)
 	}
 	fortuna4 = () => {
 		this.setState({ fortuna4: 1 })
 		console.log('leinster')
-		this.setState({ province: 'leinster'  + this.state.province})
+		this.setState({ province: 'leinster'})
 		console.log(this.state)
 	}
 	getCharClass = (tallyX) => {

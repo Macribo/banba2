@@ -469,7 +469,7 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 33%;
+  height: 18%;
   margin-bottom: 0;
   z-index: 499;
   top: 3px !important;
@@ -488,6 +488,7 @@ html {
   right: 38%;
   position: fixed;
   z-index: 250;
+  animation: scroll-down 4s forwards;
 }
 
 .rogue {
@@ -614,6 +615,14 @@ html {
   animation: scroll-to-geaga 4s forwards;
 }
 
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -653,14 +662,13 @@ html {
 .counties-container {
   position: fixed;
   display: flex;
-  top: 0%;
+  top: 12%;
   left: 0%;
   width: 100%;
   justify-content: space-evenly;
   height: 33%;
   z-index: 600;
   background-repeat: no-repeat;
-  top: 5%;
 }
 
 .fadeOut {
@@ -735,7 +743,99 @@ html {
   background-image: url("/monaghan-night.d0a36601.png");
 }
 
+.carlow {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.dublin {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.kildare {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.kilkenny {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.laois {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.longford {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.louth {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.meath {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.offaly {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.westmeath {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.wexford {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
 .tyrone {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.wicklow {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.clare {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.cork {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.kerry {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.limerick {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.tipperary {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.waterford {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.galway {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.leitrim {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.mayo {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.roscommon {
+  background-image: url("/tyrone-night.38aa3199.png");
+}
+
+.sligo {
   background-image: url("/tyrone-night.38aa3199.png");
 }
 .my-flix {

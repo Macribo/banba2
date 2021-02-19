@@ -17,7 +17,7 @@ export class Geaga extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			charClass:''
+			charClass: ''
 			// province:null
 		}
 		const tallyX = props.tallyX;
@@ -33,7 +33,7 @@ export class Geaga extends React.Component {
 
 	}
 
-	
+
 	addHighlight = () => {
 		ReactDOM.findDOMNode(element).classList.add("highlight-champ");
 		console.log('highlight-champ')
@@ -44,12 +44,12 @@ export class Geaga extends React.Component {
 		let tallyX = this.props.tallyX
 		// console.log()
 
-		
+
 		let charClass = this.props.getCharClass(tallyX);
-		console.log("howdy "+charClass)
+		console.log("howdy " + charClass)
 	}
-	componentDidUpdate(){
-		
+	componentDidUpdate() {
+
 	}
 	render() {
 
@@ -78,7 +78,7 @@ export class Geaga extends React.Component {
 				</div>
 				<FadeIn delay={2000}>
 
-				{this.props.province == null ? <div className={"fortuna .text-center"}>
+					{this.props.province == null ? <div className={"fortuna .text-center"}>
 						<div onClick={this.fortuna1} onTouchEnd={this.props.fortuna1} className="o-fortuna o-fortuna1"></div>
 						<div className="o-fortuna o-fortuna2" onClick={this.props.fortuna2} onTouchEnd={this.props.fortuna2}></div>
 						<div className="o-fortuna o-fortuna3" onClick={this.props.fortuna3} onTouchEnd={this.props.fortuna3}></div>
@@ -115,19 +115,7 @@ export class Geaga extends React.Component {
 				</FadeIn>
 
 				<div className="container geaga-container" ><>
-				<div id="characters">
-						<>
-							<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
-							<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
-							<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
-							<div className={this.props.tallyX == 3 ? "portrait druid" : null}></div>
-							<div className={this.props.tallyX == 4 ? "portrait gallowglas" : null}></div>
-							<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
-							<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
-							<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
-						</>
-
-					</div>
+				
 
 				</>
 					{/*{this.props.engMode ? <h1>Select
@@ -141,10 +129,10 @@ export class Geaga extends React.Component {
 
 					<div id="stage">
 
-					
+
 						{this.props.charClass == 3 ? '' : null}
 
-				
+
 						{this.props.charClass == 0 ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
 					</div>
 					{this.props.charClass == 1 ? <h1>Cá bhfuil do thríall?</h1> : null}
@@ -163,33 +151,76 @@ export class Geaga extends React.Component {
 					{this.props.charClass == ' fenian' ? <h1>Beir bua.</h1> : null}
 
 				</div>
+				<div id="characters">
+						<>
+							<div className={this.props.tallyX == 0 ? "portrait rogue" : null}></div>
+							<div className={this.props.tallyX == 1 ? "portrait sage" : null}></div>
+							<div className={this.props.tallyX == 2 ? "portrait poet" : null}></div>
+							<div className={this.props.tallyX == 3 ? "portrait druid" : null}></div>
+							<div className={this.props.tallyX == 4 ? "portrait gallowglas" : null}></div>
+							<div className={this.props.tallyX == 5 ? "portrait detective" : null}></div>
+							<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
+							<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
+						</>
+
+					</div>
 				<div id={this.props.fortuna1 == 1 ?
 
-<h1>Uladh</h1>
+					<h1>Uladh</h1>
 
 
-: null}>
+					: null}>
 
-</div>
+				</div>
 
-<div className={this.props.province == 'ulster' ? "counties-container" : ''} >
-
-						 					
-< div className="county antrim"   onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county armagh"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county cavan"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county donegal"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county down"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county fermanagh"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county derry"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county monaghan"  onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-<div className="county tyrone" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+				<div className={this.props.province == 'ulster' ? "counties-container" : ''} >
 
 
+					< div className="county antrim" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county armagh" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county cavan" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county donegal" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county down" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county fermanagh" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county derry" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county monaghan" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county tyrone" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 
-</div>
 
 
+				</div>
+
+				<div className={this.props.province == 'leinster' ? "counties-container" : ''} >
+
+				<div className="county carlow" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county dublin" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county kildare" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county kilkenny" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county laois" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>					<div className="county longford" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county louth" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county meath" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county offaly" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county westmeath" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county wexford" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county wicklow" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county kilkenny" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+
+				</div>
+
+				<div className={this.props.province == 'munster' ? "counties-container" : ''} >
+
+				<div className="county clare" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div><div className="county cork" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div><div className="county kerry" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div><div className="county limerick" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div><div className="county tipperary" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div><div className="county waterford" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+
+				</div>
+			
+				<div className={this.props.province == 'connacht' ? "counties-container" : ''} >
+				<div className="county galway" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county leitrim" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county mayo" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county roscommon" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+					<div className="county sligo" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
+
+				</div>
 			</div>
 
 		)

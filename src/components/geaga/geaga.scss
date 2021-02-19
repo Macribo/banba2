@@ -19,7 +19,7 @@ position: fixed;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 33%;
+    height: 18%;
     margin-bottom: 0;
     z-index: 499;
     top: 3px !important;
@@ -38,7 +38,7 @@ position: fixed;
     position: fixed;
 // border: 3px solid blue;
 z-index: 250;
-  }
+animation: scroll-down 4s forwards;  }
 
 
 
@@ -174,7 +174,10 @@ z-index: 250;
       background-image: url('../../img/foreground/geaga-bg1.png');
     animation: scroll-to-geaga 4s forwards;
     }
-
+@keyframes scroll-down{
+  0%{transform:translateY(0px) }
+  100%{transform:translateY(50px)}
+}
     @keyframes fade-in{
       0%{opacity: 0;}
       100%{opacity: 1;}
@@ -219,7 +222,7 @@ height:125px;
 .counties-container{
   position:fixed;
   display:flex;
-  top:0%;
+  top:12%;
   left:0%;
   // border: 2px solid orange;
   width:100%;
@@ -229,7 +232,6 @@ height:125px;
   background-repeat:no-repeat;
   // background-size: contain;
   // border-radius: 50%;
-  top:5%;
 }
 
 .fadeOut{
@@ -300,6 +302,107 @@ height:125px;
 .monaghan{
   background-image:url('../../img/counties/ulster/monaghan-night.png');
 }
+
+//leinster
+.carlow{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+
+.dublin{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.kildare{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.kilkenny{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.laois{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.longford{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.louth{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.meath{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.offaly{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.westmeath{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.wexford{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
 .tyrone{
   background-image:url('../../img/counties/ulster/tyrone-night.png');
 }
+
+.wicklow{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+//munster
+
+.clare{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.cork{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.kerry{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.limerick{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.tipperary{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.waterford{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+//connacht
+.galway{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.leitrim{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.mayo{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.roscommon{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+.sligo{
+  background-image:url('../../img/counties/ulster/tyrone-night.png');
+}
+
+
+
+

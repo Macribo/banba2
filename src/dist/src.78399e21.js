@@ -49995,7 +49995,9 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         id: this.state.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "container geaga-container"
-      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("div", {
+        id: "stage"
+      }, this.props.charClass == 3 ? '' : null, this.props.charClass == 0 ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.props.charClass == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == 2 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.props.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.props.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.props.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 0 ? "portrait rogue" : null
@@ -50013,9 +50015,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         className: this.props.tallyX == 6 ? "portrait occultist" : null
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 7 ? "portrait fenian" : null
-      })))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "stage"
-      }, this.props.charClass == 3 ? '' : null, this.props.charClass == 0 ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.props.charClass == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == 2 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.props.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.props.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.props.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null), /*#__PURE__*/_react.default.createElement("div", {
+      }))), /*#__PURE__*/_react.default.createElement("div", {
         id: this.props.fortuna1 == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.province == 'ulster' ? "counties-container" : ''
@@ -50053,6 +50053,111 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         onTouchEnd: this.countyHandler
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "county tyrone",
+        id: "",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.province == 'leinster' ? "counties-container" : ''
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "county carlow",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county dublin",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county kildare",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county kilkenny",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county laois",
+        id: "",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), "     ", /*#__PURE__*/_react.default.createElement("div", {
+        className: "county longford",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county louth",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county meath",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county offaly",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county westmeath",
+        id: "",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county wexford",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county wicklow",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county kilkenny",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.province == 'munster' ? "counties-container" : ''
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "county clare",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county cork",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county kerry",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county limerick",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county tipperary",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county waterford",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.province == 'connacht' ? "counties-container" : ''
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "county galway",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county leitrim",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county mayo",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county roscommon",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county sligo",
         id: "",
         onClick: this.countyHandler,
         onTouchEnd: this.countyHandler
@@ -50332,7 +50437,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       console.log('connacht');
 
       _this.setState({
-        province: 'connacht' + _this.state.province
+        province: 'connacht'
       });
 
       console.log(_this.state);
@@ -50346,7 +50451,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       console.log('leinster');
 
       _this.setState({
-        province: 'leinster' + _this.state.province
+        province: 'leinster'
       });
 
       console.log(_this.state);
@@ -50506,7 +50611,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39535" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43329" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
