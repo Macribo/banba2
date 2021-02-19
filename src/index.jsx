@@ -28,8 +28,11 @@ class BanbaApp extends React.Component {
       engMode: false,
       fortuna1:0,
       fortuna2:0,
-      fortuna3:0
-      
+      fortuna3:0,
+      charClass: '',
+			province: null,
+			county: '',
+			location: ''
     }
   
   }
@@ -143,6 +146,37 @@ class BanbaApp extends React.Component {
       this.setState({ tallyX: 4 })
     }
   }
+
+  //o fortuna functions for geaga.jsx
+  fortuna1 = () => {
+		this.setState({ fortuna1: 1 })
+		console.log(' munster')
+		this.setState({ province: 'munster' })
+		console.log(this.state)
+
+
+	}
+	fortuna2 = () => {
+		this.setState({ fortuna2: 1 })
+		console.log('ulster')
+		this.setState({ province: 'ulster' })
+		console.log("province: " + this.state.province)
+		console.log(this.state)
+	}
+	fortuna3 = () => {
+		this.setState({ fortuna3: 1 })
+		console.log('connacht')
+		this.setState({ province: 'connacht'  + this.state.province})
+		console.log(this.state)
+	}
+	fortuna4 = () => {
+		this.setState({ fortuna4: 1 })
+		console.log('leinster')
+		this.setState({ province: 'leinster'  + this.state.province})
+		console.log(this.state)
+	}
+
+
   render() {
 
     return (
@@ -178,7 +212,17 @@ class BanbaApp extends React.Component {
           
           <Geaga tallyX={this.state.tallyX} setLocation = {this.setLocation}
           setCounty = {this.setCounty}
-          setProvince = {this.setProvince} getCharClass= {this.getCharClass} />
+          setProvince = {this.setProvince} getCharClass= {this.getCharClass} 
+          fortuna1 = {this.fortuna1}
+          fortuna2 = {this.fortuna2}
+          fortuna3 = {this.fortuna3}
+          fortuna4 = {this.fortuna4}
+
+          charClass={this.state.charClass}
+			province= {this.state.province}
+			county= {this.state.county}
+			location= {this.state.location}
+          />
         
         <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
 

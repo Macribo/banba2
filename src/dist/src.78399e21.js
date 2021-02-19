@@ -49640,7 +49640,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "incrementTallyA", function () {
       if (_this.state.tallyA === 0) {
-        console.log('btn A ok');
+        // this.setState({dooDeeDooPlay:true})
+        console.log("dooDeeDoo");
       }
 
       _this.setState({
@@ -49726,12 +49727,19 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       tallyD: 0,
       redirect: false,
       tallyY: 0,
-      isLoggedIn: true
+      isLoggedIn: true,
+      dooDeeDooPlay: false
     };
     return _this;
   }
 
   _createClass(MainView, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {// const hum1 = document.getElementsByClassName("dooDeeDoo")[0]
+      // hum1.play();
+      // audioEl.play()
+    }
+  }, {
     key: "render",
     value: function render() {
       var setTallyX = this.props.setTallyX;
@@ -49753,7 +49761,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "main-view"
-      }, /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("audio", {
+        className: "dooDeeDoo"
+      }, /*#__PURE__*/_react.default.createElement("source", {
+        src: "../../music/dooDeeDoo.mp3"
+      }))), /*#__PURE__*/_react.default.createElement("div", {
         id: "select-start"
       }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/_react.default.createElement(_buttonD.ButtonD, {
         onTouchEnd: this.goBack,
@@ -49830,10 +49842,10 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../img/foreground/25BG.png":[["25BG.0fbc79b7.png","img/foreground/25BG.png"],"img/foreground/25BG.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"./../../img/foreground/geaga-bg2.png":[["geaga-bg2.df5f2f41.png","img/foreground/geaga-bg2.png"],"img/foreground/geaga-bg2.png"],"./../../img/provinces/ulster-2.png":[["ulster-2.ebfd21c1.png","img/provinces/ulster-2.png"],"img/provinces/ulster-2.png"],"./../../img/foreground/geaga-bg1.png":[["geaga-bg1.7cd2f190.png","img/foreground/geaga-bg1.png"],"img/foreground/geaga-bg1.png"],"./../../img/provinces/munster-dark.png":[["munster-dark.4ca854a2.png","img/provinces/munster-dark.png"],"img/provinces/munster-dark.png"],"./../../img/provinces/ulster-dark.png":[["ulster-dark.19ddfe2b.png","img/provinces/ulster-dark.png"],"img/provinces/ulster-dark.png"],"./../../img/provinces/connacht-3dark.png":[["connacht-3dark.2c7e9e80.png","img/provinces/connacht-3dark.png"],"img/provinces/connacht-3dark.png"],"./../../img/provinces/leinster-dark.png":[["leinster-dark.7cc263d6.png","img/provinces/leinster-dark.png"],"img/provinces/leinster-dark.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"vid/j1.mp4":[function(require,module,exports) {
+},{"./../../img/foreground/25BG.png":[["25BG.0fbc79b7.png","img/foreground/25BG.png"],"img/foreground/25BG.png"],"./../../img/foreground/24BG.png":[["24BG.e49c1066.png","img/foreground/24BG.png"],"img/foreground/24BG.png"],"./../../img/foreground/geaga-bg2.png":[["geaga-bg2.df5f2f41.png","img/foreground/geaga-bg2.png"],"img/foreground/geaga-bg2.png"],"./../../img/provinces/ulster-2.png":[["ulster-2.ebfd21c1.png","img/provinces/ulster-2.png"],"img/provinces/ulster-2.png"],"./../../img/foreground/geaga-bg1.png":[["geaga-bg1.7cd2f190.png","img/foreground/geaga-bg1.png"],"img/foreground/geaga-bg1.png"],"./../../img/provinces/munster-dark.png":[["munster-dark.4ca854a2.png","img/provinces/munster-dark.png"],"img/provinces/munster-dark.png"],"./../../img/provinces/ulster-dark.png":[["ulster-dark.19ddfe2b.png","img/provinces/ulster-dark.png"],"img/provinces/ulster-dark.png"],"./../../img/provinces/connacht-3dark.png":[["connacht-3dark.2c7e9e80.png","img/provinces/connacht-3dark.png"],"img/provinces/connacht-3dark.png"],"./../../img/provinces/leinster-dark.png":[["leinster-dark.7cc263d6.png","img/provinces/leinster-dark.png"],"img/provinces/leinster-dark.png"],"./../../img/counties/ulster/antrim-night.png":[["antrim-night.0ef76e69.png","img/counties/ulster/antrim-night.png"],"img/counties/ulster/antrim-night.png"],"./../../img/counties/ulster/armagh-night.png":[["armagh-night.1d9e196c.png","img/counties/ulster/armagh-night.png"],"img/counties/ulster/armagh-night.png"],"./../../img/counties/ulster/cavan-night.png":[["cavan-night.64eb53fa.png","img/counties/ulster/cavan-night.png"],"img/counties/ulster/cavan-night.png"],"./../../img/counties/ulster/donegal-night.png":[["donegal-night.f4dbcf50.png","img/counties/ulster/donegal-night.png"],"img/counties/ulster/donegal-night.png"],"./../../img/counties/ulster/down-night.png":[["down-night.aaa606a2.png","img/counties/ulster/down-night.png"],"img/counties/ulster/down-night.png"],"./../../img/counties/ulster/fermanagh-night.png":[["fermanagh-night.e65bebb1.png","img/counties/ulster/fermanagh-night.png"],"img/counties/ulster/fermanagh-night.png"],"./../../img/counties/ulster/derry-night.png":[["derry-night.885a8bd3.png","img/counties/ulster/derry-night.png"],"img/counties/ulster/derry-night.png"],"./../../img/counties/ulster/monaghan-night.png":[["monaghan-night.d0a36601.png","img/counties/ulster/monaghan-night.png"],"img/counties/ulster/monaghan-night.png"],"./../../img/counties/ulster/tyrone-night.png":[["tyrone-night.38aa3199.png","img/counties/ulster/tyrone-night.png"],"img/counties/ulster/tyrone-night.png"],"_css_loader":"../../../.nvm/versions/node/v12.16.2/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"vid/j1.mp4":[function(require,module,exports) {
 module.exports = "/j1.d6051879.mp4";
 },{}],"img/poster-sky.png":[function(require,module,exports) {
-module.exports = "/956ecabc25a0d5c04f872e43c8d8c9bf.png";
+module.exports = "/poster-sky.c8d8c9bf.png";
 },{}],"components/geaga/geaga.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -49936,19 +49948,8 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
       console.log('highlight-champ');
     });
 
-    _defineProperty(_assertThisInitialized(_this), "fortuna1", function () {
-      console.log('ulster');
-
-      _this.setState({
-        province: 'ulster'
-      });
-    });
-
     _this.state = {
-      charClass: '',
-      province: '',
-      county: '',
-      location: ''
+      province: null
     };
     var _tallyX = props.tallyX;
     return _this;
@@ -49956,29 +49957,30 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Geaga, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log(this.state);
+    value: function componentDidMount() {// console.log(this.state)
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var tallyX = this.props.tallyX;
-      var charClass = this.getCharClass(tallyX);
-      this.setState({
-        charClass: charClass
-      });
-      console.log(charClass);
+      var charClass = this.getCharClass(tallyX); // 	console.log(charClass)
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {// let provinceX = this.props.province;
+      // this.setState({ province: provinceX })
     }
   }, {
     key: "render",
     value: function render() {
       var greetings = ["N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?"];
       var greetingsEng = ["Where in the world am I?"];
+      var fortuna1 = this.props.fortuna1;
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "geaga"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "foreground-zero"
-      }, this.state.province == '' ? null : /*#__PURE__*/_react.default.createElement("video", {
+      }, this.props.county != 'cavan' ? null : /*#__PURE__*/_react.default.createElement("video", {
         id: "sky-vid",
         autoPlay: true,
         loop: true,
@@ -49991,29 +49993,83 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         src: _j.default,
         type: "video/ogg"
       }))), /*#__PURE__*/_react.default.createElement("div", {
-        id: this.state.province == '' ? "foreground-geaga" : "foreground-geaga-3"
+        id: this.province == null ? "foreground-geaga" : "foreground-geaga-3"
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "foreground-geaga-2"
       })), /*#__PURE__*/_react.default.createElement(_reactFadeIn.default, {
         delay: 2000
-      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+      }, this.props.province == null ? /*#__PURE__*/_react.default.createElement("div", {
         className: "fortuna .text-center"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        onTouchEnd: this.fortuna1,
+        onClick: this.fortuna1,
+        onTouchEnd: this.props.fortuna1,
         className: "o-fortuna o-fortuna1"
       }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "o-fortuna o-fortuna2"
+        className: "o-fortuna o-fortuna2",
+        onClick: this.props.fortuna2,
+        onTouchEnd: this.props.fortuna2
       }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "o-fortuna o-fortuna3"
+        className: "o-fortuna o-fortuna3",
+        onClick: this.props.fortuna3,
+        onTouchEnd: this.props.fortuna3
       }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "o-fortuna o-fortuna4"
-      })))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "o-fortuna o-fortuna4",
+        onClick: this.props.fortuna4,
+        onTouchEnd: this.props.fortuna4
+      })) : null, /*#__PURE__*/_react.default.createElement("div", {
+        id: this.props.fortuna1 == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        id: this.props.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        id: this.state.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+      })), /*#__PURE__*/_react.default.createElement("div", {
         className: "container geaga-container"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-        className: "portrait" + this.state.charClass
+        className: "portrait" + this.props.charClass
       })), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
-      }, this.state.charClass == ' druid' ? '' : null, this.state.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.state.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.state.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.state.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.state.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.state.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null));
+      }, this.props.charClass == ' druid' ? '' : null, this.props.charClass == ' rogue' ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.props.charClass == ' sage' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' poet' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.props.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.props.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.props.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null), /*#__PURE__*/_react.default.createElement("div", {
+        id: this.props.fortuna1 == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.province == 'ulster' ? "counties-container" : ''
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "county antrim",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county armagh",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county cavan",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county donegal",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county down",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county fermanagh",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county derry",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county monaghan",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "county tyrone",
+        id: "",
+        onClick: this.countyHandler,
+        onTouchEnd: this.countyHandler
+      })));
     }
   }]);
 
@@ -50252,13 +50308,74 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "fortuna1", function () {
+      _this.setState({
+        fortuna1: 1
+      });
+
+      console.log(' munster');
+
+      _this.setState({
+        province: 'munster'
+      });
+
+      console.log(_this.state);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "fortuna2", function () {
+      _this.setState({
+        fortuna2: 1
+      });
+
+      console.log('ulster');
+
+      _this.setState({
+        province: 'ulster'
+      });
+
+      console.log("province: " + _this.state.province);
+      console.log(_this.state);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "fortuna3", function () {
+      _this.setState({
+        fortuna3: 1
+      });
+
+      console.log('connacht');
+
+      _this.setState({
+        province: 'connacht' + _this.state.province
+      });
+
+      console.log(_this.state);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "fortuna4", function () {
+      _this.setState({
+        fortuna4: 1
+      });
+
+      console.log('leinster');
+
+      _this.setState({
+        province: 'leinster' + _this.state.province
+      });
+
+      console.log(_this.state);
+    });
+
     _this.state = {
       tallyB: 0,
       tallyX: 0,
       engMode: false,
       fortuna1: 0,
       fortuna2: 0,
-      fortuna3: 0
+      fortuna3: 0,
+      charClass: '',
+      province: null,
+      county: '',
+      location: ''
     };
     return _this;
   }
@@ -50308,7 +50425,15 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         setLocation: this.setLocation,
         setCounty: this.setCounty,
         setProvince: this.setProvince,
-        getCharClass: this.getCharClass
+        getCharClass: this.getCharClass,
+        fortuna1: this.fortuna1,
+        fortuna2: this.fortuna2,
+        fortuna3: this.fortuna3,
+        fortuna4: this.fortuna4,
+        charClass: this.state.charClass,
+        province: this.state.province,
+        county: this.state.county,
+        location: this.state.location
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
         incrementX: this.incrementX,
         decrementX: this.decrementX,
@@ -50354,7 +50479,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46375" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39535" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

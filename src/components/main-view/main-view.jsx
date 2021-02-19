@@ -28,8 +28,17 @@ export class MainView extends React.Component {
       tallyD: 0,
       redirect: false,
       tallyY: 0,
-      isLoggedIn: true
+      isLoggedIn: true,
+      dooDeeDooPlay: false
     };
+
+
+  }
+
+  componentDidUpdate() {
+    // const hum1 = document.getElementsByClassName("dooDeeDoo")[0]
+    // hum1.play();
+    // audioEl.play()
   }
   bBtnTouchEnd = () => {
     console.log('end');
@@ -40,16 +49,20 @@ export class MainView extends React.Component {
 
   incrementTallyA = () => {
     if (this.state.tallyA === 0) {
-      console.log('btn A ok')
+
+      // this.setState({dooDeeDooPlay:true})
+      console.log("dooDeeDoo");
+
+
     }
     this.setState({ tallyA: this.state.tallyA += 1 });
     console.log("inc-tal" + this.state.tallyA)
     if (this.state.tallyA == 2) {
       // alert("Update in development - March 1st 2021")
-    //  return(<h1> hi</h1>)
-    console.log("xxx")
-    this.setState({ redirect: true })
-  }
+      //  return(<h1> hi</h1>)
+      console.log("xxx")
+      this.setState({ redirect: true })
+    }
 
   }
 
@@ -91,30 +104,34 @@ export class MainView extends React.Component {
     // this.setState({tallyX: this.state.tallyX = tally})
 
   }
-  goBack = () =>{
+  goBack = () => {
     this.setState({ refresh: true })
-    console.log('goBack refresh: '+ this.state.refresh)
+    console.log('goBack refresh: ' + this.state.refresh)
     window.location.replace("http://167.172.184.73:1234/");
   }
 
 
   render() {
-   const setTallyX  = this.props.setTallyX; 
+    const setTallyX = this.props.setTallyX;
     const toggleEng = this.props.toggleEng;
     const incrementX = this.props.incrementX;
     const decrementX = this.props.decrementX;
     const upAndDown = this.props.upAndDown;
-    { this.state.redirect ? (<Redirect push to="/geaga"/>) : null }
-    { this.state.refresh ? (<Redirect push to="/geaga"/>) : null }
+    { this.state.redirect ? (<Redirect push to="/geaga" />) : null }
+    { this.state.refresh ? (<Redirect push to="/geaga" />) : null }
     return (
 
       <div id="main-view">
-
+        <div>
+          <audio className="dooDeeDoo">
+            <source src="../../music/dooDeeDoo.mp3"></source>
+          </audio>
+        </div>
         <div id="select-start">
           <Container>
             <Row>
               <Col>
-                <ButtonD onTouchEnd ={this.goBack}onClick={this.goBack} />
+                <ButtonD onTouchEnd={this.goBack} onClick={this.goBack} />
               </Col>
               <Col>
                 <Dropdown >
@@ -154,7 +171,7 @@ export class MainView extends React.Component {
 
           <div className="grid-container">
             <div className="grid-item"></div>
-            <div className="grid-item">      <ButtonUp onClick={upAndDown}  />
+            <div className="grid-item">      <ButtonUp onClick={upAndDown} />
             </div>
             <div className="grid-item"></div>
             <div className="grid-item">      <ButtonLeft onClick={decrementX} />

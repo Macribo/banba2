@@ -374,7 +374,7 @@ html {
   justify-content: center;
   align-items: center;
   top: 44%;
-  z-index: 52;
+  z-index: 452;
   left: 10%;
   height: 30%;
   text-align: center;
@@ -593,6 +593,33 @@ html {
   height: 125px;
 }
 
+.counties-container {
+  position: fixed;
+  display: flex;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 33%;
+  z-index: 600;
+  background-repeat: no-repeat;
+  top: 5%;
+}
+
+.fadeOut {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+
+.county {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  z-index: 601;
+}
+
 .o-fortuna {
   z-index: 600;
   position: relative;
@@ -617,6 +644,42 @@ html {
 
 .o-fortuna4 {
   background-image: url("/leinster-dark.7cc263d6.png");
+}
+
+.antrim {
+  background-image: url("/antrim-night.0ef76e69.png");
+}
+
+.armagh {
+  background-image: url("/armagh-night.1d9e196c.png");
+}
+
+.cavan {
+  background-image: url("/cavan-night.64eb53fa.png");
+}
+
+.donegal {
+  background-image: url("/donegal-night.f4dbcf50.png");
+}
+
+.down {
+  background-image: url("/down-night.aaa606a2.png");
+}
+
+.fermanagh {
+  background-image: url("/fermanagh-night.e65bebb1.png");
+}
+
+.derry {
+  background-image: url("/derry-night.885a8bd3.png");
+}
+
+.monaghan {
+  background-image: url("/monaghan-night.d0a36601.png");
+}
+
+.tyrone {
+  background-image: url("/tyrone-night.38aa3199.png");
 }
 .my-flix {
   color: steelblue;
