@@ -127,6 +127,11 @@ export class MainView extends React.Component {
             <source src="../../music/dooDeeDoo.mp3"></source>
           </audio>
         </div>
+        {/* show logo on start */}
+
+<div className={this.state.tallyA==0?"show-logo":''}></div>
+
+
         <div id="select-start">
           <Container>
             <Row>
