@@ -11,7 +11,8 @@ import ReactDOM from 'react-dom';
 import './geaga.scss'
 import Button from 'react-bootstrap/Button';
 import clip1 from '../../vid/j1.mp4';
-import PosterSky from '../../img/poster-sky.png'
+import PosterSky from '../../img/poster-sky.png';
+import {transition} from 'react-transition-group';
 export class Geaga extends React.Component {
 
 	constructor(props) {
@@ -52,11 +53,12 @@ export class Geaga extends React.Component {
 
 	}
 	render() {
+		var cuige = ['Mumhan','Uladh','Laighean','Ċonnacht']
 
 
 
-		let greetings = [`Ní fheadar in Éirinn cá bhfuil mé?`];
-		let greetingsEng = [`Where in the world am I?`];
+		let greetings = [`Ní fheadar in Éiɼinn cá bhfuil mé?`];
+		let greetingsEng = [`Where in the World am I?`];
 		let fortuna1 = this.props.fortuna1;
 		return (
 
@@ -226,6 +228,14 @@ export class Geaga extends React.Component {
 					<div className="county sligo" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 
 				</div>
+
+				<Transition in={inProp} timeout={500}>
+    {state => (
+      <div>
+        I am {state}
+      </div>
+    )}
+  </Transition>
 			</div>
 
 		)
