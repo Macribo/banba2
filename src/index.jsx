@@ -24,7 +24,7 @@ class BanbaApp extends React.Component {
     this.state = {
       tallyB: 0,
       tallyX: 0,
-
+      tallyProvence:1,
       engMode: false,
       fortuna1:0,
       fortuna2:0,
@@ -55,6 +55,23 @@ class BanbaApp extends React.Component {
       this.setState({ tallyX: 7 })
     }
   }
+
+  incrementProvence = () => {
+    this.setState({ tallyProvence: this.state.tallyProvince += 1 });
+    console.log("inc-talX" + this.state.tallyProvince)
+    if (this.state.tallyProvence >= 3) {
+      this.setState({ tallyProvince: 0 })
+    }
+  }
+  decrementProvence = () => {
+    this.setState({ tallyProvince: this.state.tallyProvince -= 1 });
+    console.log("dec-talProvence " + this.state.tallyProvince)
+    if (this.state.tallyProvince <= -1) {
+      this.setState({ tallyProvence: 3 })
+    }
+  }
+
+
 
   incrementTallyB = () => {
     this.setState({ tallyb: this.state.tallyB += 1 });
@@ -118,6 +135,10 @@ class BanbaApp extends React.Component {
     this.setState({ tallyX: 8 });
 
 
+  }
+
+  setTallyProvince = (tallyP) =>{
+    this.setState(tallyP)
   }
   upAndDown = () => {
     console.log("tallyX: " + this.state.tallyX)
@@ -207,9 +228,6 @@ class BanbaApp extends React.Component {
             setTally6={this.setTally6}
             setTally7={this.setTally7}
             setTally8={this.setTally8}
-
-
-
           />
 
 
@@ -221,7 +239,10 @@ class BanbaApp extends React.Component {
 
         <Route exact path="/geaga">
           
-          <Geaga tallyX={this.state.tallyX} setLocation = {this.setLocation}
+          <Geaga tallyX={this.state.tallyX} 
+                 tallyProvence = {this.state.tallyProvence}
+          
+          setLocation = {this.setLocation}
           setCounty = {this.setCounty}
           setProvince = {this.setProvince} 
           getCharClass= {(tallyX) => this.getCharClass= (tallyX)}
@@ -229,14 +250,16 @@ class BanbaApp extends React.Component {
           fortuna2 = {this.fortuna2}
           fortuna3 = {this.fortuna3}
           fortuna4 = {this.fortuna4}
-
+setTallyProvince = {(tallyP)=>this.setTallyProvince(tallyP)}
           charClass={this.state.charClass}
 			province= {this.state.province}
 			county= {this.state.county}
 			location= {this.state.location}
           />
         
-        <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
+        <MainView incrementProvence={this.incrementProvince} decrementProvence={this.decrementProvence} toggleEng={this.toggleEng} engMode={this.state.engMode}
+        
+          />
 
 
 

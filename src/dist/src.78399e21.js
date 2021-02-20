@@ -51206,26 +51206,19 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
 
     };
     var tallyX = props.tallyX;
+    var tallyProvince = props.tallyProvince;
+    var charClass = props.getCharClass(tallyX);
+    console.log(charClass);
+    console.log(tallyX + "<< tallyX from geaga");
+    console.log(tallyProvince + "<< tallyProvince from geaga");
     return _this;
   }
 
   _createClass(Geaga, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      var tallyX = this.props.tallyX;
-      var charClass = props.getCharClass(tallyX);
-      this.setState({
-        charClass: charClass
-      });
-      console.log(charClass); // console.log(this.state)
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var tallyX = this.props.tallyX; // console.log()
-
-      var charClass = this.props.getCharClass(tallyX);
-      console.log("howdy " + charClass);
+    value: function componentDidMount() {// this.setState({ charClass: charClass })
+      // console.log(this.state)
+      // console.log("howdy " + charClass)
     }
   }, {
     key: "componentDidUpdate",
@@ -51234,6 +51227,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var cuige = ['Mumhan', 'Uladh', 'Laighean', 'Ċonnacht'];
+      var dinneen = ['Munster', 'Ulster', 'Connacht', 'Leinster'];
       var greetings = ["N\xED fheadar in \xC9i\u027Cinn c\xE1 bhfuil m\xE9?"];
       var greetingsEng = ["Where in the World am I?"];
       var fortuna1 = this.props.fortuna1;
@@ -51278,16 +51272,16 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         onClick: this.props.fortuna4,
         onTouchEnd: this.props.fortuna4
       })) : null, /*#__PURE__*/_react.default.createElement("div", {
-        id: this.props.fortuna1 == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+        id: this.props.province == 'munster' ? /*#__PURE__*/_react.default.createElement("h1", null, cuige[0]) : null
       }), /*#__PURE__*/_react.default.createElement("div", {
-        id: this.props.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: this.state.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
+        id: this.state.province == 'ulster' ? /*#__PURE__*/_react.default.createElement("h1", null, this.cuige[1]) : null
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "container geaga-container"
-      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), this.props.engMode ? /*#__PURE__*/_react.default.createElement("h1", null, this.dinneen[0]) : /*#__PURE__*/_react.default.createElement("h1", {
+        alt: "Province"
+      }, cuige[1]), /*#__PURE__*/_react.default.createElement("div", {
         id: "stage"
-      }, this.props.charClass == 3 ? '' : null, this.props.charClass == 0 ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.props.charClass == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == 2 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.props.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.props.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.props.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null), /*#__PURE__*/_react.default.createElement("div", {
+      }, this.props.charClass == 3 ? '' : null, this.props.charClass == 0 && this.props.engMode == false ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null, this.props.charClass == 0 && this.props.engMode == false ? /*#__PURE__*/_react.default.createElement("h1", null, "N\xED fheadar in \xC9irinn c\xE1 bhfuil m\xE9?") : null), this.props.charClass == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == 2 ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 raibh as dhuit?") : null, this.props.charClass == ' druid' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "C\xE9n saighs Draoi th\xFA?")) : null, this.props.charClass == ' gallowglass' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' detective' ? /*#__PURE__*/_react.default.createElement("h1", null, "C\xE1 bhfuil do thr\xEDall?") : null, this.props.charClass == ' occultist' ? /*#__PURE__*/_react.default.createElement("h1", null, "O fortuna....") : null, this.props.charClass == ' fenian' ? /*#__PURE__*/_react.default.createElement("h1", null, "Beir bua.") : null), /*#__PURE__*/_react.default.createElement("div", {
         id: "characters"
       }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 0 ? "portrait rogue" : null
@@ -51306,6 +51300,10 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.tallyX == 7 ? "portrait fenian" : null
       }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "dinneen"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: this.props.engMode == true ? ' dinneen-container' : "hidden"
+      }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "Ulster"))), /*#__PURE__*/_react.default.createElement("div", {
         id: this.props.fortuna1 == 1 ? /*#__PURE__*/_react.default.createElement("h1", null, "Uladh") : null
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: this.props.province == 'ulster' ? "counties-container" : ''
@@ -51453,12 +51451,7 @@ var Geaga = /*#__PURE__*/function (_React$Component) {
         id: "",
         onClick: this.countyHandler,
         onTouchEnd: this.countyHandler
-      })), /*#__PURE__*/_react.default.createElement(Transition, {
-        in: inProp,
-        timeout: 500
-      }, function (state) {
-        return /*#__PURE__*/_react.default.createElement("div", null, "I am ", state);
-      }));
+      })));
     }
   }]);
 
@@ -51557,6 +51550,34 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "incrementProvence", function () {
+      _this.setState({
+        tallyProvence: _this.state.tallyProvince += 1
+      });
+
+      console.log("inc-talX" + _this.state.tallyProvince);
+
+      if (_this.state.tallyProvence >= 3) {
+        _this.setState({
+          tallyProvince: 0
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "decrementProvence", function () {
+      _this.setState({
+        tallyProvince: _this.state.tallyProvince -= 1
+      });
+
+      console.log("dec-talProvence " + _this.state.tallyProvince);
+
+      if (_this.state.tallyProvince <= -1) {
+        _this.setState({
+          tallyProvence: 3
+        });
+      }
+    });
+
     _defineProperty(_assertThisInitialized(_this), "incrementTallyB", function () {
       _this.setState({
         tallyb: _this.state.tallyB += 1
@@ -51643,6 +51664,10 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       _this.setState({
         tallyX: 8
       });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setTallyProvince", function (tallyP) {
+      _this.setState(tallyP);
     });
 
     _defineProperty(_assertThisInitialized(_this), "upAndDown", function () {
@@ -51793,6 +51818,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       tallyB: 0,
       tallyX: 0,
+      tallyProvence: 1,
       engMode: false,
       fortuna1: 0,
       fortuna2: 0,
@@ -51849,6 +51875,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         path: "/geaga"
       }, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
         tallyX: this.state.tallyX,
+        tallyProvence: this.state.tallyProvence,
         setLocation: this.setLocation,
         setCounty: this.setCounty,
         setProvince: this.setProvince,
@@ -51859,16 +51886,18 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         fortuna2: this.fortuna2,
         fortuna3: this.fortuna3,
         fortuna4: this.fortuna4,
+        setTallyProvince: function setTallyProvince(tallyP) {
+          return _this2.setTallyProvince(tallyP);
+        },
         charClass: this.state.charClass,
         province: this.state.province,
         county: this.state.county,
         location: this.state.location
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
-        incrementX: this.incrementX,
-        decrementX: this.decrementX,
+        incrementProvence: this.incrementProvince,
+        decrementProvence: this.decrementProvence,
         toggleEng: this.toggleEng,
-        engMode: this.state.engMode,
-        upAndDown: this.upAndDown
+        engMode: this.state.engMode
       })));
     }
   }]);
@@ -51908,7 +51937,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45901" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42935" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

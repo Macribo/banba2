@@ -12,7 +12,7 @@ import './geaga.scss'
 import Button from 'react-bootstrap/Button';
 import clip1 from '../../vid/j1.mp4';
 import PosterSky from '../../img/poster-sky.png';
-import {transition} from 'react-transition-group';
+import { transition } from 'react-transition-group';
 export class Geaga extends React.Component {
 
 	constructor(props) {
@@ -20,18 +20,26 @@ export class Geaga extends React.Component {
 		this.state = {
 			charClass: ''
 			// province:null
+		
+		
 		}
 		const tallyX = props.tallyX;
-
+		const tallyProvince = props.tallyProvince
+		const charClass = props.getCharClass(tallyX);
+		console.log(charClass)
+		console.log(tallyX + "<< tallyX from geaga")
+			console.log(tallyProvince + "<< tallyProvince from geaga")
 	}
 	componentDidMount() {
-		let tallyX = this.props.tallyX
-		let charClass = props.getCharClass(tallyX);
-
-		this.setState({ charClass: charClass })
-		console.log(charClass)
+		
+		// this.setState({ charClass: charClass })
+	
 		// console.log(this.state)
 
+
+
+	
+		// console.log("howdy " + charClass)
 	}
 
 
@@ -40,20 +48,13 @@ export class Geaga extends React.Component {
 		console.log('highlight-champ')
 	}
 
-	componentDidMount() {
-
-		let tallyX = this.props.tallyX
-		// console.log()
-
-
-		let charClass = this.props.getCharClass(tallyX);
-		console.log("howdy " + charClass)
-	}
 	componentDidUpdate() {
 
 	}
 	render() {
-		var cuige = ['Mumhan','Uladh','Laighean','Ċonnacht']
+		var cuige = ['Mumhan', 'Uladh', 'Laighean', 'Ċonnacht']
+
+		var dinneen = ['Munster', 'Ulster', 'Connacht', 'Leinster'];
 
 
 
@@ -86,21 +87,8 @@ export class Geaga extends React.Component {
 						<div className="o-fortuna o-fortuna3" onClick={this.props.fortuna3} onTouchEnd={this.props.fortuna3}></div>
 						<div className="o-fortuna o-fortuna4" onClick={this.props.fortuna4} onTouchEnd={this.props.fortuna4}></div>
 					</div> : null}
-					<div id={this.props.fortuna1 == 1 ?
-
-						<h1>Uladh</h1>
-
-
-						: null}>
-
-
-
-					</div>
-
-
-					<div id={this.props.province == 'ulster' ?
-
-						<h1>Uladh</h1>
+					<div id={this.props.province == 'munster' ?
+						<h1>{cuige[0]}</h1>
 
 
 						: null}>
@@ -108,7 +96,7 @@ export class Geaga extends React.Component {
 					</div>
 					<div id={this.state.province == 'ulster' ?
 
-						<h1>Uladh</h1>
+						<h1>{this.cuige[1]}</h1>
 
 
 						: null}>
@@ -120,13 +108,12 @@ export class Geaga extends React.Component {
 
 
 				</>
-					{/*{this.props.engMode ? <h1>Select
-						 Champion</h1> : <h1 alt="Champion">Roghnaigh Tuairghneach</h1>}
-						 
-						 
-						 
-						 
-						 */}
+					{this.props.engMode ? <h1>{this.dinneen[0]}</h1> : <h1 alt="Province">{cuige[1]}</h1>}
+
+
+
+
+
 
 
 					<div id="stage">
@@ -135,7 +122,8 @@ export class Geaga extends React.Component {
 						{this.props.charClass == 3 ? '' : null}
 
 
-						{this.props.charClass == 0 ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
+						{this.props.charClass == 0 && this.props.engMode == false ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
+						{this.props.charClass == 0 && this.props.engMode == false ? <h1>Ní fheadar in Éirinn cá bhfuil mé?</h1> : null}
 					</div>
 					{this.props.charClass == 1 ? <h1>Cá bhfuil do thríall?</h1> : null}
 					{this.props.charClass == 2 ? <h1>Cá raibh as dhuit?</h1> : null}
@@ -164,8 +152,18 @@ export class Geaga extends React.Component {
 						<div className={this.props.tallyX == 6 ? "portrait occultist" : null}></div>
 						<div className={this.props.tallyX == 7 ? "portrait fenian" : null} ></div>
 					</>
-
 				</div>
+
+				<div className="dinneen">
+					<div className={this.props.engMode == true ?
+						' dinneen-container' : "hidden"}>
+
+						<>
+							Ulster
+							</>
+					</div>
+				</div>
+
 				<div id={this.props.fortuna1 == 1 ?
 
 					<h1>Uladh</h1>
@@ -199,7 +197,7 @@ export class Geaga extends React.Component {
 					<div className="county dublin" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 					<div className="county kildare" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 					<div className="county kilkenny" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
-					<div className="county laois" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>					
+					<div className="county laois" id="" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 
 					<div className="county longford" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
 					<div className="county louth" onClick={this.countyHandler} onTouchEnd={this.countyHandler}></div>
@@ -229,13 +227,13 @@ export class Geaga extends React.Component {
 
 				</div>
 
-				<Transition in={inProp} timeout={500}>
+				{/* <Transition in={inProp} timeout={500}>
     {state => (
       <div>
         I am {state}
       </div>
     )}
-  </Transition>
+  </Transition> */}
 			</div>
 
 		)
