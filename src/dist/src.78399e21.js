@@ -49742,6 +49742,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var viewingProvinces = this.props.engMode;
+      console.log('viewing provinces: ' + viewingProvinces);
       var setTallyX = this.props.setTallyX;
       var toggleEng = this.props.toggleEng;
       var incrementX = this.props.incrementX;
@@ -51550,30 +51552,30 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "incrementProvence", function () {
+    _defineProperty(_assertThisInitialized(_this), "incrementProvince", function () {
       _this.setState({
-        tallyProvence: _this.state.tallyProvince += 1
+        tallyProvince: _this.state.tallyProvince += 1
       });
 
       console.log("inc-talX" + _this.state.tallyProvince);
 
-      if (_this.state.tallyProvence >= 3) {
+      if (_this.state.tallyProvince >= 3) {
         _this.setState({
           tallyProvince: 0
         });
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "decrementProvence", function () {
+    _defineProperty(_assertThisInitialized(_this), "decrementProvince", function () {
       _this.setState({
         tallyProvince: _this.state.tallyProvince -= 1
       });
 
-      console.log("dec-talProvence " + _this.state.tallyProvince);
+      console.log("dec-talProvince " + _this.state.tallyProvince);
 
       if (_this.state.tallyProvince <= -1) {
         _this.setState({
-          tallyProvence: 3
+          tallyProvince: 3
         });
       }
     });
@@ -51818,7 +51820,7 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       tallyB: 0,
       tallyX: 0,
-      tallyProvence: 1,
+      tallyProvince: 1,
       engMode: false,
       fortuna1: 0,
       fortuna2: 0,
@@ -51826,7 +51828,8 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
       charClass: '',
       province: null,
       county: '',
-      location: ''
+      location: '',
+      viewingProvinces: false
     };
     return _this;
   }
@@ -51849,7 +51852,8 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         decrementX: this.decrementX,
         toggleEng: this.toggleEng,
         engMode: this.state.engMode,
-        upAndDown: this.upAndDown
+        upAndDown: this.upAndDown,
+        viewingProvinces: this.state.viewingProvinces
       })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/champions"
@@ -51869,13 +51873,14 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         decrementX: this.decrementX,
         toggleEng: this.toggleEng,
         engMode: this.state.engMode,
-        upAndDown: this.upAndDown
+        upAndDown: this.upAndDown,
+        viewingProvinces: this.state.viewingProvinces
       })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/geaga"
       }, /*#__PURE__*/_react.default.createElement(_geaga.Geaga, {
         tallyX: this.state.tallyX,
-        tallyProvence: this.state.tallyProvence,
+        tallyProvince: this.state.tallyProvince,
         setLocation: this.setLocation,
         setCounty: this.setCounty,
         setProvince: this.setProvince,
@@ -51894,10 +51899,11 @@ var BanbaApp = /*#__PURE__*/function (_React$Component) {
         county: this.state.county,
         location: this.state.location
       }), /*#__PURE__*/_react.default.createElement(_mainView.MainView, {
-        incrementProvence: this.incrementProvince,
-        decrementProvence: this.decrementProvence,
+        incrementProvince: this.incrementProvince,
+        decrementProvince: this.decrementProvince,
         toggleEng: this.toggleEng,
-        engMode: this.state.engMode
+        engMode: this.state.engMode,
+        viewingProvinces: this.state.viewingProvinces
       })));
     }
   }]);

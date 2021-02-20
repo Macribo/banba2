@@ -24,7 +24,7 @@ class BanbaApp extends React.Component {
     this.state = {
       tallyB: 0,
       tallyX: 0,
-      tallyProvence:1,
+      tallyProvince:1,
       engMode: false,
       fortuna1:0,
       fortuna2:0,
@@ -32,7 +32,8 @@ class BanbaApp extends React.Component {
       charClass: '',
 			province: null,
 			county: '',
-			location: ''
+			location: '',
+      viewingProvinces:false
     }
   
   }
@@ -56,18 +57,18 @@ class BanbaApp extends React.Component {
     }
   }
 
-  incrementProvence = () => {
-    this.setState({ tallyProvence: this.state.tallyProvince += 1 });
+  incrementProvince = () => {
+    this.setState({ tallyProvince: this.state.tallyProvince += 1 });
     console.log("inc-talX" + this.state.tallyProvince)
-    if (this.state.tallyProvence >= 3) {
+    if (this.state.tallyProvince >= 3) {
       this.setState({ tallyProvince: 0 })
     }
   }
-  decrementProvence = () => {
+  decrementProvince = () => {
     this.setState({ tallyProvince: this.state.tallyProvince -= 1 });
-    console.log("dec-talProvence " + this.state.tallyProvince)
+    console.log("dec-talProvince " + this.state.tallyProvince)
     if (this.state.tallyProvince <= -1) {
-      this.setState({ tallyProvence: 3 })
+      this.setState({ tallyProvince: 3 })
     }
   }
 
@@ -214,7 +215,9 @@ class BanbaApp extends React.Component {
     return (
       <Router>
         <Route exact path="/">
-          <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
+          <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} 
+          viewingProvinces = {this.state.viewingProvinces}
+        />
         </Route>
 
         <Route exact path="/champions" >
@@ -230,8 +233,8 @@ class BanbaApp extends React.Component {
             setTally8={this.setTally8}
           />
 
-
-          <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} />
+{/* container for buttons in select champions view */}
+          <MainView incrementX={this.incrementX} decrementX={this.decrementX} toggleEng={this.toggleEng} engMode={this.state.engMode} upAndDown={this.upAndDown} viewingProvinces = {this.state.viewingProvinces}/>
 
 
 
@@ -240,7 +243,7 @@ class BanbaApp extends React.Component {
         <Route exact path="/geaga">
           
           <Geaga tallyX={this.state.tallyX} 
-                 tallyProvence = {this.state.tallyProvence}
+                 tallyProvince = {this.state.tallyProvince}
           
           setLocation = {this.setLocation}
           setCounty = {this.setCounty}
@@ -257,7 +260,8 @@ setTallyProvince = {(tallyP)=>this.setTallyProvince(tallyP)}
 			location= {this.state.location}
           />
         
-        <MainView incrementProvence={this.incrementProvince} decrementProvence={this.decrementProvence} toggleEng={this.toggleEng} engMode={this.state.engMode}
+        <MainView incrementProvince={this.incrementProvince} decrementProvince={this.decrementProvince} toggleEng={this.toggleEng} engMode={this.state.engMode}
+        viewingProvinces = {this.state.viewingProvinces}
         
           />
 

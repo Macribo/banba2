@@ -29,8 +29,10 @@ export class MainView extends React.Component {
       redirect: false,
       tallyY: 0,
       isLoggedIn: true,
-      dooDeeDooPlay: false
+      dooDeeDooPlay: false,
+      
     };
+    
 
 
   }
@@ -39,6 +41,7 @@ export class MainView extends React.Component {
     // const hum1 = document.getElementsByClassName("dooDeeDoo")[0]
     // hum1.play();
     // audioEl.play()
+
   }
   bBtnTouchEnd = () => {
     console.log('end');
@@ -112,6 +115,8 @@ export class MainView extends React.Component {
 
 
   render() {
+    const viewingProvinces = this.props.engMode;
+    console.log('viewing provinces: '+viewingProvinces)
     const setTallyX = this.props.setTallyX;
     const toggleEng = this.props.toggleEng;
     const incrementX = this.props.incrementX;
